@@ -16,10 +16,13 @@ import json
 import os
 import sys
 
+from dotenv import load_dotenv
 from neo4j import GraphDatabase
 
 from ragbench.core.config import Config
 from ragbench.llms.factory import build_llm
+
+load_dotenv("/home/rokey/your-project/.env")  # GEMINI_API_KEY 등
 
 CFG_PATH = sys.argv[1] if len(sys.argv) > 1 else "config/ollama.yaml"
 OUT_DIR = sys.argv[2] if len(sys.argv) > 2 else "storage/graphrag_e2b"

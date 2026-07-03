@@ -17,12 +17,20 @@ def build_llm(cfg: Config) -> Any:
     if provider == "google":
         from llama_index.llms.google_genai import GoogleGenAI
 
-        return GoogleGenAI(
+        kwargs = dict(
             model=cfg.llm.model,
             api_key=_google_api_key(),
             temperature=cfg.llm.temperature,
             max_tokens=cfg.llm.max_tokens,
         )
+        # thinking=False → thinking_budget 0 으로 사고 토큰 제거(추출·요약·채점 비용 절감).
+        if not getattr(cfg.llm, "thinking", True):
+            from google.genai import types
+
+            kwargs["generation_config"] = types.GenerateContentConfig(
+                thinking_config=types.ThinkingConfig(thinking_budget=0)
+            )
+        return GoogleGenAI(**kwargs)
 
     if provider == "ollama":
         # 로컬/원격 Ollama. base_url 은 OLLAMA_BASE_URL 환경변수(기본 localhost:11434).

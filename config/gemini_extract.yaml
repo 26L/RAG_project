@@ -1,0 +1,15 @@
+# Gemini 엔티티·관계 추출 검증용 — 추출 LLM만 gemini로, 임베딩은 e5 유지(변수 격리).
+llm:
+  provider: google
+  model: gemini-2.5-flash
+  temperature: 0.1
+  max_tokens: 4096
+  thinking: false
+embed:
+  provider: local
+  model: intfloat/multilingual-e5-small
+chunk_size: 1024
+chunk_overlap: 64
+top_k: 4
+data_dir: data/company
+storage_dir: storage

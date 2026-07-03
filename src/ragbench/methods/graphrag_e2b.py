@@ -78,6 +78,17 @@ def normalize_rel(label: str) -> str:
     return label
 
 
+_ROUTER_PROMPT = (
+    "다음 질문을 두 유형 중 하나로 분류하라.\n"
+    "- global: 회사 전체·여러 부서·여러 문서를 아우르는 개괄·요약·종합 질문. "
+    "'전사/전체/각각/여러/주요/전반적으로/어떻게 이어지나' 같은 신호가 있으면 global.\n"
+    "  예: '세 사업부는 각각 어떤 프로젝트를 하나', '전사적으로 예산은 어떻게 관리되나', '주요 활동은'\n"
+    "- specific: 특정 규정·수치·인물·양식 하나를 콕 집어 묻는 질문.\n"
+    "  예: '연차는 며칠인가', '휴가신청서 번호는', 'X 규정의 마감일은'\n"
+    "반드시 한 단어로만 답하라: global 또는 specific\n\n질문: {q}\n답:"
+)
+
+
 def parse_extraction(resp: str):
     """E2B 산문 출력 → (entities, relations). entities=(이름,유형,설명), relations=(출발,관계,도착)."""
     ents, rels = [], []
@@ -180,6 +191,75 @@ class GraphRAGE2BL5(GraphRAGE2B):
         return RetrieverQueryEngine.from_args(retriever, llm=self._big_llm())
 
 
+class GraphRAGE2BAdaptive(GraphRAGE2BL5):
+    """graphrag_e2b_l5 + 질의 유형 라우팅(적응형 검색).
+
+    질의를 gemma로 global/specific 분류 → 전역형이면 커뮤니티 요약 주입(breadth),
+    특정형이면 재순위 top-k만(요약 희석 없음). 핀포인트·전역 양쪽을 균형 있게.
+    """
+
+    name = "graphrag_e2b_adaptive"
+
+    def _make_engine(self) -> Any:
+        import nest_asyncio
+
+        nest_asyncio.apply()
+        from llama_index.core.query_engine import RetrieverQueryEngine
+
+        pool = max(self.cfg.top_k * self._RETRIEVE_MULT, self._RETRIEVE_MIN)
+        base = self._index.as_retriever(similarity_top_k=pool)
+        reranker = _E5Rerank(embed_model=self.embed_model, top_n=self.cfg.top_k)
+        retriever = _GraphCommunityRetriever(
+            base=base,
+            reranker=reranker,
+            embed_model=self.embed_model,
+            summaries=self._load_summaries(),
+            top_comm=self._TOP_COMMUNITY,
+            router_llm=self.llm,  # ← 질의 유형 라우팅
+        )
+        return RetrieverQueryEngine.from_args(retriever, llm=self._big_llm())
+
+
+class GraphRAGE2BHybrid(GraphRAGE2BL5):
+    """검색층 하이브리드 — 그래프 검색 + 직접 청크 벡터검색(RRF 융합) + 재순위.
+
+    단일 그래프 검색(query→엔티티→청크, 간접)의 정밀도 약점을,
+    직접 벡터검색(query→청크)을 융합해 보완. 의미+키워드 하이브리드가 단일보다
+    나았던 것과 같은 원리(그래프+벡터). standard 인덱스를 직접검색으로 재사용.
+    """
+
+    name = "graphrag_e2b_hybrid"
+
+    def _make_engine(self) -> Any:
+        import nest_asyncio
+
+        nest_asyncio.apply()
+        from llama_index.core import StorageContext, load_index_from_storage
+        from llama_index.core.query_engine import RetrieverQueryEngine
+        from llama_index.core.retrievers import QueryFusionRetriever
+
+        pool = max(self.cfg.top_k * self._RETRIEVE_MULT, self._RETRIEVE_MIN)
+        graph_ret = self._index.as_retriever(similarity_top_k=pool)
+        # 직접 청크 벡터검색: standard(VectorStoreIndex, 같은 코퍼스·e5) 재사용
+        vdir = os.path.join(self.cfg.storage_dir, "standard")
+        vindex = load_index_from_storage(
+            StorageContext.from_defaults(persist_dir=vdir), embed_model=self.embed_model
+        )
+        vec_ret = vindex.as_retriever(similarity_top_k=pool)
+        fusion = QueryFusionRetriever(
+            [graph_ret, vec_ret],
+            similarity_top_k=pool,
+            num_queries=1,  # 질의 확장 없이 두 retriever 결과만 RRF 융합
+            mode="reciprocal_rerank",
+            use_async=False,
+            llm=self._big_llm(),
+        )
+        reranker = _E5Rerank(embed_model=self.embed_model, top_n=self.cfg.top_k)
+        return RetrieverQueryEngine.from_args(
+            fusion, node_postprocessors=[reranker], llm=self._big_llm()
+        )
+
+
 def _build_community_retriever_cls():
     """그래프 검색(재순위) + 커뮤니티 요약 주입을 합치는 커스텀 retriever."""
     import math
@@ -194,18 +274,30 @@ def _build_community_retriever_cls():
         return s / (na * nb + 1e-9)
 
     class GraphCommunityRetriever(BaseRetriever):
-        def __init__(self, base, reranker, embed_model, summaries, top_comm=3):
+        def __init__(self, base, reranker, embed_model, summaries, top_comm=3, router_llm=None):
             self._base = base
             self._rr = reranker
             self._em = embed_model
             self._summaries = summaries
             self._top = top_comm
+            self._router = router_llm  # None=항상 주입(L5) / 있으면 global일 때만(적응형)
             super().__init__()
+
+        def _inject_summaries(self, query_str) -> bool:
+            if not self._summaries:
+                return False
+            if self._router is None:
+                return True
+            try:
+                resp = str(self._router.complete(_ROUTER_PROMPT.format(q=query_str))).strip().lower()
+                return "global" in resp  # 특정형(specific)이면 요약 주입 안 함
+            except Exception:
+                return True  # 분류 실패 시 안전하게 주입
 
         def _retrieve(self, query_bundle):
             nodes = self._base.retrieve(query_bundle)
             nodes = self._rr.postprocess_nodes(nodes, query_bundle=query_bundle)
-            if self._summaries:
+            if self._inject_summaries(query_bundle.query_str):
                 q = self._em.get_query_embedding(query_bundle.query_str)
                 scored = sorted(
                     ((_cos(q, e), t) for t, e in self._summaries),
@@ -247,7 +339,17 @@ def _build_reranker_cls():
                 nb = math.sqrt(sum(y * y for y in b))
                 return s / (na * nb + 1e-9)
 
-            texts = [nw.node.get_content(metadata_mode=MetadataMode.NONE) or "" for nw in nodes]
+            def clean(t: str) -> str:
+                # PropertyGraphIndex가 앞에 붙이는 "Here are some facts…:" + 트리플 제거.
+                # e5-small(512토큰)이 앞부분만 임베딩 → 트리플만 보고 원문(사실)을 놓쳐
+                # 정답 청크를 낮게 매기는 버그 방지. 원문 텍스트로만 재순위.
+                lines = [
+                    ln for ln in t.splitlines()
+                    if " -> " not in ln and "Here are some facts" not in ln
+                ]
+                return "\n".join(lines).strip() or t
+
+            texts = [clean(nw.node.get_content(metadata_mode=MetadataMode.NONE) or "") for nw in nodes]
             embs = self.embed_model.get_text_embedding_batch(
                 [t if t.strip() else " " for t in texts]
             )

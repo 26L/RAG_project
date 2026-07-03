@@ -81,6 +81,25 @@
 - 트레이드오프 확정: **L5는 multi·global↑ / single↓** → **적응형 검색**(single=재순위 / global=L5·breadth)이 다음 스텝.
 - 결과: `results/local_eval/{bm25,standard,hybrid,graphrag_e2b,graphrag_e2b_l5}_v2_judge.json`. 비용 $0.
 
+## 2026-07-02 (심화 — 강judge 검증 → 버그 발견 → 검색층 하이브리드로 그래프 부활)
+**"GraphRAG는 왜 지는가"를 5단계로 파고들어, 결국 "제대로 구현하면 이긴다"를 실측.**
+1. **강judge 검증**: gemma judge가 그래프 점수를 부풀림 의심 → **Gemini judge로 재채점**. graphrag_e2b_l5 global 0.38→**0.00** 붕괴 → 약judge가 그래프를 관대하게 봤음이 드러남.
+2. **강추출 검증**: "약한 gemma 추출 탓" 가설 → **Gemini로 전체 재추출**(desc 62%→**98%**, 타입 깨끗). 그런데도 그래프 judge 0.25~0.36으로 여전히 낮음 → "구조적 한계"로 **잠정 오결론**.
+3. **버그 발견(사용자 반증)**: "버그 아니야?" → 진단하니 **재랭커 임베딩 버그** — 검색된 노드 내용이 `트리플 + 원문`인데 e5(512토큰)가 **앞의 트리플만 임베딩**해 정답 청크(근로기준법)를 낮게 매김. 정답이 풀에 있는데 top-k에서 탈락. → 재순위 시 트리플 제거하도록 수정(부분 회복).
+4. **핵심 통찰(사용자)**: "버그가 전부 아니다 — 검색이 그래프 단일 기법이라 낮다"(의미/키워드 단일 대비 하이브리드가 이겼던 것과 동형).
+5. **검색층 하이브리드**([methods/graphrag_e2b.py](src/ragbench/methods/graphrag_e2b.py) `GraphRAGE2BHybrid`): 그래프 검색 + **직접 청크 벡터검색**(standard 인덱스 재사용) **RRF 융합** → **graphrag_e2b 0.333 → hybrid 0.806**(2.4배), single 1.0·multi 0.92·relational 0.80로 **평면 수준 정밀도 회복** + global 0.38로 **연결성 강점 유지**.
+
+**최종 비교 (Gemini 그래프·생성·judge, 버그수정 반영)**
+
+| 방식 | judge | recall | single | multi | relat | global |
+| --- | --- | --- | --- | --- | --- | --- |
+| standard (평면) | 0.833 | 0.863 | 1.00 | 0.92 | 1.00 | 0.38 |
+| graphrag_e2b (그래프만) | 0.333 | 0.250 | 0.36 | 0.50 | 0.20 | 0.12 |
+| **graphrag_e2b_hybrid (그래프+직접벡터)** | **0.806** | 0.833 | 1.00 | 0.92 | 0.80 | 0.38 |
+
+- **결론**: **GraphRAG 저성능 = 방법론의 구조적 한계가 아니라 ① 재랭커 임베딩 버그 + ② 단일 검색 기법.** 올바른 검색층(그래프+벡터 하이브리드 + 정상 재랭커)이면 평면 정밀도를 따라잡으며 전역·연결성을 더한다.
+- 결과: `results/local_eval/*_gemini_{judge,fixed}.json`, `graphrag_e2b_hybrid_gemini.json`. 비용: Gemini 추출(thinking on)~2천원대 + 평가·재채점 소액.
+
 ## 핵심 결과 (누적)
 - **하이브리드 검색이 대체로 최고**, 다중 홉·노이즈가 공통 난점.
 - **GraphRAG는 현재 미결론** — 그래프가 빈약(노드 속성/임베딩/커뮤니티 요약 없음)해 공정 판정 불가(CLAUDE.md §10).

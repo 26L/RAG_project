@@ -14,6 +14,7 @@ class LLMConfig:
     temperature: float = 0.1
     max_tokens: int = 1024
     num_ctx: int = 4096  # 입력 컨텍스트 창(Ollama). 기본 4096 — 온디바이스 제약
+    thinking: bool = True  # Gemini thinking. 추출·요약·채점엔 불필요 → False로 비용/속도 절감
 
 
 @dataclass

@@ -10,7 +10,12 @@ from .core.config import Config
 from .core.interface import RagBackend
 from .methods.bm25 import BM25RAG
 from .methods.graphrag import GraphRAG, GraphRAGDynamic, GraphRAGSchema
-from .methods.graphrag_e2b import GraphRAGE2B, GraphRAGE2BL5
+from .methods.graphrag_e2b import (
+    GraphRAGE2B,
+    GraphRAGE2BAdaptive,
+    GraphRAGE2BHybrid,
+    GraphRAGE2BL5,
+)
 from .methods.hybrid import HybridRAG
 from .methods.standard import StandardRAG
 
@@ -23,6 +28,8 @@ METHODS: dict[str, type[RagBackend]] = {
     "graphrag_dynamic": GraphRAGDynamic,  # 그래프 — 동적 온톨로지 + 속성
     "graphrag_e2b": GraphRAGE2B,          # 그래프 — 로컬 산문 추출 + description(파싱)
     "graphrag_e2b_l5": GraphRAGE2BL5,     # 위 + L5 커뮤니티 요약 주입(전역 강화)
+    "graphrag_e2b_adaptive": GraphRAGE2BAdaptive,  # 위 + 질의 유형 라우팅(적응형)
+    "graphrag_e2b_hybrid": GraphRAGE2BHybrid,      # 검색층 하이브리드(그래프+직접벡터 RRF)
     # "lightrag": LightRAG,
     # ... 부록 A 참고
 }

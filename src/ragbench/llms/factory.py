@@ -24,11 +24,15 @@ def build_llm(cfg: Config) -> Any:
             max_tokens=cfg.llm.max_tokens,
         )
         # thinking=False → thinking_budget 0 으로 사고 토큰 제거(추출·요약·채점 비용 절감).
+        # 주의: generation_config 를 주면 GoogleGenAI 가 temperature/max_tokens 를 주입하는
+        # 분기를 건너뛰므로, 여기서 명시해 재현성(temperature) 을 유지한다.
         if not getattr(cfg.llm, "thinking", True):
             from google.genai import types
 
             kwargs["generation_config"] = types.GenerateContentConfig(
-                thinking_config=types.ThinkingConfig(thinking_budget=0)
+                temperature=cfg.llm.temperature,
+                max_output_tokens=cfg.llm.max_tokens,
+                thinking_config=types.ThinkingConfig(thinking_budget=0),
             )
         return GoogleGenAI(**kwargs)
 

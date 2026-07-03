@@ -250,8 +250,15 @@ class GraphRAGE2BHybrid(GraphRAGE2BL5):
 
         pool = max(self.cfg.top_k * self._RETRIEVE_MULT, self._RETRIEVE_MIN)
         graph_ret = self._index.as_retriever(similarity_top_k=pool)
-        # 직접 청크 벡터검색: standard(VectorStoreIndex, 같은 코퍼스·e5) 재사용
+        # 직접 청크 벡터검색: standard(VectorStoreIndex) 재사용.
+        # 주의: standard 는 이 그래프와 반드시 같은 임베딩으로 색인돼 있어야 한다(차원·의미
+        # 일치). 다른 임베딩으로 만든 standard 를 쓰면 차원 불일치/무의미 유사도가 된다.
         vdir = os.path.join(self.cfg.storage_dir, "standard")
+        if not os.path.isdir(vdir):
+            raise FileNotFoundError(
+                f"graphrag_e2b_hybrid 는 직접 벡터검색용 'standard' 인덱스가 필요합니다: {vdir} 없음. "
+                f"같은 임베딩으로 'ragbench index --method standard' 를 먼저 실행하세요."
+            )
         vindex = load_index_from_storage(
             StorageContext.from_defaults(persist_dir=vdir), embed_model=self.embed_model
         )
@@ -300,9 +307,15 @@ def _build_community_retriever_cls():
                 return True
             try:
                 resp = str(self._router.complete(_ROUTER_PROMPT.format(q=query_str))).strip().lower()
-                return "global" in resp  # 특정형(specific)이면 요약 주입 안 함
+                # 장황한 응답("specific (not global)" 등) 대비: 두 라벨의 첫 등장 위치로 판정.
+                g, s = resp.find("global"), resp.find("specific")
+                if g == -1:
+                    return False  # global 언급 없음 → specific(주입 안 함)
+                if s == -1:
+                    return True
+                return g < s  # 먼저 나온 라벨 채택
             except Exception:
-                return True  # 분류 실패 시 안전하게 주입
+                return True  # 분류 실패 시 안전하게 주입(전역 breadth)
 
         def _retrieve(self, query_bundle):
             nodes = self._base.retrieve(query_bundle)
@@ -350,14 +363,19 @@ def _build_reranker_cls():
                 return s / (na * nb + 1e-9)
 
             def clean(t: str) -> str:
-                # PropertyGraphIndex가 앞에 붙이는 "Here are some facts…:" + 트리플 제거.
-                # e5-small(512토큰)이 앞부분만 임베딩 → 트리플만 보고 원문(사실)을 놓쳐
-                # 정답 청크를 낮게 매기는 버그 방지. 원문 텍스트로만 재순위.
-                lines = [
-                    ln for ln in t.splitlines()
-                    if " -> " not in ln and "Here are some facts" not in ln
-                ]
-                return "\n".join(lines).strip() or t
+                # PropertyGraphIndex가 그래프 노드 앞에 붙이는 "Here are some facts…:" +
+                # 트리플 블록만 제거하고 원문은 보존한다. e5-small(512토큰)이 앞의 트리플만
+                # 임베딩해 정답 청크를 낮게 매기는 버그 방지. 접두사가 없는 노드(직접 벡터검색
+                # 청크 등)는 원문의 정당한 '->' 라인을 지우지 않도록 그대로 반환.
+                if "Here are some facts" not in t:
+                    return t
+                out, in_prefix = [], True
+                for ln in t.splitlines():
+                    if in_prefix and ("Here are some facts" in ln or " -> " in ln or not ln.strip()):
+                        continue  # 선두 트리플 블록만 스킵
+                    in_prefix = False
+                    out.append(ln)
+                return "\n".join(out).strip() or t
 
             texts = [clean(nw.node.get_content(metadata_mode=MetadataMode.NONE) or "") for nw in nodes]
             embs = self.embed_model.get_text_embedding_batch(

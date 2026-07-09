@@ -16,6 +16,10 @@
 
 ## 🎯 핵심 결과
 
+![결과 비교 — 그래프 검색만 0.333 → 그래프+직접벡터 0.806](docs/img/results.svg)
+
+> 인터랙티브 버전(검증 여정 5단계 포함): Claude Artifact — 비공개 링크(소유자만).
+
 **최종 비교** (동일 조건 — 210문서·36문항·Gemini 그래프·생성·LLM-judge)
 
 | 방식 | judge(정답률) | single | multi | relational | global |

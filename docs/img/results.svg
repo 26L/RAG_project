@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 320" font-family="system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif">
+  <rect x="0" y="0" width="640" height="320" rx="14" fill="#ffffff"/>
+  <rect x="0.5" y="0.5" width="639" height="319" rx="14" fill="none" stroke="#e1e0d9"/>
+
+  <text x="28" y="40" font-size="19" font-weight="700" fill="#0b0b0b">GraphRAG는 왜 지는가 → 검색층을 고치니 이겼다</text>
+  <text x="28" y="62" font-size="12.5" fill="#52514e">질문 정답률(LLM-judge, Gemini) · 그래프 검색만 0.333 → 그래프+직접벡터 0.806 (2.4배)</text>
+
+  <!-- axis baseline -->
+  <line x1="188" y1="88" x2="188" y2="284" stroke="#c3c2b7" stroke-width="1"/>
+
+  <!-- rows: label(right-aligned at 178), bar from 188, scale judge*440 -->
+  <!-- standard 0.833 -->
+  <text x="178" y="106" font-size="12.5" text-anchor="end" fill="#52514e" font-family="ui-monospace, Menlo, monospace">standard (평면)</text>
+  <rect x="188" y="94" width="366" height="20" rx="4" fill="#2a78d6"/>
+  <text x="562" y="109" font-size="12" font-weight="700" fill="#2a78d6" font-family="ui-monospace, Menlo, monospace">0.833</text>
+
+  <!-- graph-hybrid 0.806  ★ -->
+  <text x="178" y="150" font-size="12.5" text-anchor="end" fill="#0b0b0b" font-family="ui-monospace, Menlo, monospace" font-weight="700">★ graph+직접벡터</text>
+  <rect x="188" y="138" width="355" height="20" rx="4" fill="#0ca30c"/>
+  <text x="551" y="153" font-size="12" font-weight="700" fill="#0ca30c" font-family="ui-monospace, Menlo, monospace">0.806</text>
+
+  <!-- hybrid flat 0.778 -->
+  <text x="178" y="194" font-size="12.5" text-anchor="end" fill="#52514e" font-family="ui-monospace, Menlo, monospace">hybrid (평면)</text>
+  <rect x="188" y="182" width="342" height="20" rx="4" fill="#2a78d6"/>
+  <text x="538" y="197" font-size="12" font-weight="700" fill="#2a78d6" font-family="ui-monospace, Menlo, monospace">0.778</text>
+
+  <!-- graph only 0.333 -->
+  <text x="178" y="238" font-size="12.5" text-anchor="end" fill="#52514e" font-family="ui-monospace, Menlo, monospace">graph 검색만</text>
+  <rect x="188" y="226" width="147" height="20" rx="4" fill="#eb6834"/>
+  <text x="343" y="241" font-size="12" font-weight="700" fill="#eb6834" font-family="ui-monospace, Menlo, monospace">0.333</text>
+
+  <!-- legend -->
+  <rect x="188" y="272" width="11" height="11" rx="2" fill="#2a78d6"/>
+  <text x="204" y="282" font-size="11.5" fill="#52514e">평면검색</text>
+  <rect x="270" y="272" width="11" height="11" rx="2" fill="#eb6834"/>
+  <text x="286" y="282" font-size="11.5" fill="#52514e">그래프(단일 검색)</text>
+  <rect x="392" y="272" width="11" height="11" rx="2" fill="#0ca30c"/>
+  <text x="408" y="282" font-size="11.5" fill="#52514e">그래프+직접벡터(하이브리드)</text>
+
+  <text x="612" y="308" font-size="10.5" text-anchor="end" fill="#898781">ragbench · 210문서 · 36문항 · Gemini judge</text>
+</svg>

@@ -79,7 +79,7 @@ LlamaIndex는 **Standard RAG의 기본 구현 + 문서 로딩/평가 유틸**로
 > src 레이아웃 패키지(`ragbench`). 새 기법은 `methods/` 에 어댑터 추가 + `registry.py` 한 줄.
 
 ```text
-your-project/
+RAG_project/
   src/ragbench/
     core/
       interface.py    # RagBackend(ABC), QueryResult, RetrievedContext  ✅

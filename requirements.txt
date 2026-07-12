@@ -7,3 +7,6 @@ llama-index-embeddings-openai>=0.3
 llama-index-retrievers-bm25>=0.5
 python-dotenv>=1.0
 pyyaml>=6.0
+
+# HippoRAG2 (선택) — OpenIE KG + PPR. ⚠️ torch/transformers 다운그레이드 유발 → 별도 설치 권장:
+#   uv pip install hipporag

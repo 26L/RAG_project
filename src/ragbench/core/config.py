@@ -33,6 +33,7 @@ class Config:
     data_dir: str = "data"
     storage_dir: str = "storage"
     extract_lang: str = "ko"  # 그래프 추출 프롬프트 언어("ko" 사내도메인 / "en" 범용). 외부벤치용.
+    hipporag_embedding: str | None = None  # HippoRAG 임베딩(기본 facebook/contriever). e5는 OpenAI호환 서버.
 
     @classmethod
     def load(cls, path: str | None = None) -> "Config":

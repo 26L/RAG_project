@@ -16,6 +16,7 @@ from .methods.graphrag_e2b import (
     GraphRAGE2BHybrid,
     GraphRAGE2BL5,
 )
+from .methods.hipporag import HippoRAGBackend
 from .methods.hybrid import HybridRAG
 from .methods.standard import StandardRAG
 
@@ -30,6 +31,7 @@ METHODS: dict[str, type[RagBackend]] = {
     "graphrag_e2b_l5": GraphRAGE2BL5,     # 위 + L5 커뮤니티 요약 주입(전역 강화)
     "graphrag_e2b_adaptive": GraphRAGE2BAdaptive,  # 위 + 질의 유형 라우팅(적응형)
     "graphrag_e2b_hybrid": GraphRAGE2BHybrid,      # 검색층 하이브리드(그래프+직접벡터 RRF)
+    "hipporag": HippoRAGBackend,          # OpenIE KG + Personalized PageRank (공식 hipporag)
     # "lightrag": LightRAG,
     # ... 부록 A 참고
 }

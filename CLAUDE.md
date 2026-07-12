@@ -428,6 +428,21 @@ cp .env.example .env   # GEMINI_API_KEY 채우기 (GOOGLE_API_KEY 도 인식)
 - **주의**: `recall@k=0`은 검색 실패 아님 — HippoRAG 반환이 원문 문단(파일명 소실)이라 recall@k 미산출, **judge·kw_recall로 평가**(그래프 기법 방침과 동일). 의존성: hipporag가 torch 2.10→2.5.1·transformers 다운그레이드(+vllm)했으나 기존 파이프라인 정상 확인. `pip install hipporag` 별도(핵심 requirements 미포함, 어댑터 지연 import).
 - 인프라: config `hipporag.yaml`(contriever·동작확인용)·`hipporag_e5.yaml`(e5·공정결론용). 결과 `results/local_eval/hipporag_matrix.json`.
 
+### 10.11 외부검증 완결 — HippoRAG2 공개벤치 + 독립 논문 대조 (2026-07-12)
+> §10.10 후속. HippoRAG2를 ① 공개벤치(HotpotQA)로 외부검증하고 ② 독립 VLDB 논문의 대규모 통제실험과 대조.
+
+**(1) HippoRAG2 외부검증 (HotpotQA n=100, e5, PPR)** — `results/local_eval/hipporag_hotpot.json`
+- judge **0.640** — 외부 클러스터(평면 0.64~0.69)에 안착, 아무도 압도 못 함(§10.7과 일치).
+- ⚠️ **25/100 문항에서 recognition-memory JSON 파싱 실패**(Gemini OpenAI호환 응답 절단) → **보수적 하한**. 방법 한계 아니라 **통합 글루 이슈**(HippoRAG 자체 OpenAI 클라이언트 ↔ Gemini shim의 엄격 JSON 불일치). 내부(0.806)에선 덜 트리거돼 안 터짐.
+
+**(2) 독립 논문 대조 — [In-depth Analysis of Graph-based RAG (VLDB 2025)](https://arxiv.org/abs/2503.04338)** (CUHK+Huawei, 12기법×11데이터셋×GPT-4o judge)
+- **프레임워크 수렴**: 논문의 4단계(graph building→index→operator config→retrieval&generation)가 우리 `RagBackend`+하니스 분해와 동일 철학. "기법=연산자 조합" = 우리 §4 플러그형 백엔드.
+- **분류 일치**: Table 1이 HippoRAG를 **Specific QA ✓ / Abstract QA ✗** 로 분류 → 우리 실측(single/multi/relat 최상위, global 0.25)과 정확히 일치. HippoRAG 연산자 = `Link+PPR`(우리 심층설명 확인).
+- **수치 수렴(Table 5)**: HotpotQA에서 **HippoRAG 50.3 ≈ VanillaRAG 50.8**(압도 없음) → 우리 외부검증(HippoRAG 클러스터 묻힘)과 동일. 논문 원문 *"graph-based RAG typically higher than vanilla, but if retrieved elements irrelevant, may degrade"* = 우리 "그래프 우위는 조건부".
+- **결론 수렴**: 논문 *"no single method dominates across question types and cost → task-specific optimization"* = 우리 **§11 용도별 2 프로필**.
+- **★ 함의**: **완전 독립 팀·다른 하니스(GPT-4o·BGE-M3·11벤치)가 우리와 같은 결론** → §10.6 "공식 SOTA 대조 없음" 갭 **부분 해소**, 우리 결론의 external validity↑("과적합 우연" 아님).
+- **새 발견**: Table 5에서 **specific QA 최고가 대부분 RAPTOR**(트리 계층요약, 비그래프). 계층 요약이 핀포인트에도 강함 → **다음 후보 RAPTOR**(§9).
+
 ## 11. 사용 프로필 (범용 vs 커뮤니티)
 > 결론은 "하나의 승자"가 아니라 **용도별 두 프로필**(§10.7~10.9). 상세·명령: [docs/PROFILES.md](docs/PROFILES.md).
 
@@ -456,5 +471,6 @@ cp .env.example .env   # GEMINI_API_KEY 채우기 (GOOGLE_API_KEY 도 인식)
 | CausalRAG | Wang et al., *CausalRAG: Integrating Causal Graphs into Retrieval-Augmented Generation* (ACL 2025 Findings) | [2503.19878](https://arxiv.org/abs/2503.19878) | [hippoley/CausalRAG](https://github.com/hippoley/CausalRAG) |
 | HugRAG | *HugRAG: Hierarchical Causal Knowledge Graph Design for RAG* (2026) | [2602.05143](https://arxiv.org/abs/2602.05143) | 공개 레포 미확인 |
 
-**관련 벤치마크**
+**관련 벤치마크 · 서베이**
 - **HolisQA** — HugRAG 논문이 제안한 관계·전체이해 중심 QA 평가셋. 공개 형태·라이선스는 논문/레포에서 확인 후 채택 검토(§8).
+- **In-depth Analysis of Graph-based RAG (VLDB 2025)** — [2503.04338](https://arxiv.org/abs/2503.04338) · [github/JayLZhou/GraphRAG](https://github.com/JayLZhou/GraphRAG). 12기법×11데이터셋 통합 벤치. 우리 결론과 수렴(§10.11) — 외부 타당성 근거.

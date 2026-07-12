@@ -1,0 +1,18 @@
+# HippoRAG2 외부검증 — 임베딩 레버 교체: e5 → NIM nv-embed-v1(논문 NV-Embed 계열 근접).
+# OpenIE는 Gemini 재사용(LLM명에 묶임), 임베딩만 재계산. 내부LLM·생성·judge는 Gemini.
+llm:
+  provider: google
+  model: gemini-2.5-flash
+  temperature: 0.1
+  max_tokens: 4096
+  thinking: false
+embed:
+  provider: local
+  model: intfloat/multilingual-e5-small
+chunk_size: 1024
+chunk_overlap: 64
+top_k: 4
+data_dir: data/hotpot
+storage_dir: storage_hotpot
+hipporag_embedding: text-embedding-nvembed
+hipporag_embedding_base_url: https://integrate.api.nvidia.com/v1

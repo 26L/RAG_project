@@ -43,6 +43,76 @@ def _patch_hipporag_llm() -> None:
     CacheOpenAI._ragbench_patched = True
 
 
+def _patch_hipporag_filter() -> None:
+    """recognition memory 트리플 필터 파서를 관대하게 — Gemini 등 출력 JSON이 잘려도
+    완전한 [주어,관계,목적어] 트리플만 정규식으로 복구한다(재인덱싱 없이 파싱실패 흡수).
+    공식 parse_filter 는 json/ast 실패 시 빈 리스트를 반환해 그 질의의 필터가 무력화됨."""
+    import json as _json
+    import re as _re
+    from hipporag.rerank import DSPyFilter
+
+    if getattr(DSPyFilter, "_ragbench_repair", False):
+        return
+    _field = _re.compile(r"\[\[ ## (\w+) ## \]\]")
+    _triple = _re.compile(
+        r'\[\s*"((?:[^"\\]|\\.)*)"\s*,\s*"((?:[^"\\]|\\.)*)"\s*,\s*"((?:[^"\\]|\\.)*)"\s*\]'
+    )
+
+    def _parse_repaired(self, response):
+        # fact_after_filter 섹션 추출
+        sections, cur = {}, None
+        for line in (response or "").splitlines():
+            m = _field.match(line.strip())
+            if m:
+                cur = m.group(1); sections[cur] = []
+            elif cur is not None:
+                sections[cur].append(line)
+        value = "\n".join(sections.get("fact_after_filter", [])).strip() or (response or "")
+        # 1) 정상 파싱(json)
+        try:
+            obj = _json.loads(value)
+            facts = obj.get("fact") if isinstance(obj, dict) else obj
+            out = [list(t) for t in facts if isinstance(t, (list, tuple)) and len(t) == 3]
+            if out:
+                return out
+        except Exception:
+            pass
+        # 2) 잘린 출력 → 완전한 트리플만 복구
+        return [[a, b, c] for a, b, c in _triple.findall(value)]
+
+    DSPyFilter.parse_filter = _parse_repaired
+    DSPyFilter._ragbench_repair = True
+
+
+def _patch_nim_embedding(api_key: str, model: str = "nvidia/nv-embed-v1") -> None:
+    """NIM 임베딩(nv-embed 등)을 HippoRAG OpenAI 임베딩 경로에 연결.
+    ① 임베딩 클라이언트에 별도 NVIDIA 키 주입(LLM은 Gemini 키 유지) ② nv-embed 필수
+    파라미터 input_type=passage 추가 ③ API 모델명을 실제 NIM 모델로 고정(라우팅용 이름과 분리)."""
+    import numpy as _np
+    from openai import OpenAI as _OpenAI
+    from hipporag.embedding_model.OpenAI import OpenAIEmbeddingModel
+
+    if getattr(OpenAIEmbeddingModel, "_ragbench_nim", False):
+        return
+    _orig_init = OpenAIEmbeddingModel.__init__
+
+    def _init(self, global_config=None, embedding_model_name=None):
+        _orig_init(self, global_config=global_config, embedding_model_name=embedding_model_name)
+        self.client = _OpenAI(base_url=global_config.embedding_base_url, api_key=api_key)
+        self._nim_model = model
+
+    def _encode(self, texts):
+        texts = [t.replace("\n", " ") or " " for t in texts]
+        resp = self.client.embeddings.create(
+            input=texts, model=self._nim_model, extra_body={"input_type": "passage"}
+        )
+        return _np.array([v.embedding for v in resp.data])
+
+    OpenAIEmbeddingModel.__init__ = _init
+    OpenAIEmbeddingModel.encode = _encode
+    OpenAIEmbeddingModel._ragbench_nim = True
+
+
 class HippoRAGBackend(RagBackend):
     name = "hipporag"
 
@@ -58,6 +128,7 @@ class HippoRAGBackend(RagBackend):
         from hipporag import HippoRAG
 
         _patch_hipporag_llm()
+        _patch_hipporag_filter()  # 트리플필터 파싱 관대화(잘린 JSON 복구, 재인덱싱 불필요)
         # HippoRAG 내부 LLM(OpenIE+트리플필터) — 기본 Gemini OpenAI호환, override로 NIM Llama 등.
         llm_base = getattr(self.cfg, "hipporag_llm_base_url", None) or _GEMINI_OPENAI
         llm_model = getattr(self.cfg, "hipporag_llm_model", None) or self.cfg.llm.model
@@ -68,6 +139,10 @@ class HippoRAGBackend(RagBackend):
             os.environ["OPENAI_API_KEY"] = key
         emb = getattr(self.cfg, "hipporag_embedding", None) or "facebook/contriever"
         emb_url = getattr(self.cfg, "hipporag_embedding_base_url", None)
+        if emb_url and "nvidia.com" in emb_url:  # NIM 임베딩: 별도 NVIDIA 키 + input_type 패치
+            nv_key = os.environ.get("NVIDIA_API_KEY")
+            if nv_key:
+                _patch_nim_embedding(nv_key, model=os.environ.get("NIM_EMBED_MODEL", "nvidia/nv-embed-v1"))
         kwargs = dict(
             save_dir=self.save_dir,
             llm_model_name=llm_model,

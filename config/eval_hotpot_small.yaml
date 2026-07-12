@@ -1,0 +1,194 @@
+- question: Were Scott Derrickson and Ed Wood of the same nationality?
+  type: multi
+  relevant_sources:
+  - Scott_Derrickson_d3a4c0.md
+  - Ed_Wood_fafbab.md
+  answer_keywords:
+  - 'yes'
+  reference_answer: 'yes'
+- question: What government position was held by the woman who portrayed Corliss Archer
+    in the film Kiss and Tell?
+  type: multi
+  relevant_sources:
+  - Kiss_and_Tell_1945_film_6c9ed9.md
+  - Shirley_Temple_b3642d.md
+  answer_keywords:
+  - Chief
+  - Protocol
+  reference_answer: Chief of Protocol
+- question: What science fantasy young adult series, told in first person, has a set
+    of companion books narrating the stories of enslaved worlds and alien species?
+  type: multi
+  relevant_sources:
+  - The_Hork_Bajir_Chronicles_09dd22.md
+  - Animorphs_df9035.md
+  answer_keywords:
+  - Animorphs
+  reference_answer: Animorphs
+- question: Are the Laleli Mosque and Esma Sultan Mansion located in the same neighborhood?
+  type: multi
+  relevant_sources:
+  - Laleli_Mosque_c7818f.md
+  - Esma_Sultan_Mansion_fb6370.md
+  answer_keywords:
+  - 'no'
+  reference_answer: 'no'
+- question: The director of the romantic comedy "Big Stone Gap" is based in what New
+    York city?
+  type: multi
+  relevant_sources:
+  - Big_Stone_Gap_film_850981.md
+  - Adriana_Trigiani_b2b51c.md
+  answer_keywords:
+  - Greenwich
+  - Village,
+  - New
+  - York
+  - City
+  reference_answer: Greenwich Village, New York City
+- question: 2014 S/S is the debut album of a South Korean boy group that was formed
+    by who?
+  type: multi
+  relevant_sources:
+  - 2014_S_S_4dabbb.md
+  - Winner_band_d13a43.md
+  answer_keywords:
+  - Entertainment
+  reference_answer: YG Entertainment
+- question: Who was known by his stage name Aladin and helped organizations improve
+    their performance as a consultant?
+  type: multi
+  relevant_sources:
+  - Eenasul_Fateh_ee6ecc.md
+  - Management_consulting_87e12d.md
+  answer_keywords:
+  - Eenasul
+  - Fateh
+  reference_answer: Eenasul Fateh
+- question: The arena where the Lewiston Maineiacs played their home games can seat
+    how many people?
+  type: multi
+  relevant_sources:
+  - Lewiston_Maineiacs_ea53ec.md
+  - Androscoggin_Bank_Colis_e_bbbebc.md
+  answer_keywords:
+  - 3,677
+  - seated
+  reference_answer: 3,677 seated
+- question: Who is older, Annie Morton or Terry Richardson?
+  type: multi
+  relevant_sources:
+  - Annie_Morton_0077cb.md
+  - Terry_Richardson_534ef6.md
+  answer_keywords:
+  - Terry
+  - Richardson
+  reference_answer: Terry Richardson
+- question: Are Local H and For Against both from the United States?
+  type: multi
+  relevant_sources:
+  - Local_H_4b3b45.md
+  - For_Against_ad4911.md
+  answer_keywords:
+  - 'yes'
+  reference_answer: 'yes'
+- question: What is the name of the fight song of the university whose main campus
+    is in Lawrence, Kansas and whose branch campuses are in the Kansas City metropolitan
+    area?
+  type: multi
+  relevant_sources:
+  - Kansas_Song_1d5b9c.md
+  - University_of_Kansas_d0b73a.md
+  answer_keywords:
+  - Kansas
+  - Song
+  reference_answer: Kansas Song
+- question: What screenwriter with credits for "Evolution" co-wrote a film starring
+    Nicolas Cage and Téa Leoni?
+  type: multi
+  relevant_sources:
+  - David_Weissman_058f1e.md
+  - The_Family_Man_a7dd0d.md
+  answer_keywords:
+  - David
+  - Weissman
+  reference_answer: David Weissman
+- question: What year did Guns N Roses perform a promo for a movie starring Arnold
+    Schwarzenegger as a former New York Police detective?
+  type: multi
+  relevant_sources:
+  - Oh_My_God_Guns_N_Roses_song_d49dd4.md
+  - End_of_Days_film_2d0d66.md
+  answer_keywords:
+  - '1999'
+  reference_answer: '1999'
+- question: Are Random House Tower and 888 7th Avenue both used for real estate?
+  type: multi
+  relevant_sources:
+  - Random_House_Tower_2b6a2a.md
+  - 888_7th_Avenue_f091f0.md
+  answer_keywords:
+  - 'no'
+  reference_answer: 'no'
+- question: The football manager who recruited David Beckham managed Manchester United
+    during what timeframe?
+  type: multi
+  relevant_sources:
+  - 1995_96_Manchester_United_F_C_season_3f9756.md
+  - Alex_Ferguson_6962e9.md
+  answer_keywords:
+  - from
+  - '1986'
+  - '2013'
+  reference_answer: from 1986 to 2013
+- question: Brown State Fishing Lake is in a country that has a population of how
+    many inhabitants ?
+  type: multi
+  relevant_sources:
+  - Brown_State_Fishing_Lake_66ab5c.md
+  - Brown_County_Kansas_1d5088.md
+  answer_keywords:
+  - 9,984
+  reference_answer: 9,984
+- question: The Vermont Catamounts men's soccer team currently competes in a conference
+    that was formerly known as what from 1988 to 1996?
+  type: multi
+  relevant_sources:
+  - Vermont_Catamounts_men_s_soccer_a9f0e0.md
+  - America_East_Conference_89b0aa.md
+  answer_keywords:
+  - the
+  - North
+  - Atlantic
+  - Conference
+  reference_answer: the North Atlantic Conference
+- question: Are Giuseppe Verdi and Ambroise Thomas both Opera composers ?
+  type: multi
+  relevant_sources:
+  - Giuseppe_Verdi_509f16.md
+  - Ambroise_Thomas_962e92.md
+  answer_keywords:
+  - 'yes'
+  reference_answer: 'yes'
+- question: Roger O. Egeberg was Assistant Secretary for Health and Scientific Affairs
+    during the administration of a president that served during what years?
+  type: multi
+  relevant_sources:
+  - Roger_O_Egeberg_f39d93.md
+  - Richard_Nixon_0d4401.md
+  answer_keywords:
+  - '1969'
+  - until
+  - '1974'
+  reference_answer: 1969 until 1974
+- question: Which writer was from England, Henry Roth or Robert Erskine Childers?
+  type: multi
+  relevant_sources:
+  - Henry_Roth_62d23c.md
+  - Robert_Erskine_Childers_4c9b5e.md
+  answer_keywords:
+  - Robert
+  - Erskine
+  - Childers
+  - DSC
+  reference_answer: Robert Erskine Childers DSC

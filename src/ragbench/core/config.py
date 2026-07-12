@@ -35,6 +35,9 @@ class Config:
     extract_lang: str = "ko"  # 그래프 추출 프롬프트 언어("ko" 사내도메인 / "en" 범용). 외부벤치용.
     hipporag_embedding: str | None = None  # HippoRAG 임베딩(기본 facebook/contriever). e5는 OpenAI호환 서버.
     hipporag_embedding_base_url: str | None = None  # e5 OpenAI호환 서버 URL(공정비교). 이름에 "text-embedding" 필요.
+    hipporag_llm_base_url: str | None = None  # HippoRAG 내부 LLM(OpenIE+트리플필터) 엔드포인트. 기본 Gemini. NIM 등 override.
+    hipporag_llm_model: str | None = None     # 내부 LLM 모델. 기본 cfg.llm.model. NIM: meta/llama-3.3-70b-instruct
+    hipporag_llm_key_env: str | None = None   # 내부 LLM API키 환경변수명. 기본 GEMINI_API_KEY. NIM: NVIDIA_API_KEY
 
     @classmethod
     def load(cls, path: str | None = None) -> "Config":

@@ -58,16 +58,20 @@ class HippoRAGBackend(RagBackend):
         from hipporag import HippoRAG
 
         _patch_hipporag_llm()
-        # HippoRAG 의 OpenAI 클라이언트는 OPENAI_API_KEY 를 읽는다 → Gemini 키로 채움.
-        key = os.environ.get("GEMINI_API_KEY") or os.environ.get("GOOGLE_API_KEY")
-        if key and not os.environ.get("OPENAI_API_KEY"):
+        # HippoRAG 내부 LLM(OpenIE+트리플필터) — 기본 Gemini OpenAI호환, override로 NIM Llama 등.
+        llm_base = getattr(self.cfg, "hipporag_llm_base_url", None) or _GEMINI_OPENAI
+        llm_model = getattr(self.cfg, "hipporag_llm_model", None) or self.cfg.llm.model
+        key_env = getattr(self.cfg, "hipporag_llm_key_env", None) or "GEMINI_API_KEY"
+        # HippoRAG 의 OpenAI 클라이언트는 OPENAI_API_KEY 를 읽는다 → 지정 키로 채움.
+        key = os.environ.get(key_env) or os.environ.get("GOOGLE_API_KEY")
+        if key:
             os.environ["OPENAI_API_KEY"] = key
         emb = getattr(self.cfg, "hipporag_embedding", None) or "facebook/contriever"
         emb_url = getattr(self.cfg, "hipporag_embedding_base_url", None)
         kwargs = dict(
             save_dir=self.save_dir,
-            llm_model_name=self.cfg.llm.model,
-            llm_base_url=_GEMINI_OPENAI,
+            llm_model_name=llm_model,
+            llm_base_url=llm_base,
             embedding_model_name=emb,
         )
         if emb_url:  # e5 등 OpenAI호환 서버로 임베딩(공정비교) — 이름에 "text-embedding" 필요

@@ -1,0 +1,21 @@
+# HippoRAG2 외부검증 — 내부 LLM(OpenIE+트리플필터)을 NIM Llama-3.3-70B로(25% JSON버그 해소).
+# 임베딩 e5(공정), 최종 생성·judge Gemini. 기존 storage_hotpot/hipporag 인덱스 재사용.
+llm:
+  provider: google
+  model: gemini-2.5-flash
+  temperature: 0.1
+  max_tokens: 4096
+  thinking: false
+embed:
+  provider: local
+  model: intfloat/multilingual-e5-small
+chunk_size: 1024
+chunk_overlap: 64
+top_k: 4
+data_dir: data/hotpot
+storage_dir: storage_hotpot
+hipporag_embedding: text-embedding-e5
+hipporag_embedding_base_url: http://127.0.0.1:8123/v1
+hipporag_llm_base_url: https://integrate.api.nvidia.com/v1
+hipporag_llm_model: meta/llama-3.3-70b-instruct
+hipporag_llm_key_env: NVIDIA_API_KEY

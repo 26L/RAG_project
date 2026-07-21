@@ -9,6 +9,10 @@ import yaml
 
 @dataclass
 class LLMConfig:
+    """생성 LLM 설정 — provider(공급자)·model(모델 ID)·temperature(무작위성)·max_tokens(출력 상한).
+
+    num_ctx 는 Ollama 입력 컨텍스트 창, thinking 은 Gemini thinking 사용 여부.
+    """
     provider: str = "anthropic"
     model: str = "claude-sonnet-4-6"
     temperature: float = 0.1
@@ -19,12 +23,17 @@ class LLMConfig:
 
 @dataclass
 class EmbedConfig:
+    """임베딩 설정 — provider(공급자: openai/gemini/local 등)·model(임베딩 모델 ID)."""
     provider: str = "openai"
     model: str = "text-embedding-3-small"
 
 
 @dataclass
 class Config:
+    """실험 전체 설정 — LLM·임베딩 + 청킹(chunk_size/overlap)·검색(top_k)·경로(data_dir/storage_dir).
+
+    extract_lang 은 그래프 추출 프롬프트 언어, hipporag_* 는 HippoRAG 어댑터 전용 override.
+    """
     llm: LLMConfig = field(default_factory=LLMConfig)
     embed: EmbedConfig = field(default_factory=EmbedConfig)
     chunk_size: int = 512
@@ -41,6 +50,11 @@ class Config:
 
     @classmethod
     def load(cls, path: str | None = None) -> "Config":
+        """YAML 파일에서 설정을 읽어 Config 를 만든다(없으면 기본값).
+
+        입력: path — 설정 YAML 경로. None 이면 전부 기본값
+        출력: llm/embed 는 중첩 dataclass 로, 나머지 키는 최상위 필드로 채운 Config
+        """
         data: dict = {}
         if path:
             data = yaml.safe_load(Path(path).read_text(encoding="utf-8")) or {}

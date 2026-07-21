@@ -12,6 +12,12 @@ from ..core.config import Config
 
 
 def build_embed_model(cfg: Config) -> Any:
+    """설정의 provider 에 맞는 임베딩 모델을 만든다.
+
+    입력: cfg — provider("google"/"openai"/"local")·model 등 임베딩 설정
+    출력: LlamaIndex 임베딩 객체 — google=GoogleGenAIEmbedding, openai=OpenAIEmbedding,
+        local=HuggingFaceEmbedding(GPU 있으면 cuda). 그 외 provider 는 ValueError.
+    """
     provider = cfg.embed.provider
     if provider == "google":
         # GEMINI_API_KEY 우선, 없으면 GOOGLE_API_KEY.

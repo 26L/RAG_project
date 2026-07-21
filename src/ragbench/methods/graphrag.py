@@ -28,6 +28,10 @@ class GraphRAG(LlamaIndexBackend):
     _big = None
 
     def _big_llm(self) -> Any:
+        """max_tokens=8192 로 키운 LLM을 만들어 캐시한다(추출·답변 합성 공용).
+
+        출력: LlamaIndex LLM 객체(인스턴스 단위로 1회만 생성)
+        """
         # 추출·합성 모두 출력이 길어 max_tokens 여유 필요(2.5 thinking 토큰).
         if self._big is None:
             big = dataclasses.replace(
@@ -37,6 +41,10 @@ class GraphRAG(LlamaIndexBackend):
         return self._big
 
     def _extractor(self) -> Any:
+        """청크당 최대 8개의 평면 트리플을 뽑는 추출기를 만든다(타입·속성 없음).
+
+        출력: SimpleLLMPathExtractor
+        """
         from llama_index.core.indices.property_graph import SimpleLLMPathExtractor
 
         return SimpleLLMPathExtractor(
@@ -44,6 +52,11 @@ class GraphRAG(LlamaIndexBackend):
         )
 
     def index(self, documents: Sequence[Any]) -> None:
+        """문서에서 속성 그래프를 구축해 persist_dir 에 저장한다.
+
+        입력: documents — 로더가 읽어온 LlamaIndex Document 목록
+        출력: 없음(청크마다 LLM 추출 → PropertyGraphIndex 생성 후 디스크에 영속화)
+        """
         from llama_index.core import PropertyGraphIndex
 
         self._index = PropertyGraphIndex.from_documents(
@@ -57,6 +70,10 @@ class GraphRAG(LlamaIndexBackend):
         self._index.storage_context.persist(persist_dir=self.persist_dir)
 
     def _ensure_loaded(self) -> None:
+        """저장된 그래프 인덱스를 아직 안 읽었으면 디스크에서 읽어 온다.
+
+        출력: 없음(self._index 채움. 인덱스 폴더가 없으면 FileNotFoundError)
+        """
         if self._index is not None:
             return
         if not os.path.isdir(self.persist_dir):
@@ -69,6 +86,10 @@ class GraphRAG(LlamaIndexBackend):
         self._index = load_index_from_storage(sc)
 
     def _make_engine(self) -> Any:
+        """그래프 검색 기반 질의 엔진을 만든다(재순위·융합 없는 기준선).
+
+        출력: LlamaIndex query engine (top_k = cfg.top_k)
+        """
         import nest_asyncio  # 그래프 검색기의 중첩 async 허용
 
         nest_asyncio.apply()
@@ -83,6 +104,10 @@ class GraphRAGSchema(GraphRAG):
     name = "graphrag_schema"
 
     def _extractor(self) -> Any:
+        """ENTITY_TYPES·RELATION_TYPES 만 허용하는 closed-world 추출기를 만든다.
+
+        출력: SchemaLLMPathExtractor (타입 제약만, props 는 Gemini 제약으로 미사용)
+        """
         from typing import Literal
 
         from llama_index.core.indices.property_graph import SchemaLLMPathExtractor
@@ -109,6 +134,10 @@ class GraphRAGDynamic(GraphRAG):
     name = "graphrag_dynamic"
 
     def _extractor(self) -> Any:
+        """도메인 타입을 시드로만 주고 새 타입도 허용하는 open-world 추출기를 만든다.
+
+        출력: DynamicLLMPathExtractor (엔티티·관계에 description 속성 포함)
+        """
         from llama_index.core.indices.property_graph import DynamicLLMPathExtractor
 
         return DynamicLLMPathExtractor(

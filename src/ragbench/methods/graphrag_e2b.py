@@ -69,14 +69,24 @@ _REL_REMAP = {
 
 def normalize_name(name: str) -> str:
     """엔티티 이름 정규화(L2 병합용): 인용괄호·따옴표 제거 → 「복지 규정」=복지 규정.
-    같은 이름이 되면 LlamaIndex가 id(=name) 기준으로 자동 병합한다."""
+    같은 이름이 되면 LlamaIndex가 id(=name) 기준으로 자동 병합한다.
+
+    입력: name — 추출된 원본 엔티티 이름
+    출력: 앞뒤 괄호·따옴표를 벗기고 공백을 정리한 이름
+    """
     name = (name or "").strip()
     name = re.sub(r"^[「『“\"'\[\(《]+|[」』”\"'\]\)》]+$", "", name).strip()
     return name
 
 
 def normalize_type(name: str, typ: str) -> str:
-    """엔티티 타입 정규화(결정론적). 도메인 타입은 유지, 오분류는 규칙으로 교정."""
+    """엔티티 타입 정규화(결정론적). 도메인 타입은 유지, 오분류는 규칙으로 교정.
+
+    입력: name — 정규화된 엔티티 이름 / typ — LLM이 붙인 유형(빈 문자열 가능)
+    출력: 도메인 타입 문자열. 순서는 ① 관계어 오분류 교정(_TYPE_REMAP: 소속→직원)
+      ② 도메인 타입이면 그대로 ③ 영어 'entity'·무라벨은 이름 접미사로 재분류
+      (_TYPE_SUFFIX: …신청서→양식) ④ 전부 실패하면 "개념"
+    """
     typ = (typ or "").strip()
     if typ in _TYPE_REMAP:
         return _TYPE_REMAP[typ]
@@ -90,7 +100,12 @@ def normalize_type(name: str, typ: str) -> str:
 
 
 def normalize_rel(label: str) -> str:
-    """관계 라벨 정규화: 표면형 통합 + 흔한 어미(함/됨/한다/받음) 제거."""
+    """관계 라벨 정규화: 표면형 통합 + 흔한 어미(함/됨/한다/받음) 제거.
+
+    입력: label — 추출된 관계 라벨(예: "따른다", "제출한다")
+    출력: 통합된 라벨. _REL_REMAP 특수형이 우선이고, 그 다음 어미를 떼되
+      남는 어근이 2글자 미만이면 그대로 둔다(포함→포 방지).
+    """
     label = (label or "").strip()
     if label in _REL_REMAP:
         return _REL_REMAP[label]
@@ -115,7 +130,13 @@ _ROUTER_PROMPT = (
 
 
 def parse_extraction(resp: str):
-    """E2B 산문 출력 → (entities, relations). entities=(이름,유형,설명), relations=(출발,관계,도착)."""
+    """E2B 산문 출력 → (entities, relations). entities=(이름,유형,설명), relations=(출발,관계,도착).
+
+    입력: resp — PROMPT 형식(`[엔티티]`/`[관계]` 섹션 + `|` 구분)의 LLM 원문 응답
+    출력: (ents, rels) 튜플. 줄머리 불릿을 벗기고 섹션 마커로 상태를 바꾸며,
+      엔티티는 2칸 이상(설명 없으면 빈 문자열)·관계는 정확히 3칸이고 전부 비지 않은
+      줄만 채택한다. `|` 없는 줄은 무시 → 잡설이 섞여도 안전.
+    """
     ents, rels = [], []
     section = None
     for raw in resp.splitlines():
@@ -144,6 +165,12 @@ def parse_extraction(resp: str):
 
 
 class GraphRAGE2B(GraphRAG):
+    """E2B 산문 추출 그래프 + E5 재순위 — 이 계열의 기준 구현.
+
+    상위 GraphRAG(평면 트리플)와 달리 엔티티에 유형·설명이 채워지고, 그래프가
+    무랭킹으로 뱉는 후보를 e5 유사도로 다시 정렬해 top_k 만 넘긴다.
+    """
+
     name = "graphrag_e2b"
 
     # 재순위: 그래프에서 후보를 넉넉히(top_k×5, ≥20) 가져와 아래 재랭커로 top_k 재정렬.
@@ -151,10 +178,19 @@ class GraphRAGE2B(GraphRAG):
     _RETRIEVE_MIN = 20
 
     def _extractor(self) -> Any:
+        """산문 추출기를 만든다. cfg.extract_lang 으로 한국어/영어 프롬프트를 고른다.
+
+        출력: _E2BExtractor (추출 LLM은 self.llm — 그래프 품질은 이 모델에 좌우)
+        """
         prompt = PROMPT_EN if getattr(self.cfg, "extract_lang", "ko") == "en" else PROMPT
         return _E2BExtractor(llm=self.llm, num_workers=1, prompt=prompt)
 
     def _make_engine(self) -> Any:
+        """그래프 검색 + E5 재순위 질의 엔진을 만든다.
+
+        출력: LlamaIndex query engine. 후보를 pool(top_k×5, 최소 20)만큼 넉넉히
+          받아 _E5Rerank 로 top_k 로 좁힌다.
+        """
         import nest_asyncio  # 그래프 검색기의 중첩 async 허용
 
         nest_asyncio.apply()
@@ -180,11 +216,20 @@ class GraphRAGE2BL5(GraphRAGE2B):
     _summaries = None  # [(summary_text, embedding)]
 
     def __init__(self, cfg: Any, llm: Any, embed_model: Any):
+        """백엔드를 초기화하되 인덱스 경로를 graphrag_e2b 로 되돌린다.
+
+        입력: cfg — 설정 / llm — 추출·라우팅용 LLM / embed_model — 재순위·요약 임베딩
+        출력: 없음(persist_dir 을 graphrag_e2b 로 고정 → 재추출 없이 그래프 공유)
+        """
         super().__init__(cfg, llm, embed_model)
         # L5는 재추출 없이 graphrag_e2b 그래프 + community_summaries.json 재사용.
         self.persist_dir = os.path.join(cfg.storage_dir, "graphrag_e2b")
 
     def _load_summaries(self) -> Any:
+        """community_summaries.json 을 읽어 (요약문, 임베딩) 목록으로 캐시한다.
+
+        출력: [(summary_text, embedding)] 리스트. 파일이 없으면 빈 리스트(요약 주입 비활성).
+        """
         if self._summaries is not None:
             return self._summaries
         import json
@@ -199,6 +244,11 @@ class GraphRAGE2BL5(GraphRAGE2B):
         return self._summaries
 
     def _make_engine(self) -> Any:
+        """그래프 검색 + 재순위 + 커뮤니티 요약 상시 주입 엔진을 만든다.
+
+        출력: RetrieverQueryEngine. router_llm 을 주지 않으므로 요약은 질의 종류와
+          무관하게 항상 top-3 붙는다(전역 강화, 핀포인트는 희석 위험).
+        """
         import nest_asyncio
 
         nest_asyncio.apply()
@@ -227,6 +277,11 @@ class GraphRAGE2BAdaptive(GraphRAGE2BL5):
     name = "graphrag_e2b_adaptive"
 
     def _make_engine(self) -> Any:
+        """L5와 같되 라우터 LLM을 달아 요약 주입을 질의 유형에 따라 켠다.
+
+        출력: RetrieverQueryEngine. breadth 로 분류된 질의에만 커뮤니티 요약을 붙이고,
+          pinpoint 는 재순위 top_k 만 넘겨 희석을 피한다.
+        """
         import nest_asyncio
 
         nest_asyncio.apply()
@@ -257,6 +312,11 @@ class GraphRAGE2BHybrid(GraphRAGE2BL5):
     name = "graphrag_e2b_hybrid"
 
     def _make_engine(self) -> Any:
+        """그래프 retriever와 standard 벡터 retriever를 RRF로 융합한 엔진을 만든다.
+
+        출력: RetrieverQueryEngine. 두 검색 결과를 reciprocal_rerank 로 합친 뒤
+          _E5Rerank 로 top_k 를 고른다. standard 인덱스가 없으면 FileNotFoundError.
+        """
         import nest_asyncio
 
         nest_asyncio.apply()
@@ -294,20 +354,38 @@ class GraphRAGE2BHybrid(GraphRAGE2BL5):
 
 
 def _build_community_retriever_cls():
-    """그래프 검색(재순위) + 커뮤니티 요약 주입을 합치는 커스텀 retriever."""
+    """그래프 검색(재순위) + 커뮤니티 요약 주입을 합치는 커스텀 retriever.
+
+    출력: GraphCommunityRetriever 클래스(런타임 정의 — 상위 import 순서 의존 회피)
+    """
     import math
 
     from llama_index.core.retrievers import BaseRetriever
     from llama_index.core.schema import NodeWithScore, TextNode
 
     def _cos(a, b):
+        """두 벡터의 코사인 유사도를 계산한다(요약 랭킹용).
+
+        입력: a, b — 같은 차원의 임베딩 벡터
+        출력: -1~1 실수(0벡터 대비 분모에 1e-9)
+        """
         s = sum(x * y for x, y in zip(a, b))
         na = math.sqrt(sum(x * x for x in a))
         nb = math.sqrt(sum(y * y for y in b))
         return s / (na * nb + 1e-9)
 
     class GraphCommunityRetriever(BaseRetriever):
+        """그래프 후보를 재순위한 뒤, 필요하면 커뮤니티 요약 노드를 덧붙이는 retriever."""
+
         def __init__(self, base, reranker, embed_model, summaries, top_comm=3, router_llm=None):
+            """구성요소를 받아 retriever를 초기화한다.
+
+            입력: base — 그래프 retriever / reranker — _E5Rerank /
+              embed_model — 질의·요약 임베딩 / summaries — [(요약문, 임베딩)] /
+              top_comm — 붙일 요약 개수 / router_llm — None이면 항상 주입(L5),
+              주면 breadth 판정 시에만 주입(적응형)
+            출력: 없음
+            """
             self._base = base
             self._rr = reranker
             self._em = embed_model
@@ -317,6 +395,12 @@ def _build_community_retriever_cls():
             super().__init__()
 
         def _inject_summaries(self, query_str) -> bool:
+            """이 질의에 커뮤니티 요약을 붙일지 판단한다.
+
+            입력: query_str — 사용자 질문
+            출력: True면 요약 주입. 요약이 없으면 False, 라우터가 없으면 True(L5),
+              있으면 breadth/pinpoint 중 먼저 등장한 라벨을 채택하고 분류 실패 시 True.
+            """
             if not self._summaries:
                 return False
             if self._router is None:
@@ -335,6 +419,11 @@ def _build_community_retriever_cls():
                 return True  # 분류 실패 시 안전하게 주입(breadth)
 
         def _retrieve(self, query_bundle):
+            """그래프 검색 → 재순위 → (조건부) 커뮤니티 요약 노드 추가.
+
+            입력: query_bundle — LlamaIndex 질의 번들
+            출력: NodeWithScore 목록(요약은 "[커뮤니티 요약] " 접두사로 구분)
+            """
             nodes = self._base.retrieve(query_bundle)
             nodes = self._rr.postprocess_nodes(nodes, query_bundle=query_bundle)
             if self._inject_summaries(query_bundle.query_str):
@@ -354,32 +443,62 @@ def _build_community_retriever_cls():
 
 
 def _build_reranker_cls():
-    """질의-노드 e5 유사도로 재순위하는 node postprocessor(로컬 임베딩 재활용)."""
+    """질의-노드 e5 유사도로 재순위하는 node postprocessor(로컬 임베딩 재활용).
+
+    출력: E5Rerank 클래스(런타임 정의 — 상위 import 순서 의존 회피)
+    """
     import math
 
     from llama_index.core.postprocessor.types import BaseNodePostprocessor
     from llama_index.core.schema import MetadataMode
 
     class E5Rerank(BaseNodePostprocessor):
+        """검색 후보를 질의-본문 e5 코사인 유사도로 다시 정렬해 top_n 만 남긴다.
+
+        그래프 검색은 랭킹 없이 후보를 대량 반환하므로, 이 재순위가 실질적인
+        정밀도 장치다. 임베딩 대상 텍스트는 clean() 으로 트리플 접두사를 뗀다.
+        """
+
         embed_model: Any
         top_n: int = 4
 
         @classmethod
         def class_name(cls) -> str:
+            """LlamaIndex 직렬화용 클래스 이름을 돌려준다.
+
+            출력: "E5Rerank"
+            """
             return "E5Rerank"
 
         def _postprocess_nodes(self, nodes, query_bundle=None):
+            """후보 노드를 질의 유사도로 재정렬한다.
+
+            입력: nodes — 검색된 NodeWithScore 목록 / query_bundle — 질의(없으면 앞 top_n 만 자름)
+            출력: score 를 코사인 유사도로 덮어쓴 상위 top_n 노드. 본문이 빈 노드는
+              score=-1.0 으로 밀어낸다.
+            """
             if not nodes or query_bundle is None:
                 return nodes[: self.top_n]
             q = self.embed_model.get_query_embedding(query_bundle.query_str)
 
             def cos(a, b):
+                """두 벡터의 코사인 유사도를 계산한다.
+
+                입력: a, b — 같은 차원의 임베딩 벡터
+                출력: -1~1 실수(0벡터 대비 분모에 1e-9)
+                """
                 s = sum(x * y for x, y in zip(a, b))
                 na = math.sqrt(sum(x * x for x in a))
                 nb = math.sqrt(sum(y * y for y in b))
                 return s / (na * nb + 1e-9)
 
             def clean(t: str) -> str:
+                """재순위 임베딩 전에 그래프 노드 앞의 트리플 블록만 떼어낸다.
+
+                입력: t — 노드 본문 텍스트
+                출력: 트리플 접두사를 제거한 원문. 이 처리가 없으면 e5-small(512토큰)이
+                  앞의 트리플만 임베딩해 정답 청크가 밀려나는 버그가 난다(§10.5).
+                """
                 # PropertyGraphIndex가 그래프 노드 앞에 붙이는 "Here are some facts…:" +
                 # 트리플 블록만 제거하고 원문은 보존한다. e5-small(512토큰)이 앞의 트리플만
                 # 임베딩해 정답 청크를 낮게 매기는 버그 방지. 접두사가 없는 노드(직접 벡터검색
@@ -407,7 +526,10 @@ def _build_reranker_cls():
 
 
 def _build_extractor_cls():
-    """런타임에 TransformComponent 서브클래스를 만든다(상위 import 순서 의존 회피)."""
+    """런타임에 TransformComponent 서브클래스를 만든다(상위 import 순서 의존 회피).
+
+    출력: E2BExtractor 클래스
+    """
     from llama_index.core.async_utils import run_jobs
     from llama_index.core.graph_stores.types import (
         EntityNode,
@@ -419,18 +541,41 @@ def _build_extractor_cls():
     from llama_index.core.schema import BaseNode, MetadataMode, TransformComponent
 
     class E2BExtractor(TransformComponent):
+        """산문 형식 추출을 파싱해 청크 메타데이터에 엔티티·관계를 심는 변환 컴포넌트.
+
+        LlamaIndex 의 kg_extractor 자리에 꽂혀, 인덱싱 중 청크마다 LLM을 호출한다.
+        JSON 스키마를 강제하지 않으므로 작은 모델도 쓸 수 있고, 대신 파싱과
+        타입·관계 정규화를 결정론적 규칙으로 처리한다.
+        """
+
         llm: LLM
         num_workers: int = 1
         prompt: str = PROMPT
 
         @classmethod
         def class_name(cls) -> str:
+            """LlamaIndex 직렬화용 클래스 이름을 돌려준다.
+
+            출력: "E2BPathExtractor"
+            """
             return "E2BPathExtractor"
 
         def __call__(self, nodes, show_progress: bool = False, **kwargs):
+            """동기 진입점 — 비동기 추출을 이벤트 루프에서 돌린다.
+
+            입력: nodes — 청크 노드 목록 / show_progress — 진행바 표시 여부
+            출력: 엔티티·관계가 메타데이터에 채워진 노드 목록
+            """
             return asyncio.run(self.acall(nodes, show_progress=show_progress, **kwargs))
 
         async def _aextract(self, node: BaseNode) -> BaseNode:
+            """청크 하나에서 엔티티·관계를 뽑아 노드 메타데이터에 기록한다.
+
+            입력: node — 텍스트 청크 노드
+            출력: 같은 노드(KG_NODES_KEY/KG_RELATIONS_KEY 채움). 이름·타입·관계를
+              정규화하고, 관계에만 등장하는 엔티티도 타입을 추론해 생성한다.
+              LLM 호출·파싱이 실패하면 빈 결과로 넘어가 인덱싱을 멈추지 않는다.
+            """
             # 청크(≤1024토큰) 전체를 추출에 넣도록 여유 있게(이전 2000자 절단이 긴 청크 손실).
             text = node.get_content(metadata_mode=MetadataMode.LLM)[:4000]
             try:
@@ -478,6 +623,11 @@ def _build_extractor_cls():
             return node
 
         async def acall(self, nodes, show_progress: bool = False, **kwargs):
+            """모든 청크의 추출을 num_workers 만큼 동시에 실행한다.
+
+            입력: nodes — 청크 노드 목록 / show_progress — 진행바 표시 여부
+            출력: 추출 결과가 채워진 노드 목록
+            """
             jobs = [self._aextract(n) for n in nodes]
             return await run_jobs(jobs, workers=self.num_workers, show_progress=show_progress, desc="E2B 추출")
 

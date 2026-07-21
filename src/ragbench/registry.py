@@ -38,6 +38,11 @@ METHODS: dict[str, type[RagBackend]] = {
 
 
 def build_backend(name: str, cfg: Config, llm: Any, embed_model: Any) -> RagBackend:
+    """이름으로 기법을 찾아 백엔드 인스턴스를 만든다.
+
+    입력: name — METHODS 키(기법 이름) / cfg — 실험 설정 / llm — 생성 LLM / embed_model — 임베딩 모델
+    출력: RagBackend 구현체. 이름이 없으면 ValueError
+    """
     if name not in METHODS:
         raise ValueError(f"알 수 없는 기법: {name!r}. 사용 가능: {sorted(METHODS)}")
     return METHODS[name](cfg, llm, embed_model)

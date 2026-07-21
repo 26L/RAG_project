@@ -8,11 +8,21 @@ from ..core.config import Config
 
 
 def _google_api_key() -> str | None:
+    """Google 계열 API 키를 환경변수에서 읽는다.
+
+    출력: GEMINI_API_KEY 값, 없으면 GOOGLE_API_KEY 값, 둘 다 없으면 None
+    """
     # GEMINI_API_KEY 우선, 없으면 GOOGLE_API_KEY 사용 (둘 다 신형 SDK 가 인식).
     return os.environ.get("GEMINI_API_KEY") or os.environ.get("GOOGLE_API_KEY")
 
 
 def build_llm(cfg: Config) -> Any:
+    """설정의 provider 에 맞는 생성 LLM 을 만든다.
+
+    입력: cfg — provider("google"/"ollama"/"anthropic")·model·temperature·max_tokens 등 LLM 설정
+    출력: LlamaIndex LLM 객체 — google=GoogleGenAI(thinking=False 면 thinking_budget 0),
+        ollama=Ollama(OLLAMA_BASE_URL), anthropic=Anthropic. 그 외 provider 는 ValueError.
+    """
     provider = cfg.llm.provider
     if provider == "google":
         from llama_index.llms.google_genai import GoogleGenAI

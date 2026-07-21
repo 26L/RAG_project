@@ -17,6 +17,11 @@ from .registry import build_backend
 
 
 def _make_backend(args):
+    """CLI 인자로부터 설정·LLM·임베딩을 만들고 요청한 기법의 백엔드를 조립한다.
+
+    입력: args — `--config`(설정 YAML 경로), `--method`(기법 이름)
+    출력: (Config, RagBackend) 튜플
+    """
     cfg = Config.load(args.config)
     llm = build_llm(cfg)
     embed = build_embed_model(cfg)
@@ -24,6 +29,11 @@ def _make_backend(args):
 
 
 def cmd_index(args):
+    """`index` 서브커맨드 — 문서 디렉토리를 로드해 해당 기법으로 인덱싱·영속화한다.
+
+    입력: args — `--data`(문서 디렉토리, 없으면 cfg.data_dir) + 공통 인자
+    출력: 없음(`storage_dir/<method>` 에 인덱스 저장, 진행 상황 출력)
+    """
     cfg, backend = _make_backend(args)
     data_dir = args.data or cfg.data_dir
     docs = load_documents(data_dir)
@@ -33,6 +43,11 @@ def cmd_index(args):
 
 
 def cmd_query(args):
+    """`query` 서브커맨드 — 질문 하나를 던져 답변과 출처를 출력한다.
+
+    입력: args — `question`(질문 텍스트) + 공통 인자
+    출력: 없음(답변 본문과 출처 목록을 stdout 에 출력)
+    """
     _, backend = _make_backend(args)
     result = backend.query(args.question)
     print("\n=== 답변 ===")
@@ -43,11 +58,21 @@ def cmd_query(args):
 
 
 def _fmt_agg(agg: dict) -> str:
+    """집계 지표 딕셔너리를 한 줄 문자열로 포맷한다(값 없는 키는 생략).
+
+    입력: agg — n·recall·precision·mrr·keyword_recall·judge_correct·latency_s 집계
+    출력: "recall=0.8  mrr=0.7" 형태의 문자열
+    """
     keys = ("n", "recall", "precision", "mrr", "keyword_recall", "judge_correct", "latency_s")
     return "  ".join(f"{k}={agg.get(k)}" for k in keys if agg.get(k) is not None)
 
 
 def cmd_eval(args):
+    """`eval` 서브커맨드 — 평가셋을 돌려 전체·유형별 지표를 집계하고 결과를 저장한다.
+
+    입력: args — `--eval-set`(평가셋 YAML), `--judge`(LLM-as-judge 채점 여부) + 공통 인자
+    출력: 없음(집계표를 출력하고 `results/<method>.json` 에 설정+리포트 저장)
+    """
     import json
     import os
 
@@ -82,6 +107,11 @@ def cmd_eval(args):
 
 
 def cmd_compare(args):
+    """`compare` 서브커맨드 — `results/*.json` 을 모아 기법 비교표를 출력한다.
+
+    입력: args — 사용하지 않음(결과 파일 전체를 파일명 라벨로 비교)
+    출력: 없음(비교표를 stdout 에 출력. 결과 파일이 없으면 안내만 출력)
+    """
     import glob
     import json
 
@@ -108,6 +138,10 @@ def cmd_compare(args):
 
 
 def main():
+    """CLI 진입점 — .env 로드 후 서브커맨드(index/query/eval/compare)를 파싱해 실행한다.
+
+    출력: 없음(선택된 서브커맨드 함수를 호출)
+    """
     load_dotenv()
     parser = argparse.ArgumentParser(prog="ragbench")
     common = argparse.ArgumentParser(add_help=False)

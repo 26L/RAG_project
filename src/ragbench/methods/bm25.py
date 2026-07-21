@@ -7,9 +7,15 @@ from ._common import LlamaIndexBackend, ko_tokenize
 
 
 class BM25RAG(LlamaIndexBackend):
+    """BM25 키워드(렉시컬) 점수만으로 top-k 청크를 뽑는 백엔드."""
+
     name = "bm25"
 
     def _make_engine(self) -> Any:
+        """docstore 노드로 BM25 검색기를 만들어 질의 엔진에 연결한다.
+
+        출력: 한국어 토크나이저(ko_tokenize)를 쓰는 BM25Retriever 기반 RetrieverQueryEngine
+        """
         from llama_index.core.query_engine import RetrieverQueryEngine
         from llama_index.retrievers.bm25 import BM25Retriever
 

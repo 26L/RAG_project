@@ -7,9 +7,15 @@ from ._common import LlamaIndexBackend, ko_tokenize
 
 
 class HybridRAG(LlamaIndexBackend):
+    """벡터(의미) 검색과 BM25(키워드) 검색 결과를 RRF 로 융합하는 백엔드."""
+
     name = "hybrid"
 
     def _make_engine(self) -> Any:
+        """벡터·BM25 두 검색기를 RRF(reciprocal_rerank)로 융합한 질의 엔진을 만든다.
+
+        출력: QueryFusionRetriever(num_queries=1 — LLM 질의확장 끔) 기반 RetrieverQueryEngine
+        """
         from llama_index.core.query_engine import RetrieverQueryEngine
         from llama_index.core.retrievers import QueryFusionRetriever
         from llama_index.retrievers.bm25 import BM25Retriever

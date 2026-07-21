@@ -15,7 +15,11 @@ _TOKEN = re.compile(r"[A-Za-z0-9가-힣]+")
 
 
 def ko_tokenize(text: str) -> list[str]:
-    """한국어/영문/숫자 토큰화(어절·연속문자 단위). 형태소 분석 없이 BM25용 1차 토크나이저."""
+    """한국어/영문/숫자 토큰화(어절·연속문자 단위). 형태소 분석 없이 BM25용 1차 토크나이저.
+
+    입력: text — 원문 문자열
+    출력: 소문자화된 토큰 리스트
+    """
     return _TOKEN.findall(text.lower())
 
 
@@ -25,6 +29,12 @@ class LlamaIndexBackend(RagBackend):
     name = "base"
 
     def __init__(self, cfg: Config, llm: Any, embed_model: Any):
+        """백엔드를 초기화하고 LlamaIndex 전역 Settings(LLM·임베딩·청킹)를 세팅한다.
+
+        입력: cfg — 설정(storage_dir·chunk_size·chunk_overlap·top_k), llm — 생성 LLM,
+            embed_model — 임베딩 모델
+        출력: 없음(인덱스 경로 self.persist_dir 결정, Settings 전역 설정)
+        """
         self.cfg = cfg
         self.llm = llm
         self.embed_model = embed_model
@@ -41,12 +51,21 @@ class LlamaIndexBackend(RagBackend):
         )
 
     def index(self, documents: Sequence[Any]) -> None:
+        """문서를 청킹·임베딩해 VectorStoreIndex 를 만들고 디스크에 영속화한다.
+
+        입력: documents — 로드된 LlamaIndex Document 목록
+        출력: 없음(self._index 설정 + persist_dir 에 인덱스 저장)
+        """
         from llama_index.core import VectorStoreIndex
 
         self._index = VectorStoreIndex.from_documents(list(documents))
         self._index.storage_context.persist(persist_dir=self.persist_dir)
 
     def _ensure_loaded(self) -> None:
+        """인덱스가 메모리에 없으면 persist_dir 에서 읽어 올린다.
+
+        출력: 없음(self._index 채움. 저장된 인덱스가 없으면 FileNotFoundError)
+        """
         if self._index is not None:
             return
         if not os.path.isdir(self.persist_dir):
@@ -59,12 +78,26 @@ class LlamaIndexBackend(RagBackend):
         self._index = load_index_from_storage(sc)
 
     def _nodes(self) -> list[Any]:
+        """인덱스 docstore 의 전체 청크 노드를 꺼낸다(BM25 등 비벡터 검색기 구성용).
+
+        출력: 노드 리스트
+        """
         return list(self._index.docstore.docs.values())
 
     def _make_engine(self) -> Any:
+        """검색 방식을 정하는 서브클래스 확장점 — 질의 엔진을 만들어 반환한다.
+
+        출력: LlamaIndex 질의 엔진(서브클래스가 구현. 베이스는 NotImplementedError)
+        """
         raise NotImplementedError
 
     def query(self, question: str) -> QueryResult:
+        """질문을 서브클래스의 엔진으로 검색·생성하고 공통 QueryResult 로 변환한다.
+
+        입력: question — 자연어 질문
+        출력: QueryResult — answer(생성 답변), contexts(source_nodes 를 RetrievedContext
+            로 변환: 본문·file_name 출처·score·메타), metadata(method·top_k)
+        """
         self._ensure_loaded()
         resp = self._make_engine().query(question)
         contexts = [

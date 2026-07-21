@@ -9,6 +9,14 @@ import yaml
 
 @dataclass
 class EvalItem:
+    """평가셋 한 문항. YAML 한 항목이 이 필드들로 그대로 매핑된다.
+
+    필드: question — 질의 / relevant_sources — 정답 근거 문서(파일명), 검색 지표 채점 기준
+          answer_keywords — 답변에 있어야 할 키워드(keyword_recall 용)
+          reference_answer — LLM-as-judge 채점용 참조 정답
+          type — 질문 유형(single/multi/relational/global), 유형별 집계 키
+    """
+
     question: str
     # 정답 근거 문서(파일명) — 검색 지표(recall@k 등) 채점 기준.
     relevant_sources: list[str] = field(default_factory=list)
@@ -21,5 +29,11 @@ class EvalItem:
 
 
 def load_eval_set(path: str) -> list[EvalItem]:
+    """평가셋 YAML(항목 리스트)을 읽어 EvalItem 리스트로 만든다.
+
+    입력: path — YAML 경로. 각 항목 키는 EvalItem 필드명과 동일
+          (question 필수, relevant_sources·answer_keywords·reference_answer·type 은 선택)
+    출력: EvalItem 리스트 (파일이 비면 빈 리스트)
+    """
     raw = yaml.safe_load(Path(path).read_text(encoding="utf-8")) or []
     return [EvalItem(**item) for item in raw]

@@ -9,3 +9,4 @@ __pycache__/
 .vscode/
 *.pdf
 storage_hotpot/
+storage_hotpot400/

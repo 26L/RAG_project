@@ -25,6 +25,16 @@ _ANSWER_PROMPT = (
     "[근거]\n{ctx}\n\n[질문]\n{q}\n\n[답변]\n"
 )
 
+# 공개벤치용 짧은답(EM/F1 비교 가능) — _common._SHORT_QA_TMPL 과 같은 지시를 맞춘다.
+_ANSWER_PROMPT_SHORT = (
+    "Answer the question using ONLY the context below. Do not use prior knowledge and "
+    "do not speculate — every part of the answer must be supported by the context.\n"
+    "Give the SHORTEST possible answer span (a name, entity, number, date, or yes/no). "
+    "Output only the answer itself — no sentence, no explanation, no punctuation at the end.\n"
+    "If the context does not support an answer, output exactly: NO_ANSWER\n\n"
+    "[Context]\n{ctx}\n\n[Question]\n{q}\n\n[Answer]\n"
+)
+
 
 def _patch_hipporag_llm() -> None:
     """Gemini 의 OpenAI 호환 엔드포인트는 'seed' 필드를 거부(Unknown name "seed") →
@@ -232,7 +242,12 @@ class HippoRAGBackend(RagBackend):
             for i, d in enumerate(docs)
         ]
         ctx = "\n\n".join(f"- {d}" for d in docs) or "(근거 없음)"
-        answer = str(self.llm.complete(_ANSWER_PROMPT.format(ctx=ctx[:8000], q=question)))
+        tmpl = (
+            _ANSWER_PROMPT_SHORT
+            if getattr(self.cfg, "answer_style", "default") == "short"
+            else _ANSWER_PROMPT
+        )
+        answer = str(self.llm.complete(tmpl.format(ctx=ctx[:8000], q=question)))
         return QueryResult(
             answer=answer,
             contexts=contexts,

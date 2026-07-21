@@ -1,5 +1,4 @@
-# HotpotQA 외부검증 — 그래프 계열. 내부 gemini_extract.yaml과 동일 조건,
-# storage_dir/data_dir/extract_lang 3개만 도메인 적응(불가피).
+# HotpotQA(공개 다중홉 벤치) 검증용 — 평면검색 3종. 영어 코퍼스.
 llm:
   provider: google
   model: gemini-2.5-flash
@@ -12,7 +11,6 @@ embed:
 chunk_size: 1024
 chunk_overlap: 64
 top_k: 4
-data_dir: data/hotpot
-storage_dir: storage_hotpot
-extract_lang: en
+data_dir: data/hotpot400
+storage_dir: storage_hotpot400
 answer_style: short   # 공개벤치 EM/F1 비교용 짧은답 생성

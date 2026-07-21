@@ -12,8 +12,8 @@ embed:
 chunk_size: 1024
 chunk_overlap: 64
 top_k: 4
-data_dir: data/hotpot
-storage_dir: storage_hotpot
+data_dir: data/hotpot400
+storage_dir: storage_hotpot400
 hipporag_embedding: text-embedding-e5
 hipporag_embedding_base_url: http://127.0.0.1:8123/v1
 answer_style: short   # 공개벤치 EM/F1 비교용 짧은답 생성

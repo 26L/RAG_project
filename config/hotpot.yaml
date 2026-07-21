@@ -13,3 +13,4 @@ chunk_overlap: 64
 top_k: 4
 data_dir: data/hotpot
 storage_dir: storage_hotpot
+answer_style: short   # 공개벤치 EM/F1 비교용 짧은답 생성

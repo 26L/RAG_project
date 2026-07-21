@@ -12,9 +12,18 @@ from typing import Any, Sequence
 from ..core.interface import RagBackend
 from .dataset import EvalItem
 from .judge import judge_answer
-from .metrics import dedupe_preserve, keyword_recall, retrieval_metrics
+from .metrics import (
+    dedupe_preserve,
+    exact_match,
+    keyword_recall,
+    retrieval_metrics,
+    token_f1,
+)
 
-_AGG_KEYS = ("hit", "recall", "precision", "mrr", "keyword_recall", "judge_correct", "latency_s")
+_AGG_KEYS = (
+    "hit", "recall", "precision", "mrr", "keyword_recall", "judge_correct",
+    "em", "f1", "latency_s",
+)
 
 
 def _avg(values: Sequence[Any]) -> float | None:
@@ -31,8 +40,8 @@ def _aggregate(rows: Sequence[dict[str, Any]]) -> dict[str, Any]:
     """문항별 결과를 지표별 평균으로 집계한다.
 
     입력: rows — run_eval 이 만든 문항 row 리스트
-    출력: _AGG_KEYS(hit·recall·precision·mrr·keyword_recall·judge_correct·latency_s)
-          각각의 평균 + 문항 수 "n"
+    출력: _AGG_KEYS(hit·recall·precision·mrr·keyword_recall·judge_correct·em·f1·
+          latency_s) 각각의 평균 + 문항 수 "n"
     """
     agg = {key: _avg([r[key] for r in rows]) for key in _AGG_KEYS}
     agg["n"] = len(rows)
@@ -74,6 +83,8 @@ def run_eval(
                 if judge_llm is not None
                 else None
             ),
+            "em": exact_match(res.answer, it.reference_answer),
+            "f1": token_f1(res.answer, it.reference_answer),
             "retrieved": retrieved[:k],
             "answer": res.answer,
         }

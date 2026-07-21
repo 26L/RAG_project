@@ -1,0 +1,4006 @@
+- question: Were Scott Derrickson and Ed Wood of the same nationality?
+  type: multi
+  relevant_sources:
+  - Scott_Derrickson_d3a4c0.md
+  - Ed_Wood_fafbab.md
+  answer_keywords:
+  - 'yes'
+  reference_answer: 'yes'
+- question: What government position was held by the woman who portrayed Corliss Archer
+    in the film Kiss and Tell?
+  type: multi
+  relevant_sources:
+  - Kiss_and_Tell_1945_film_6c9ed9.md
+  - Shirley_Temple_b3642d.md
+  answer_keywords:
+  - Chief
+  - Protocol
+  reference_answer: Chief of Protocol
+- question: What science fantasy young adult series, told in first person, has a set
+    of companion books narrating the stories of enslaved worlds and alien species?
+  type: multi
+  relevant_sources:
+  - The_Hork_Bajir_Chronicles_09dd22.md
+  - Animorphs_df9035.md
+  answer_keywords:
+  - Animorphs
+  reference_answer: Animorphs
+- question: Are the Laleli Mosque and Esma Sultan Mansion located in the same neighborhood?
+  type: multi
+  relevant_sources:
+  - Laleli_Mosque_c7818f.md
+  - Esma_Sultan_Mansion_fb6370.md
+  answer_keywords:
+  - 'no'
+  reference_answer: 'no'
+- question: The director of the romantic comedy "Big Stone Gap" is based in what New
+    York city?
+  type: multi
+  relevant_sources:
+  - Big_Stone_Gap_film_850981.md
+  - Adriana_Trigiani_b2b51c.md
+  answer_keywords:
+  - Greenwich
+  - Village
+  - New
+  - York
+  - City
+  reference_answer: Greenwich Village, New York City
+- question: 2014 S/S is the debut album of a South Korean boy group that was formed
+    by who?
+  type: multi
+  relevant_sources:
+  - 2014_S_S_4dabbb.md
+  - Winner_band_d13a43.md
+  answer_keywords:
+  - YG
+  - Entertainment
+  reference_answer: YG Entertainment
+- question: Who was known by his stage name Aladin and helped organizations improve
+    their performance as a consultant?
+  type: multi
+  relevant_sources:
+  - Eenasul_Fateh_ee6ecc.md
+  - Management_consulting_87e12d.md
+  answer_keywords:
+  - Eenasul
+  - Fateh
+  reference_answer: Eenasul Fateh
+- question: The arena where the Lewiston Maineiacs played their home games can seat
+    how many people?
+  type: multi
+  relevant_sources:
+  - Lewiston_Maineiacs_ea53ec.md
+  - Androscoggin_Bank_Colis_e_bbbebc.md
+  answer_keywords:
+  - '3'
+  - '677'
+  - seated
+  reference_answer: 3,677 seated
+- question: Who is older, Annie Morton or Terry Richardson?
+  type: multi
+  relevant_sources:
+  - Annie_Morton_0077cb.md
+  - Terry_Richardson_534ef6.md
+  answer_keywords:
+  - Terry
+  - Richardson
+  reference_answer: Terry Richardson
+- question: Are Local H and For Against both from the United States?
+  type: multi
+  relevant_sources:
+  - Local_H_4b3b45.md
+  - For_Against_ad4911.md
+  answer_keywords:
+  - 'yes'
+  reference_answer: 'yes'
+- question: What is the name of the fight song of the university whose main campus
+    is in Lawrence, Kansas and whose branch campuses are in the Kansas City metropolitan
+    area?
+  type: multi
+  relevant_sources:
+  - Kansas_Song_1d5b9c.md
+  - University_of_Kansas_d0b73a.md
+  answer_keywords:
+  - Kansas
+  - Song
+  reference_answer: Kansas Song
+- question: What screenwriter with credits for "Evolution" co-wrote a film starring
+    Nicolas Cage and Téa Leoni?
+  type: multi
+  relevant_sources:
+  - David_Weissman_058f1e.md
+  - The_Family_Man_a7dd0d.md
+  answer_keywords:
+  - David
+  - Weissman
+  reference_answer: David Weissman
+- question: What year did Guns N Roses perform a promo for a movie starring Arnold
+    Schwarzenegger as a former New York Police detective?
+  type: multi
+  relevant_sources:
+  - Oh_My_God_Guns_N_Roses_song_d49dd4.md
+  - End_of_Days_film_2d0d66.md
+  answer_keywords:
+  - '1999'
+  reference_answer: '1999'
+- question: Are Random House Tower and 888 7th Avenue both used for real estate?
+  type: multi
+  relevant_sources:
+  - Random_House_Tower_2b6a2a.md
+  - 888_7th_Avenue_f091f0.md
+  answer_keywords:
+  - 'no'
+  reference_answer: 'no'
+- question: The football manager who recruited David Beckham managed Manchester United
+    during what timeframe?
+  type: multi
+  relevant_sources:
+  - 1995_96_Manchester_United_F_C_season_3f9756.md
+  - Alex_Ferguson_6962e9.md
+  answer_keywords:
+  - from
+  - '1986'
+  - '2013'
+  reference_answer: from 1986 to 2013
+- question: Brown State Fishing Lake is in a country that has a population of how
+    many inhabitants ?
+  type: multi
+  relevant_sources:
+  - Brown_State_Fishing_Lake_66ab5c.md
+  - Brown_County_Kansas_1d5088.md
+  answer_keywords:
+  - '9'
+  - '984'
+  reference_answer: 9,984
+- question: The Vermont Catamounts men's soccer team currently competes in a conference
+    that was formerly known as what from 1988 to 1996?
+  type: multi
+  relevant_sources:
+  - Vermont_Catamounts_men_s_soccer_a9f0e0.md
+  - America_East_Conference_89b0aa.md
+  answer_keywords:
+  - North
+  - Atlantic
+  - Conference
+  reference_answer: the North Atlantic Conference
+- question: Are Giuseppe Verdi and Ambroise Thomas both Opera composers ?
+  type: multi
+  relevant_sources:
+  - Giuseppe_Verdi_509f16.md
+  - Ambroise_Thomas_962e92.md
+  answer_keywords:
+  - 'yes'
+  reference_answer: 'yes'
+- question: Roger O. Egeberg was Assistant Secretary for Health and Scientific Affairs
+    during the administration of a president that served during what years?
+  type: multi
+  relevant_sources:
+  - Roger_O_Egeberg_f39d93.md
+  - Richard_Nixon_0d4401.md
+  answer_keywords:
+  - '1969'
+  - until
+  - '1974'
+  reference_answer: 1969 until 1974
+- question: Which writer was from England, Henry Roth or Robert Erskine Childers?
+  type: multi
+  relevant_sources:
+  - Henry_Roth_62d23c.md
+  - Robert_Erskine_Childers_4c9b5e.md
+  answer_keywords:
+  - Robert
+  - Erskine
+  - Childers
+  - DSC
+  reference_answer: Robert Erskine Childers DSC
+- question: Which other Mexican Formula One race car driver has held the podium besides
+    the Force India driver born in 1990?
+  type: multi
+  relevant_sources:
+  - Formula_One_drivers_from_Mexico_253155.md
+  - Sergio_P_rez_94d794.md
+  answer_keywords:
+  - Pedro
+  - Rodr
+  - guez
+  reference_answer: Pedro Rodríguez
+- question: This singer of A Rather Blustery Day also voiced what hedgehog?
+  type: multi
+  relevant_sources:
+  - A_Rather_Blustery_Day_8364c9.md
+  - Jim_Cummings_2d010a.md
+  answer_keywords:
+  - Sonic
+  reference_answer: Sonic
+- question: Aside from the Apple Remote, what other device can control the program
+    Apple Remote was originally designed to interact with?
+  type: multi
+  relevant_sources:
+  - Apple_Remote_fcaffa.md
+  - Front_Row_software_ec6691.md
+  answer_keywords:
+  - keyboard
+  - function
+  - keys
+  reference_answer: keyboard function keys
+- question: 'Which performance act has a higher instrument to person ratio, Badly
+    Drawn Boy or Wolf Alice? '
+  type: multi
+  relevant_sources:
+  - Badly_Drawn_Boy_cc9e5f.md
+  - Wolf_Alice_3f6530.md
+  answer_keywords:
+  - Badly
+  - Drawn
+  - Boy
+  reference_answer: Badly Drawn Boy
+- question: What was the father of Kasper Schmeichel voted to be by the IFFHS in 1992?
+  type: multi
+  relevant_sources:
+  - Kasper_Schmeichel_c9da28.md
+  - Peter_Schmeichel_0b144a.md
+  answer_keywords:
+  - World
+  - s
+  - Best
+  - Goalkeeper
+  reference_answer: World's Best Goalkeeper
+- question: Who was the writer of These Boots Are Made for Walkin' and who died in
+    2007?
+  type: multi
+  relevant_sources:
+  - These_Boots_Are_Made_for_Walkin_3c0e9a.md
+  - Lee_Hazlewood_a8ecd3.md
+  answer_keywords:
+  - Barton
+  - Lee
+  - Hazlewood
+  reference_answer: Barton Lee Hazlewood
+- question: The 2011–12 VCU Rams men's basketball team, led by third year head coach
+    Shaka Smart, represented Virginia Commonwealth University which was founded in
+    what year?
+  type: multi
+  relevant_sources:
+  - 2011_12_VCU_Rams_men_s_basketball_team_3b0f75.md
+  - Virginia_Commonwealth_University_78d477.md
+  answer_keywords:
+  - '1838'
+  reference_answer: '1838'
+- question: Are both Dictyosperma, and Huernia described as a genus?
+  type: multi
+  relevant_sources:
+  - Dictyosperma_7a7587.md
+  - Huernia_0a2b3b.md
+  answer_keywords:
+  - 'yes'
+  reference_answer: 'yes'
+- question: Kaiser Ventures corporation was founded by an American industrialist who
+    became known as the father of modern American shipbuilding?
+  type: multi
+  relevant_sources:
+  - Kaiser_Ventures_93a330.md
+  - Henry_J_Kaiser_53c448.md
+  answer_keywords:
+  - Henry
+  - J
+  - Kaiser
+  reference_answer: Henry J. Kaiser
+- question: What is the name for the adventure in "Tunnels and Trolls", a game designed
+    by Ken St. Andre?
+  type: multi
+  relevant_sources:
+  - Arena_of_Khazan_5e4272.md
+  - Tunnels_amp_Trolls_30a638.md
+  answer_keywords:
+  - Arena
+  - Khazan
+  reference_answer: Arena of Khazan
+- question: When was Poison's album "Shut Up, Make Love" released?
+  type: multi
+  relevant_sources:
+  - Shut_Up_Make_Love_dd4bba.md
+  - Poison_American_band_9f9a4a.md
+  answer_keywords:
+  - '2000'
+  reference_answer: '2000'
+- question: Hayden is a singer-songwriter from Canada, but where does Buck-Tick hail
+    from?
+  type: multi
+  relevant_sources:
+  - Hayden_musician_2503ca.md
+  - Buck_Tick_1f866e.md
+  answer_keywords:
+  - Fujioka
+  - Gunma
+  reference_answer: Fujioka, Gunma
+- question: Which  French ace pilot and adventurer fly L'Oiseau Blanc
+  type: multi
+  relevant_sources:
+  - L_Oiseau_Blanc_12450d.md
+  - Charles_Nungesser_67ba12.md
+  answer_keywords:
+  - Charles
+  - Eug
+  - ne
+  reference_answer: Charles Eugène
+- question: Are Freakonomics and In the Realm of the Hackers both American documentaries?
+  type: multi
+  relevant_sources:
+  - Freakonomics_film_249214.md
+  - In_the_Realm_of_the_Hackers_367f43.md
+  answer_keywords:
+  - 'no'
+  reference_answer: 'no'
+- question: Which band, Letters to Cleo or Screaming Trees, had more members?
+  type: multi
+  relevant_sources:
+  - Letters_to_Cleo_e0d9a6.md
+  - Screaming_Trees_c3d4c5.md
+  answer_keywords:
+  - Letters
+  - Cleo
+  reference_answer: Letters to Cleo
+- question: Alexander Kerensky was defeated and destroyed by the Bolsheviks in the
+    course of a civil war that ended when ?
+  type: multi
+  relevant_sources:
+  - Socialist_Revolutionary_Party_68737a.md
+  - Russian_Civil_War_5a6752.md
+  answer_keywords:
+  - October
+  - '1922'
+  reference_answer: October 1922
+- question: Seven Brief Lessons on Physics was written by an Italian physicist that
+    has worked in France since what year?
+  type: multi
+  relevant_sources:
+  - Seven_Brief_Lessons_on_Physics_91a097.md
+  - Carlo_Rovelli_d94bff.md
+  answer_keywords:
+  - '2000'
+  reference_answer: '2000'
+- question: The Livesey Hal War Memorial commemorates the fallen of which war, that
+    had over 60 million casualties?
+  type: multi
+  relevant_sources:
+  - Livesey_Hall_War_Memorial_a76d8d.md
+  - World_War_II_casualties_3bfe97.md
+  answer_keywords:
+  - World
+  - War
+  - II
+  reference_answer: World War II
+- question: Are both Elko Regional Airport and Gerald R. Ford International Airport
+    located in Michigan?
+  type: multi
+  relevant_sources:
+  - Elko_Regional_Airport_b8dabb.md
+  - Gerald_R_Ford_International_Airport_aa3aad.md
+  answer_keywords:
+  - 'no'
+  reference_answer: 'no'
+- question: Ralph Hefferline was a psychology professor at a university that is located
+    in what city?
+  type: multi
+  relevant_sources:
+  - Ralph_Hefferline_c52813.md
+  - Columbia_University_fafc34.md
+  answer_keywords:
+  - New
+  - York
+  - City
+  reference_answer: New York City
+- question: 'Which dog''s ancestors include Gordon and Irish Setters: the Manchester
+    Terrier or the Scotch Collie?'
+  type: multi
+  relevant_sources:
+  - Manchester_Terrier_88d4c9.md
+  - Scotch_Collie_6c5bdb.md
+  answer_keywords:
+  - Scotch
+  - Collie
+  reference_answer: Scotch Collie
+- question: 'Where is the company that Sachin Warrier worked for as a software engineer
+    headquartered? '
+  type: multi
+  relevant_sources:
+  - Sachin_Warrier_0c6a8d.md
+  - Tata_Consultancy_Services_21ce29.md
+  answer_keywords:
+  - Mumbai
+  reference_answer: Mumbai
+- question: A Japanese manga series based on a 16 year old high school student Ichitaka
+    Seto, is written and illustrated by someone born in what year?
+  type: multi
+  relevant_sources:
+  - Masakazu_Katsura_21c79c.md
+  - I_quot_s_c798de.md
+  answer_keywords:
+  - '1962'
+  reference_answer: '1962'
+- question: The battle in which Giuseppe Arimondi lost his life secured what for Ethiopia?
+  type: multi
+  relevant_sources:
+  - Giuseppe_Arimondi_0fc7eb.md
+  - Battle_of_Adwa_1fa890.md
+  answer_keywords:
+  - sovereignty
+  reference_answer: sovereignty
+- question: Alfred Balk served as the secretary of the Committee on the Employment
+    of Minority Groups in the News Media under which United States Vice President?
+  type: multi
+  relevant_sources:
+  - Alfred_Balk_9a03b3.md
+  - Nelson_Rockefeller_1fa122.md
+  answer_keywords:
+  - Nelson
+  - Rockefeller
+  reference_answer: Nelson Rockefeller
+- question: A medieval fortress in Dirleton, East Lothian, Scotland borders on the
+    south side of what coastal area?
+  type: multi
+  relevant_sources:
+  - Yellowcraigs_0c745c.md
+  - Dirleton_Castle_a042b8.md
+  answer_keywords:
+  - Yellowcraig
+  reference_answer: Yellowcraig
+- question: Who is the writer of this song that was inspired by words on a tombstone
+    and was the first track on the box set Back to Mono?
+  type: multi
+  relevant_sources:
+  - Back_to_Mono_1958_1969_085180.md
+  - To_Know_Him_Is_to_Love_Him_5088a9.md
+  answer_keywords:
+  - Phil
+  - Spector
+  reference_answer: Phil Spector
+- question: What type of forum did a former Soviet statesman initiate?
+  type: multi
+  relevant_sources:
+  - World_Summit_of_Nobel_Peace_Laureates_8a723b.md
+  - Mikhail_Gorbachev_78b492.md
+  answer_keywords:
+  - Organizations
+  - could
+  - come
+  - together
+  - address
+  - global
+  - issues
+  reference_answer: Organizations could come together to address global issues
+- question: Are Ferocactus and Silene both types of plant?
+  type: multi
+  relevant_sources:
+  - Ferocactus_c575ca.md
+  - Silene_927085.md
+  answer_keywords:
+  - 'yes'
+  reference_answer: 'yes'
+- question: Which British first-generation jet-powered medium bomber was used in the
+    South West Pacific theatre of World War II?
+  type: multi
+  relevant_sources:
+  - No_2_Squadron_RAAF_a75482.md
+  - English_Electric_Canberra_becfbe.md
+  answer_keywords:
+  - English
+  - Electric
+  - Canberra
+  reference_answer: English Electric Canberra
+- question: Which year and which conference was the 14th season for this conference
+    as part of the NCAA Division that the Colorado Buffaloes played in with a record
+    of 2-6 in conference play?
+  type: multi
+  relevant_sources:
+  - 2009_Colorado_Buffaloes_football_team_c564e4.md
+  - 2009_Big_12_Conference_football_season_51ed99.md
+  answer_keywords:
+  - '2009'
+  - Big
+  - '12'
+  - Conference
+  reference_answer: 2009 Big 12 Conference
+- question: In 1991 Euromarché was bought by a chain that operated how any hypermarkets
+    at the end of 2016?
+  type: multi
+  relevant_sources:
+  - Euromarch_085339.md
+  - Carrefour_a2a75b.md
+  answer_keywords:
+  - '1'
+  - '462'
+  reference_answer: 1,462
+- question: What race track in the midwest hosts a 500 mile race eavery May?
+  type: multi
+  relevant_sources:
+  - 1957_Indianapolis_500_e3bffe.md
+  - Indianapolis_Motor_Speedway_df5853.md
+  answer_keywords:
+  - Indianapolis
+  - Motor
+  - Speedway
+  reference_answer: Indianapolis Motor Speedway
+- question: In what city did the "Prince of tenors" star in a film based on an opera
+    by Giacomo Puccini?
+  type: multi
+  relevant_sources:
+  - Tosca_1956_film_9b8b07.md
+  - Franco_Corelli_38a315.md
+  answer_keywords:
+  - Rome
+  reference_answer: Rome
+- question: Ellie Goulding worked with what other writers on her third studio album,
+    Delirium?
+  type: multi
+  relevant_sources:
+  - Delirium_Ellie_Goulding_album_5bb0cb.md
+  - On_My_Mind_Ellie_Goulding_song_7beb6f.md
+  answer_keywords:
+  - Max
+  - Martin
+  - Savan
+  - Kotecha
+  - Ilya
+  - Salmanzadeh
+  reference_answer: Max Martin, Savan Kotecha and Ilya Salmanzadeh
+- question: Which Australian city founded in 1838 contains a boarding school opened
+    by a Prime Minister of Australia and named after a school in London of the same
+    name.
+  type: multi
+  relevant_sources:
+  - Westminster_School_Adelaide_e21f2b.md
+  - Marion_South_Australia_a52c71.md
+  answer_keywords:
+  - Marion
+  - South
+  - Australia
+  reference_answer: Marion, South Australia
+- question: D1NZ is a series based on what oversteering technique?
+  type: multi
+  relevant_sources:
+  - D1NZ_0b05a3.md
+  - Drifting_motorsport_ffc90e.md
+  answer_keywords:
+  - Drifting
+  reference_answer: Drifting
+- question: who is younger Keith Bostic or Jerry Glanville ?
+  type: multi
+  relevant_sources:
+  - Keith_Bostic_American_football_dfb34b.md
+  - Jerry_Glanville_13dc6d.md
+  answer_keywords:
+  - Keith
+  - Bostic
+  reference_answer: Keith Bostic
+- question: According to the 2001 census, what was the population of the city in which
+    Kirton End is located?
+  type: multi
+  relevant_sources:
+  - Kirton_End_966029.md
+  - Boston_Lincolnshire_c9745e.md
+  answer_keywords:
+  - '35'
+  - '124'
+  reference_answer: 35,124
+- question: Are both Cypress and Ajuga genera?
+  type: multi
+  relevant_sources:
+  - Cypress_598dc6.md
+  - Ajuga_bbc5bf.md
+  answer_keywords:
+  - 'no'
+  reference_answer: 'no'
+- question: What distinction is held by the former NBA player who was a member of
+    the Charlotte Hornets during their 1992-93 season and was head coach for the WNBA
+    team Charlotte Sting?
+  type: multi
+  relevant_sources:
+  - 1992_93_Charlotte_Hornets_season_5737e5.md
+  - Muggsy_Bogues_59e4aa.md
+  answer_keywords:
+  - shortest
+  - player
+  - ever
+  - play
+  - National
+  - Basketball
+  - Association
+  reference_answer: shortest player ever to play in the National Basketball Association
+- question: What is the name of the executive producer of the film that has a score
+    composed by Jerry Goldsmith?
+  type: multi
+  relevant_sources:
+  - Alien_soundtrack_7853a1.md
+  - Alien_film_5ad84c.md
+  answer_keywords:
+  - Ronald
+  - Shusett
+  reference_answer: Ronald Shusett
+- question: Who was born earlier, Emma Bull or Virginia Woolf?
+  type: multi
+  relevant_sources:
+  - Emma_Bull_10331f.md
+  - Virginia_Woolf_184fe2.md
+  answer_keywords:
+  - Adeline
+  - Virginia
+  - Woolf
+  reference_answer: Adeline Virginia Woolf
+- question: What was the Roud Folk Song Index of the nursery rhyme inspiring What
+    Are Little Girls Made Of?
+  type: multi
+  relevant_sources:
+  - What_Are_Little_Girls_Made_Of_78ed0b.md
+  - What_Are_Little_Boys_Made_Of_5c8221.md
+  answer_keywords:
+  - '821'
+  reference_answer: '821'
+- question: Scott Parkin has been a vocal critic of Exxonmobil and another corporation
+    that has operations in how many countries ?
+  type: multi
+  relevant_sources:
+  - Scott_Parkin_d8dd45.md
+  - Halliburton_5c0738.md
+  answer_keywords:
+  - more
+  - than
+  - '70'
+  - countries
+  reference_answer: more than 70 countries
+- question: What WB supernatrual drama series was Jawbreaker star Rose Mcgowan best
+    known for being in?
+  type: multi
+  relevant_sources:
+  - Jawbreaker_film_e807ba.md
+  - Rose_McGowan_8ae78d.md
+  answer_keywords:
+  - Charmed
+  reference_answer: Charmed
+- question: Vince Phillips held a junior welterweight title by an organization recognized
+    by what larger Hall of Fame?
+  type: multi
+  relevant_sources:
+  - Vince_Phillips_ae078a.md
+  - International_Boxing_Federation_096667.md
+  answer_keywords:
+  - International
+  - Boxing
+  - Hall
+  - Fame
+  reference_answer: International Boxing Hall of Fame
+- question: What is the name of the singer who's song was released as the lead single
+    from the album "Confessions", and that had popular song stuck behind for eight
+    consecutive weeks?
+  type: multi
+  relevant_sources:
+  - I_Don_t_Wanna_Know_1c1aea.md
+  - Yeah_Usher_song_3e7f65.md
+  answer_keywords:
+  - Usher
+  reference_answer: Usher
+- question: 'who is the younger brother of The episode guest stars of The Hard Easy '
+  type: multi
+  relevant_sources:
+  - The_Hard_Easy_Adventure_Time_7232aa.md
+  - Brian_Doyle_Murray_85fd33.md
+  answer_keywords:
+  - Bill
+  - Murray
+  reference_answer: Bill Murray
+- question: The 2017–18 Wigan Athletic F.C. season will be a year in which the team
+    competes in the league cup known as what for sponsorship reasons?
+  type: multi
+  relevant_sources:
+  - 2017_18_Wigan_Athletic_F_C_season_2a0c6f.md
+  - EFL_Cup_56d966.md
+  answer_keywords:
+  - Carabao
+  - Cup
+  reference_answer: Carabao Cup
+- question: Which of Tara Strong major voice role in animated series is an American
+    animated television series based on the DC Comics fictional superhero team, the
+    "Teen Titans"?
+  type: multi
+  relevant_sources:
+  - Tara_Strong_a3946c.md
+  - Teen_Titans_Go_TV_series_f1f123.md
+  answer_keywords:
+  - Teen
+  - Titans
+  - Go
+  reference_answer: Teen Titans Go!
+- question: What is the inhabitant of the city where  122nd SS-Standarte was formed
+    in2014
+  type: multi
+  relevant_sources:
+  - 122nd_SS_Standarte_b802c8.md
+  - Strasbourg_c651bd.md
+  answer_keywords:
+  - '276'
+  - '170'
+  - inhabitants
+  reference_answer: 276,170 inhabitants
+- question: 'What color clothing do people of the Netherlands wear during Oranjegekte
+    or to celebrate the national holiday Koningsdag? '
+  type: multi
+  relevant_sources:
+  - Oranjegekte_8248a5.md
+  - Koningsdag_f66ba4.md
+  answer_keywords:
+  - orange
+  reference_answer: orange
+- question: What was the name of the 1996 loose adaptation of William Shakespeare's
+    "Romeo & Juliet" written by James Gunn?
+  type: multi
+  relevant_sources:
+  - James_Gunn_9a06f8.md
+  - Tromeo_and_Juliet_86fab3.md
+  answer_keywords:
+  - Tromeo
+  - Juliet
+  reference_answer: Tromeo and Juliet
+- question: Robert Suettinger was the national intelligence officer under which former
+    Governor of Arkansas?
+  type: multi
+  relevant_sources:
+  - Robert_Suettinger_2cf335.md
+  - Bill_Clinton_a7ff9e.md
+  answer_keywords:
+  - William
+  - Jefferson
+  - Clinton
+  reference_answer: William Jefferson Clinton
+- question: What American professional Hawaiian surfer born 18 October 1992 won the
+    Rip Curl Pro Portugal?
+  type: multi
+  relevant_sources:
+  - MEO_Rip_Curl_Pro_Portugal_db1396.md
+  - John_John_Florence_06dcff.md
+  answer_keywords:
+  - John
+  - John
+  - Florence
+  reference_answer: John John Florence
+- question: What is the middle name of the actress who plays Bobbi Bacha in Suburban
+    Madness?
+  type: multi
+  relevant_sources:
+  - Bobbi_Bacha_ed23dc.md
+  - Sela_Ward_7a33d6.md
+  answer_keywords:
+  - Ann
+  reference_answer: Ann
+- question: Alvaro Mexia had a diplomatic mission with which tribe of indigenous people?
+  type: multi
+  relevant_sources:
+  - Alvaro_Mexia_973ac2.md
+  - Indigenous_peoples_of_Florida_5ebf0e.md
+  answer_keywords:
+  - Apalachees
+  reference_answer: Apalachees
+- question: What nationality were social anthropologists Alfred Gell and Edmund Leach?
+  type: multi
+  relevant_sources:
+  - Alfred_Gell_6de46c.md
+  - Edmund_Leach_8163b0.md
+  answer_keywords:
+  - British
+  reference_answer: British
+- question: In which year was the King who made the 1925 Birthday Honours born?
+  type: multi
+  relevant_sources:
+  - 1925_Birthday_Honours_b9ad72.md
+  - George_V_b4ed08.md
+  answer_keywords:
+  - '1865'
+  reference_answer: '1865'
+- question: What is the county seat of the county where East Lempster, New Hampshire
+    is located?
+  type: multi
+  relevant_sources:
+  - East_Lempster_New_Hampshire_d4e413.md
+  - Sullivan_County_New_Hampshire_490ab3.md
+  answer_keywords:
+  - Newport
+  reference_answer: Newport
+- question: The Album Against the Wind was the 11th Album of a Rock singer Robert
+    C Seger born may 6 1945. What was the Rock singers stage name ?
+  type: multi
+  relevant_sources:
+  - Against_the_Wind_album_92e597.md
+  - Bob_Seger_69d05d.md
+  answer_keywords:
+  - Bob
+  - Seger
+  reference_answer: Bob Seger
+- question: Rostker v. Goldberg held that the practice of what way of filling armed
+    forces vacancies was consitutional?
+  type: multi
+  relevant_sources:
+  - Rostker_v_Goldberg_b61238.md
+  - Conscription_in_the_United_States_e920fa.md
+  answer_keywords:
+  - Conscription
+  reference_answer: Conscription
+- question: Handi-Snacks are a snack food product line sold by what American multinational
+    confectionery, food, and beverage company that is based in Illinois?
+  type: multi
+  relevant_sources:
+  - Handi_Snacks_b5858e.md
+  - Mondelez_International_9a57f2.md
+  answer_keywords:
+  - Mondelez
+  - International
+  - Inc
+  reference_answer: Mondelez International, Inc.
+- question: 'What was the name of a woman from the book titled "Their Lives: The Women
+    Targeted by the Clinton Machine " and was also a former white house intern?'
+  type: multi
+  relevant_sources:
+  - Their_Lives_eed122.md
+  - Monica_Lewinsky_7bb6c2.md
+  answer_keywords:
+  - Monica
+  - Lewinsky
+  reference_answer: Monica Lewinsky
+- question: When was the American lawyer, lobbyist and political consultant who was
+    a senior member of the presidential campaign of Donald Trump born?
+  type: multi
+  relevant_sources:
+  - Trump_campaign_Russian_meeting_757a00.md
+  - Paul_Manafort_8af6b2.md
+  answer_keywords:
+  - April
+  - '1'
+  - '1949'
+  reference_answer: April 1, 1949
+- question: In what year was the novel that Lourenço Mutarelli based "Nina" on based
+    first published?
+  type: multi
+  relevant_sources:
+  - Louren_o_Mutarelli_8c6209.md
+  - Crime_and_Punishment_72d9f3.md
+  answer_keywords:
+  - '1866'
+  reference_answer: '1866'
+- question: Where are Teide National Park and Garajonay National Park located?
+  type: multi
+  relevant_sources:
+  - Teide_National_Park_aaf674.md
+  - Garajonay_National_Park_97f362.md
+  answer_keywords:
+  - Canary
+  - Islands
+  - Spain
+  reference_answer: Canary Islands, Spain
+- question: How many copies of Roald Dahl's variation on a popular anecdote sold?
+  type: multi
+  relevant_sources:
+  - Mrs_Bixby_and_the_Colonel_s_Coat_046075.md
+  - Roald_Dahl_b00bb7.md
+  answer_keywords:
+  - '250'
+  - million
+  reference_answer: 250 million
+- question: What occupation do Chris Menges and Aram Avakian share?
+  type: multi
+  relevant_sources:
+  - Aram_Avakian_c7b456.md
+  - Chris_Menges_e63bf3.md
+  answer_keywords:
+  - director
+  reference_answer: director
+- question: Andrew Jaspan was the co-founder of what not-for-profit media outlet?
+  type: multi
+  relevant_sources:
+  - Andrew_Jaspan_f6dc15.md
+  - The_Conversation_website_724191.md
+  answer_keywords:
+  - Conversation
+  reference_answer: The Conversation
+- question: Which American film director hosted the 18th Independent Spirit Awards
+    in 2002?
+  type: multi
+  relevant_sources:
+  - 18th_Independent_Spirit_Awards_edf834.md
+  - John_Waters_313076.md
+  answer_keywords:
+  - John
+  - Waters
+  reference_answer: John Waters
+- question: Where does the hotel and casino located in which Bill Cosby's third album
+    was recorded?
+  type: multi
+  relevant_sources:
+  - Why_Is_There_Air_4d04a7.md
+  - Flamingo_Las_Vegas_088d90.md
+  answer_keywords:
+  - Las
+  - Vegas
+  - Strip
+  - Paradise
+  reference_answer: Las Vegas Strip in Paradise
+- question: Do the drinks Gibson and Zurracapote both contain gin?
+  type: multi
+  relevant_sources:
+  - Gibson_cocktail_9f11db.md
+  - Zurracapote_d7143e.md
+  answer_keywords:
+  - 'no'
+  reference_answer: 'no'
+- question: 'In what month is the annual documentary film festival, that is presented
+    by the fortnightly published British journal of literary essays, held? '
+  type: multi
+  relevant_sources:
+  - London_International_Documentary_Festival_ee94b8.md
+  - London_Review_of_Books_e260ff.md
+  answer_keywords:
+  - March
+  - April
+  reference_answer: March and April
+- question: Tysons Galleria is located in what county?
+  type: multi
+  relevant_sources:
+  - McLean_Virginia_45ec68.md
+  - Tysons_Galleria_ead975.md
+  answer_keywords:
+  - Fairfax
+  - County
+  reference_answer: Fairfax County
+- question: Bordan Tkachuk was the CEO of a company that provides what sort of products?
+  type: multi
+  relevant_sources:
+  - Bordan_Tkachuk_48966f.md
+  - Viglen_7dee64.md
+  answer_keywords:
+  - IT
+  - products
+  - services
+  reference_answer: IT products and services
+- question: Which filmmaker was known for animation, Lev Yilmaz or Pamela B. Green?
+  type: multi
+  relevant_sources:
+  - Lev_Yilmaz_9ac5ec.md
+  - Pamela_B_Green_c6a889.md
+  answer_keywords:
+  - Levni
+  - Yilmaz
+  reference_answer: Levni Yilmaz
+- question: In which city is the ambassador of the Rabat-Salé-Kénitra administrative
+    region to China based?
+  type: multi
+  relevant_sources:
+  - Moroccan_Ambassador_to_China_32f237.md
+  - Rabat_fbed5c.md
+  answer_keywords:
+  - Beijing
+  reference_answer: Beijing
+- question: Are Yingkou and Fuding the same level of city?
+  type: multi
+  relevant_sources:
+  - Yingkou_35402b.md
+  - Fuding_95b51b.md
+  answer_keywords:
+  - 'no'
+  reference_answer: 'no'
+- question: Where did the descendants of the group of black Indians associated with
+    the Seminole people settle?
+  type: multi
+  relevant_sources:
+  - Mascogos_c2154a.md
+  - Black_Seminoles_359120.md
+  answer_keywords:
+  - Coahuila
+  - Mexico
+  reference_answer: Coahuila, Mexico
+- question: David Huntsinger has worked with this gospel singer born in the month
+    of July?
+  type: multi
+  relevant_sources:
+  - David_Huntsinger_9b69c6.md
+  - Larnelle_Harris_d1e236.md
+  answer_keywords:
+  - Larnelle
+  - Harris
+  reference_answer: Larnelle Harris
+- question: What year was the brother of this first round draft pick by the Washington
+    Redskins drafted?
+  type: multi
+  relevant_sources:
+  - Boss_Bailey_c6eb13.md
+  - Champ_Bailey_09d8a7.md
+  answer_keywords:
+  - '2003'
+  reference_answer: '2003'
+- question: 'Where is the stadium at which 1964 Georgia Tech Yellow Jackets football
+    team played their home game located? '
+  type: multi
+  relevant_sources:
+  - 1964_Georgia_Tech_Yellow_Jackets_football_team_903ff2.md
+  - Bobby_Dodd_Stadium_e69b57.md
+  answer_keywords:
+  - North
+  - Avenue
+  - Techwood
+  - Drive
+  reference_answer: North Avenue at Techwood Drive
+- question: Since 2 June 2017, The Leader of Fine Gael had been held by which Irish
+    Fine Gael politician who has served as Taoiseach and Minister for Defence?
+  type: multi
+  relevant_sources:
+  - Leader_of_Fine_Gael_723b98.md
+  - Leo_Varadkar_01a086.md
+  answer_keywords:
+  - Leo
+  - Varadkar
+  reference_answer: Leo Varadkar
+- question: Which American film actor and dancer starred in the 1945 film Johnny Angel?
+  type: multi
+  relevant_sources:
+  - Johnny_Angel_771c90.md
+  - George_Raft_95870e.md
+  answer_keywords:
+  - George
+  - Raft
+  reference_answer: George Raft
+- question: hree Men on a Horse is a play by a playwright born in which year ?
+  type: multi
+  relevant_sources:
+  - Three_Men_on_a_Horse_30e99e.md
+  - George_Abbott_59b417.md
+  answer_keywords:
+  - '1887'
+  reference_answer: '1887'
+- question: What type of activity does Owner earnings and Warren Buffett have in common?
+  type: multi
+  relevant_sources:
+  - Owner_earnings_3b9ef1.md
+  - Warren_Buffett_16373d.md
+  answer_keywords:
+  - business
+  reference_answer: business
+- question: 'When was the  former Indian cricketer who made his ODI debuts during
+    the 2000 ICC KnockOut Trophy born? '
+  type: multi
+  relevant_sources:
+  - 2000_ICC_KnockOut_Trophy_a85b48.md
+  - Zaheer_Khan_3bf920.md
+  answer_keywords:
+  - '7'
+  - October
+  - '1978'
+  reference_answer: 7 October 1978
+- question: Which airplane was this Major test-flying after whom the base, that 514th
+    Flight Test Squadron is stated at, is named?
+  type: multi
+  relevant_sources:
+  - 514th_Flight_Test_Squadron_c5f941.md
+  - Hill_Air_Force_Base_311d82.md
+  answer_keywords:
+  - B
+  - '17'
+  - Flying
+  - Fortress
+  - bomber
+  reference_answer: B-17 Flying Fortress bomber
+- question: Based on a True Story... is an album by which country music star, with
+    the single My Eyes?
+  type: multi
+  relevant_sources:
+  - My_Eyes_Blake_Shelton_song_fa840b.md
+  - Based_on_a_True_Story_42790b.md
+  answer_keywords:
+  - Blake
+  - Shelton
+  reference_answer: Blake Shelton
+- question: Over how many centuries were the "dwelling place of the dead" built?
+  type: multi
+  relevant_sources:
+  - Flaming_Feather_260c6e.md
+  - Montezuma_Castle_National_Monument_6cbc24.md
+  answer_keywords:
+  - three
+  - centuries
+  reference_answer: three centuries
+- question: 'When was the British author who wrote the novel on which "Here We Go
+    Round the Mulberry Bush" was based born? '
+  type: multi
+  relevant_sources:
+  - Here_We_Go_Round_the_Mulberry_Bush_film_8a0970.md
+  - Hunter_Davies_af43f4.md
+  answer_keywords:
+  - '7'
+  - January
+  - '1936'
+  reference_answer: 7 January 1936
+- question: Who died first, George Archainbaud or Ralph Murphy?
+  type: multi
+  relevant_sources:
+  - George_Archainbaud_8731c9.md
+  - Ralph_Murphy_225af2.md
+  answer_keywords:
+  - George
+  - Archainbaud
+  reference_answer: George Archainbaud
+- question: Which component of shellite has the formula (ON)CHOH?
+  type: multi
+  relevant_sources:
+  - Shellite_explosive_779537.md
+  - Picric_acid_f2190b.md
+  answer_keywords:
+  - picric
+  - acid
+  reference_answer: picric acid
+- question: The Argentine PGA Championship record holder has won how many tournaments
+    worldwide?
+  type: multi
+  relevant_sources:
+  - Argentine_PGA_Championship_509191.md
+  - Roberto_De_Vicenzo_f6306e.md
+  answer_keywords:
+  - '230'
+  reference_answer: '230'
+- question: Suicide's 1977 released album features a song based on what brand's comic
+    character?
+  type: multi
+  relevant_sources:
+  - Ghost_Rider_Suicide_song_6a76e9.md
+  - Suicide_1977_album_f5667d.md
+  answer_keywords:
+  - Marvel
+  reference_answer: Marvel
+- question: What other political position did the person who introduced the DISCLOSE
+    Act hold?
+  type: multi
+  relevant_sources:
+  - DISCLOSE_Act_ade9a9.md
+  - Chris_Van_Hollen_643c72.md
+  answer_keywords:
+  - United
+  - States
+  - Senator
+  reference_answer: United States Senator
+- question: Were the bands Skin Yard and Ostava from the U.S.?
+  type: multi
+  relevant_sources:
+  - Skin_Yard_9f21b8.md
+  - Ostava_1c9a4e.md
+  answer_keywords:
+  - 'no'
+  reference_answer: 'no'
+- question: Are Daryl Hall and Gerry Marsden both musicians?
+  type: multi
+  relevant_sources:
+  - Daryl_Hall_fd298f.md
+  - Gerry_Marsden_457ba7.md
+  answer_keywords:
+  - 'yes'
+  reference_answer: 'yes'
+- question: What major truck road is located in Backford Cross?
+  type: multi
+  relevant_sources:
+  - Backford_Cross_07d906.md
+  - A41_road_5d9e2e.md
+  answer_keywords:
+  - A41
+  reference_answer: The A41
+- question: In which role did Caroline Carver played in a 1999 Hallmark Entertainment
+    made-for-TV fantasy movie?
+  type: multi
+  relevant_sources:
+  - Caroline_Carver_actress_7577ed.md
+  - The_Magical_Legend_of_the_Leprechauns_0d732f.md
+  answer_keywords:
+  - Princess
+  - Jessica
+  reference_answer: Princess Jessica
+- question: What's the name of the fantasy film starring Sarah Bolger, featuring a
+    New England family who discover magical creatures around their estate?
+  type: multi
+  relevant_sources:
+  - Sarah_Bolger_40c047.md
+  - The_Spiderwick_Chronicles_film_fffede.md
+  answer_keywords:
+  - Spiderwick
+  - Chronicles
+  reference_answer: The Spiderwick Chronicles
+- question: Maxeda has been owned since 2004 by which American multinational equity
+    firm?
+  type: multi
+  relevant_sources:
+  - Maxeda_f76dfe.md
+  - Kohlberg_Kravis_Roberts_728df7.md
+  answer_keywords:
+  - KKR
+  - Co
+  reference_answer: KKR & Co
+- question: The youngest daughter of Lady Mary-Gaye Curzon stars with Douglas Smith
+    and Lucien Laviscount  in what 2017 film?
+  type: multi
+  relevant_sources:
+  - The_Bye_Bye_Man_906e6d.md
+  - Cressida_Bonas_5c3c57.md
+  answer_keywords:
+  - Bye
+  - Bye
+  - Man
+  reference_answer: The Bye Bye Man
+- question: Mummulgum is a stop on the Bruxner Highway before reaching the town on
+    the banks of which river?
+  type: multi
+  relevant_sources:
+  - Mummulgum_1292e7.md
+  - Casino_New_South_Wales_8c85c5.md
+  answer_keywords:
+  - Richmond
+  reference_answer: Richmond
+- question: Which American audio engineer and clandestine chemist, who was a key figure
+    in the San Francisco Bay Area hippie movement during the 1960s recorded the album
+    "Old and in the Way?"
+  type: multi
+  relevant_sources:
+  - Old_and_in_the_Way_album_a0d70d.md
+  - Owsley_Stanley_c97dc0.md
+  answer_keywords:
+  - Owsley
+  - Stanley
+  reference_answer: Owsley Stanley
+- question: When was the palace founded at which Columba de Dunbar died in 1435?
+  type: multi
+  relevant_sources:
+  - Columba_de_Dunbar_dce1ab.md
+  - Spynie_Palace_94758a.md
+  answer_keywords:
+  - late
+  - 12th
+  - Century
+  reference_answer: the late 12th Century
+- question: Where is the Bubblegum Alley, that is similar to Gum Wall, located in
+    California?
+  type: multi
+  relevant_sources:
+  - Gum_Wall_265338.md
+  - San_Luis_Obispo_California_90d3ab.md
+  answer_keywords:
+  - San
+  - Luis
+  - Obispo
+  - California
+  reference_answer: San Luis Obispo, California
+- question: At what venue was the January 2, 2012 game featured the University of
+    Louisville team?
+  type: multi
+  relevant_sources:
+  - 2012_Louisville_Cardinals_football_team_b334c8.md
+  - 2013_Sugar_Bowl_3fa413.md
+  answer_keywords:
+  - Mercedes
+  - Benz
+  - Superdome
+  reference_answer: Mercedes-Benz Superdome
+- question: 'Which film was Oscar nominated, LaLee''s Kin: The Legacy of Cotton or
+    Gimme Shelter, the 1970 Rolling Stones documentary?'
+  type: multi
+  relevant_sources:
+  - LaLee_s_Kin_The_Legacy_of_Cotton_6d9247.md
+  - Gimme_Shelter_1970_film_5d2f2a.md
+  answer_keywords:
+  - LaLee
+  - s
+  - Kin
+  - Legacy
+  - Cotton
+  reference_answer: 'LaLee''s Kin: The Legacy of Cotton'
+- question: Which board game was published most recently, Pirate's Cove or Catan?
+  type: multi
+  relevant_sources:
+  - Pirate_s_Cove_778b71.md
+  - Catan_48309f.md
+  answer_keywords:
+  - Pirate
+  - s
+  - Cove
+  reference_answer: Pirate's Cove
+- question: Alice David is the voice of Lara Croft in a video game developed by which
+    company ?
+  type: multi
+  relevant_sources:
+  - Alice_David_f68045.md
+  - Tomb_Raider_2013_video_game_f6f3bf.md
+  answer_keywords:
+  - Crystal
+  - Dynamics
+  reference_answer: Crystal Dynamics
+- question: Which Eminem album included vocals from a singer who had an album titled
+    "Unapologetic"?
+  type: multi
+  relevant_sources:
+  - The_Monster_song_886456.md
+  - Numb_Rihanna_song_6c9d1e.md
+  answer_keywords:
+  - Marshall
+  - Mathers
+  - LP
+  - '2'
+  reference_answer: '"The Marshall Mathers LP 2"'
+- question: 'This American crime film set in South Los Angeles was written and directed
+    by the same director and writer of screenwriter of "Street Kings", "End of Watch",
+    "Sabotage", "Fury" and what other film? '
+  type: multi
+  relevant_sources:
+  - Harsh_Times_d738dc.md
+  - David_Ayer_4a06f2.md
+  answer_keywords:
+  - Suicide
+  - Squad
+  reference_answer: Suicide Squad
+- question: SuperMansion starred the actress who had a recurring role as whom on Workaholics?
+  type: multi
+  relevant_sources:
+  - SuperMansion_7527a6.md
+  - Jillian_Bell_997128.md
+  answer_keywords:
+  - Jillian
+  - Belk
+  reference_answer: Jillian Belk
+- question: The 1974 Texas Tech Raiders football team represented what public research
+    university in Lubbock, Texas?
+  type: multi
+  relevant_sources:
+  - 1974_Texas_Tech_Red_Raiders_football_team_ef8e4c.md
+  - Texas_Tech_University_a52d11.md
+  answer_keywords:
+  - Texas
+  - Tech
+  - University
+  reference_answer: Texas Tech University
+- question: During Siege of Bharatpur, which Commander-in-Chief of Ireland and Commander-in-Chief
+    of India contributed to the storming of the castle?
+  type: multi
+  relevant_sources:
+  - Siege_of_Bharatpur_87ada6.md
+  - Stapleton_Cotton_1st_Viscount_Combermere_04898f.md
+  answer_keywords:
+  - Lord
+  - Combermere
+  reference_answer: Lord Combermere
+- question: For what type of work is the production company for The Year Without a
+    Santa Claus best known?
+  type: multi
+  relevant_sources:
+  - The_Year_Without_a_Santa_Claus_a8b690.md
+  - Rankin_Bass_Productions_584879.md
+  answer_keywords:
+  - seasonal
+  - television
+  - specials
+  - particularly
+  - its
+  - work
+  - stop
+  - motion
+  - animation
+  reference_answer: seasonal television specials, particularly its work in stop motion
+    animation
+- question: What year was the film that starred the composer for "The Naked Brothers
+    Band"?
+  type: multi
+  relevant_sources:
+  - The_Fault_in_Our_Stars_film_760daf.md
+  - Nat_Wolff_d38e00.md
+  answer_keywords:
+  - '2014'
+  reference_answer: '2014'
+- question: The author of Sexual Politics attended which British University?
+  type: multi
+  relevant_sources:
+  - Sexual_Politics_cad0e0.md
+  - Kate_Millett_2b5d8f.md
+  answer_keywords:
+  - Oxford
+  reference_answer: Oxford
+- question: Who had the best singles ranking, Roberta Vinci or Jorge Lozano?
+  type: multi
+  relevant_sources:
+  - Roberta_Vinci_f714c8.md
+  - Jorge_Lozano_1baa7a.md
+  answer_keywords:
+  - Roberta
+  - Vinci
+  reference_answer: Roberta Vinci
+- question: Both Truth in Science and Discovery embrace what campaign?
+  type: multi
+  relevant_sources:
+  - Truth_in_Science_718434.md
+  - Discovery_Institute_875544.md
+  answer_keywords:
+  - Teach
+  - Controversy
+  - campaign
+  reference_answer: '"Teach the Controversy" campaign'
+- question: Josey Scott and Ian Watkins were both promising musicians. Which of these
+    talented men was incarcerated, impacting his career with a rock band?
+  type: multi
+  relevant_sources:
+  - Josey_Scott_05ea0f.md
+  - Ian_Watkins_Lostprophets_562f00.md
+  answer_keywords:
+  - Lostprophets
+  - disbanded
+  - '2013'
+  - after
+  - Watkins
+  - charged
+  - with
+  - sexual
+  - offences
+  - late
+  - '2012'
+  reference_answer: Lostprophets disbanded in 2013 after Watkins was charged with
+    sexual offences in late 2012.
+- question: The movies Queen of Blood and Battle Beyond the Sun both contained scenes
+    from what 1959 Soviet feature?
+  type: multi
+  relevant_sources:
+  - Queen_of_Blood_7ea32a.md
+  - Battle_Beyond_the_Sun_e82466.md
+  answer_keywords:
+  - Nebo
+  - Zovyot
+  reference_answer: Nebo Zovyot
+- question: Who was born first, Erika Jayne or Marco Da Silva
+  type: multi
+  relevant_sources:
+  - Marco_Da_Silva_dancer_777e91.md
+  - Erika_Jayne_60e347.md
+  answer_keywords:
+  - Erika
+  - Jayne
+  reference_answer: Erika Jayne
+- question: When did the English local newspaper, featuring the sculpture and war
+    memorial in the Forbury gardens, change names?
+  type: multi
+  relevant_sources:
+  - Reading_Post_22f3d7.md
+  - Maiwand_Lion_299aff.md
+  answer_keywords:
+  - '2009'
+  reference_answer: '2009'
+- question: What is the name of the Isles who were led by Aonghus Mór and covered
+    a total land area of over 8300 km2?
+  type: multi
+  relevant_sources:
+  - Aonghus_M_r_b5e643.md
+  - Kingdom_of_the_Isles_9a036f.md
+  answer_keywords:
+  - Kingdom
+  - Isles
+  reference_answer: Kingdom of the Isles
+- question: Who is Bruce Spizer an expert on, known as the most influential act of
+    the rock era?
+  type: multi
+  relevant_sources:
+  - Bruce_Spizer_c78d7e.md
+  - The_Beatles_c9e770.md
+  answer_keywords:
+  - Beatles
+  reference_answer: The Beatles
+- question: Which song was behind the third single on the album  "A Lot About Livin'
+    (And a Little 'bout Love)" for two weeks on the country charts?
+  type: multi
+  relevant_sources:
+  - We_ll_Burn_That_Bridge_7cc5e2.md
+  - Chattahoochee_song_43c675.md
+  answer_keywords:
+  - We
+  - ll
+  - Burn
+  - That
+  - Bridge
+  reference_answer: '"We''ll Burn That Bridge"'
+- question: What occupation was shared by David Yates and Pietro Germi?
+  type: multi
+  relevant_sources:
+  - David_Yates_d0246a.md
+  - Pietro_Germi_cccbfc.md
+  answer_keywords:
+  - director
+  reference_answer: director
+- question: Marcus Wayne Garland spent nine seasons with an American professional
+    baseball team that is based in Baltimore, Maryland, and was one of the AMerican
+    League's original eight charter franchises when the league was established in
+    what year?
+  type: multi
+  relevant_sources:
+  - Wayne_Garland_02f688.md
+  - Baltimore_Orioles_cf318a.md
+  answer_keywords:
+  - '1901'
+  reference_answer: '1901'
+- question: The lamp used in many lighthouses is similiar to this type of lamp patented
+    in 1780 by Aimé Argand?
+  type: multi
+  relevant_sources:
+  - Lewis_lamp_ddcc57.md
+  - Argand_lamp_563fb5.md
+  answer_keywords:
+  - Argand
+  - lamp
+  reference_answer: Argand lamp
+- question: The songs from the sountrack to "When Harry Met Sally" are performed by
+    a singer that has had how many top 20 US albums?
+  type: multi
+  relevant_sources:
+  - When_Harry_Met_Sally_soundtrack_e2231f.md
+  - Harry_Connick_Jr_6680f3.md
+  answer_keywords:
+  - seven
+  reference_answer: seven
+- question: Are Broughtonia and Laeliocattleya both orchids?
+  type: multi
+  relevant_sources:
+  - Broughtonia_0c0471.md
+  - Laeliocattleya_12506a.md
+  answer_keywords:
+  - 'yes'
+  reference_answer: 'yes'
+- question: Where was the world cup hosted that Algeria qualified for the first time
+    into the round of 16?
+  type: multi
+  relevant_sources:
+  - Algeria_at_the_FIFA_World_Cup_e71ad6.md
+  - 2014_FIFA_World_Cup_fe780c.md
+  answer_keywords:
+  - Brazil
+  reference_answer: Brazil
+- question: Which was fought earlier in our nation's history, the Seven Days Battles
+    or the Battle of Manila?
+  type: multi
+  relevant_sources:
+  - Seven_Days_Battles_31c829.md
+  - Battle_of_Manila_1945_53ae1b.md
+  answer_keywords:
+  - Seven
+  - Days
+  - Battles
+  reference_answer: The Seven Days Battles
+- question: What retailer in ABQ Uptown is headquarted in Poole, Dorset, United Kingdom?
+  type: multi
+  relevant_sources:
+  - ABQ_Uptown_ff7f3a.md
+  - Lush_company_41abfa.md
+  answer_keywords:
+  - Lush
+  - Ltd
+  reference_answer: Lush Ltd.
+- question: 'What football club plays in the area between the old tool gates: Brook
+    Bar and Trafford bar?'
+  type: multi
+  relevant_sources:
+  - Manchester_United_F_C_in_European_football_743088.md
+  - Old_Trafford_Greater_Manchester_b2f740.md
+  answer_keywords:
+  - Manchester
+  - United
+  reference_answer: Manchester United
+- question: The song "Chim Chim Cher-ee" can be heard  in the "Mary Poppins" scene
+    of a Disney ride that debuted in what year?
+  type: multi
+  relevant_sources:
+  - Chim_Chim_Cher_ee_061f98.md
+  - The_Great_Movie_Ride_a2c8f4.md
+  answer_keywords:
+  - '1989'
+  reference_answer: '1989'
+- question: Who held the record for the longest service in the Australian Parliament
+    for a woman, and was surpassed by  a former Australian politician who was the
+    29th Speaker of the House of Representatives?
+  type: multi
+  relevant_sources:
+  - Kathy_Sullivan_Australian_politician_a2272b.md
+  - Bronwyn_Bishop_60d0f7.md
+  answer_keywords:
+  - Kathryn
+  - Jean
+  - Martin
+  reference_answer: Kathryn Jean Martin
+- question: Which man who presented the Australia 2022 FIFA World Cup bid was born
+    on October 22, 1930?
+  type: multi
+  relevant_sources:
+  - Australia_2022_FIFA_World_Cup_bid_8e5703.md
+  - Frank_Lowy_494fef.md
+  answer_keywords:
+  - Frank
+  - Lowy
+  reference_answer: Frank Lowy
+- question: What major city is the Faith Lutheran Middle School and High School located
+    by?
+  type: multi
+  relevant_sources:
+  - Faith_Lutheran_Middle_School_amp_High_School_093460.md
+  - Summerlin_Nevada_c1f8a5.md
+  answer_keywords:
+  - Las
+  - Vegas
+  reference_answer: Las Vegas
+- question: What British singer-songwriter hosted the 16th Annual Young Hollywood
+    Awards?
+  type: multi
+  relevant_sources:
+  - 2014_Young_Hollywood_Awards_62ffa9.md
+  - Kelly_Osbourne_10f5a7.md
+  answer_keywords:
+  - Kelly
+  - Lee
+  - Osbourne
+  reference_answer: Kelly Lee Osbourne
+- question: Who did the Star and Dagger bass player marry?
+  type: multi
+  relevant_sources:
+  - Supagroup_4087c3.md
+  - Sean_Yseult_faf27e.md
+  answer_keywords:
+  - Sean
+  - Yseult
+  reference_answer: Sean Yseult.
+- question: In 2017, what was 3/4th of the organization that also has a Center for
+    Veterinary Medicine as well as part of the U.S. Department of Health and Human
+    Services, spent on?
+  type: multi
+  relevant_sources:
+  - Melarsomine_9dbdf7.md
+  - Food_and_Drug_Administration_3e97f1.md
+  answer_keywords:
+  - Prescription
+  - Drug
+  - User
+  - Fee
+  - Act
+  reference_answer: Prescription Drug User Fee Act
+- question: Which came out first, Dinosaur or McFarland, USA
+  type: multi
+  relevant_sources:
+  - Dinosaur_film_70883b.md
+  - McFarland_USA_695f8d.md
+  answer_keywords:
+  - Dinosaur
+  reference_answer: Dinosaur
+- question: Both Bishop Carroll Catholic High School and Kapaun Mt. Carmel Catholic
+    High School are located in which city in Kansas?
+  type: multi
+  relevant_sources:
+  - Bishop_Carroll_Catholic_High_School_5aa312.md
+  - Kapaun_Mt_Carmel_Catholic_High_School_bf8c9d.md
+  answer_keywords:
+  - Wichita
+  reference_answer: Wichita
+- question: What was the 58th quadrennial American presidential election held after
+    the 2016 Michigan Democratic primary?
+  type: multi
+  relevant_sources:
+  - Michigan_Democratic_primary_2016_7fa23f.md
+  - United_States_presidential_election_2016_363dfd.md
+  answer_keywords:
+  - United
+  - States
+  - presidential
+  - election
+  - '2016'
+  reference_answer: United States presidential election of 2016
+- question: This Celtic ruler who was born in AD 43 ruled southeastern Britain prior
+    to conquest by which empire?
+  type: multi
+  relevant_sources:
+  - Togodumnus_604915.md
+  - Catuvellauni_197927.md
+  answer_keywords:
+  - Roman
+  reference_answer: Roman
+- question: What is the name of the detective novelist parent of the author of '"Q"
+    Is for Quarry'?
+  type: multi
+  relevant_sources:
+  - quot_Q_quot_Is_for_Quarry_0af9e8.md
+  - Sue_Grafton_b763be.md
+  answer_keywords:
+  - C
+  - W
+  - Grafton
+  reference_answer: C. W. Grafton
+- question: What is the birthplace of the Senator who represents the first of 62 districts
+    in the State Senate?
+  type: multi
+  relevant_sources:
+  - New_York_s_1st_State_Senate_district_2690e2.md
+  - Kenneth_LaValle_5e3019.md
+  answer_keywords:
+  - Brooklyn
+  - New
+  - York
+  reference_answer: Brooklyn, New York
+- question: The Memphis Hustle are based in a suburb of a city with a population of
+    what in 2010?
+  type: multi
+  relevant_sources:
+  - Memphis_Hustle_71bf0b.md
+  - Southaven_Mississippi_7cc376.md
+  answer_keywords:
+  - '48'
+  - '982'
+  reference_answer: 48,982
+- question: 'Which songwriting duo composed music for "La La Land", and created lyrics
+    for "A Christmas Story: The Musical"? '
+  type: multi
+  relevant_sources:
+  - A_Christmas_Story_The_Musical_cc93e8.md
+  - Pasek_and_Paul_aa5312.md
+  answer_keywords:
+  - Pasek
+  - Paul
+  reference_answer: Pasek & Paul
+- question: Which of the city at the south of Shelly Beach, New South Wales is a local
+    government area in the Hunter region of New South Wales, Australia?
+  type: multi
+  relevant_sources:
+  - Shelly_Beach_New_South_Wales_394331.md
+  - City_of_Newcastle_b8a5a6.md
+  answer_keywords:
+  - City
+  - Newcastle
+  reference_answer: City of Newcastle
+- question: Are Bamboo Mañalac and Danny Jones both musicians?
+  type: multi
+  relevant_sources:
+  - Bamboo_Ma_alac_c064bb.md
+  - Danny_Jones_218fc4.md
+  answer_keywords:
+  - 'yes'
+  reference_answer: 'yes'
+- question: Works by Hanna Leena Kristiina Varis are part of a collection in a museum
+    that houses approximately 65,000 what?
+  type: multi
+  relevant_sources:
+  - Hanna_Varis_e45643.md
+  - Albertina_eec665.md
+  answer_keywords:
+  - drawings
+  reference_answer: drawings
+- question: When was the Western Germanic language spoken from which the small settlement
+    situated on the river Leda opposite Leer derives its name?
+  type: multi
+  relevant_sources:
+  - Leda_river_1fc89a.md
+  - Old_Frisian_1d26a1.md
+  answer_keywords:
+  - between
+  - 8th
+  - 16th
+  - centuries
+  reference_answer: between the 8th and 16th centuries
+- question: Born on 6 March 1937, this man was also a citizen of the United Kingdom.
+  type: multi
+  relevant_sources:
+  - Alistair_Grant_fa1a5e.md
+  - British_people_0d1ac2.md
+  answer_keywords:
+  - Alistair
+  - Grant
+  reference_answer: Alistair Grant
+- question: What country does Hatton Hill and Hatton Castle, Angus have in common?
+  type: multi
+  relevant_sources:
+  - Hatton_Hill_027377.md
+  - Hatton_Castle_Angus_eb96ea.md
+  answer_keywords:
+  - Scotland
+  reference_answer: Scotland
+- question: What podcast was the cheif executive officer of Nerdist Industries a guest
+    on?
+  type: multi
+  relevant_sources:
+  - Comedy_Film_Nerds_6305d2.md
+  - Chris_Hardwick_873622.md
+  answer_keywords:
+  - Comedy
+  - Film
+  - Nerds
+  reference_answer: Comedy Film Nerds
+- question: Randall Cunningham II was a multi-sport athlete at the high school located
+    in what Nevada city?
+  type: multi
+  relevant_sources:
+  - Randall_Cunningham_II_f230f3.md
+  - Bishop_Gorman_High_School_65cc4b.md
+  answer_keywords:
+  - Summerlin
+  reference_answer: Summerlin
+- question: Which English musician is known for both the songs "See Yourself" and
+    "Withing You Without You"?
+  type: multi
+  relevant_sources:
+  - See_Yourself_b71aa1.md
+  - Within_You_Without_You_31e949.md
+  answer_keywords:
+  - George
+  - Harrison
+  reference_answer: George Harrison
+- question: Which professional ice hockey position does the Captain of the National
+    Hockey League All-Star Game "Away Team" play?
+  type: multi
+  relevant_sources:
+  - 60th_National_Hockey_League_All_Star_Game_f524da.md
+  - Jonathan_Toews_a4fc0c.md
+  answer_keywords:
+  - Canadian
+  - professional
+  - ice
+  - hockey
+  - centre
+  reference_answer: Canadian professional ice hockey centre
+- question: What year did the series on CBS, starring the actor who known for his
+    role in "Rebel Without a Cause," air?
+  type: multi
+  relevant_sources:
+  - CBS_Television_Workshop_a697bb.md
+  - James_Dean_97f3d6.md
+  answer_keywords:
+  - '1952'
+  reference_answer: '1952'
+- question: 'What season was the character introduced that becomes the main antagonist
+    in the  following season, from the animated television series created by Bryan
+    Konietzko and Michael Dante DiMartino as a sequel to "", which aired from 2005
+    to 2008? '
+  type: multi
+  relevant_sources:
+  - Kuvira_4fdaa0.md
+  - The_Legend_of_Korra_86cdc2.md
+  answer_keywords:
+  - third
+  reference_answer: third
+- question: Who were the directors of the 2009 American science fiction film starring
+    the actor who played Dexter Morgan in the Showtime TV Network series "Dexter"?
+  type: multi
+  relevant_sources:
+  - Gamer_film_4a8e8e.md
+  - Michael_C_Hall_0c4412.md
+  answer_keywords:
+  - Mark
+  - Neveldine
+  - Brian
+  - Taylor
+  reference_answer: Mark Neveldine and Brian Taylor
+- question: Which travel parody series featured American actor, comedian, and radio
+    host best known as the host of "The Joe Schmo Show"?
+  type: multi
+  relevant_sources:
+  - Hidden_America_with_Jonah_Ray_77a5b1.md
+  - Ralph_Garman_def98d.md
+  answer_keywords:
+  - Hidden
+  - America
+  - with
+  - Jonah
+  - Ray
+  reference_answer: Hidden America with Jonah Ray
+- question: Do The Importance of Being Icelandic and The Five Obstructions belong
+    to different film genres ?
+  type: multi
+  relevant_sources:
+  - The_Importance_of_Being_Icelandic_086a7b.md
+  - The_Five_Obstructions_18f018.md
+  answer_keywords:
+  - 'no'
+  reference_answer: 'no'
+- question: 'Tefik Selim Mborja was a part of a party that held power in Albania until
+    what year? '
+  type: multi
+  relevant_sources:
+  - Tefik_Mborja_372d65.md
+  - Albanian_Fascist_Party_1dbbbc.md
+  answer_keywords:
+  - '1943'
+  reference_answer: '1943'
+- question: Joe Walker played for which team that ends their regular season with the
+    Civil War rivalry game?
+  type: multi
+  relevant_sources:
+  - Joe_Walker_American_football_f01e4b.md
+  - Oregon_Ducks_football_f52707.md
+  answer_keywords:
+  - Oregon
+  - Ducks
+  - football
+  reference_answer: Oregon Ducks football
+- question: What station broadcast the episode "Marry Me a Little, Marry Me a Little
+    More" , of the series created by Max Mutchnick and David Kohan?
+  type: multi
+  relevant_sources:
+  - Marry_Me_a_Little_Marry_Me_a_Little_More_8813fe.md
+  - Will_amp_Grace_31b102.md
+  answer_keywords:
+  - National
+  - Broadcasting
+  - Company
+  reference_answer: National Broadcasting Company
+- question: Georges-Henri Bousquet translated the work of a historian who is of what
+    heritage?
+  type: multi
+  relevant_sources:
+  - Georges_Henri_Bousquet_df3fc1.md
+  - Ibn_Khaldun_625851.md
+  answer_keywords:
+  - North
+  - African
+  - Arab
+  reference_answer: North African Arab
+- question: In which city are the headquarters of the American research and scientific
+    development company where Ravi Sethi worked as computer scientist located?
+  type: multi
+  relevant_sources:
+  - Ravi_Sethi_7560a5.md
+  - Bell_Labs_726cbc.md
+  answer_keywords:
+  - Murray
+  - Hill
+  reference_answer: Murray Hill
+- question: What is the full name of the viral respiratory disease in which Yi Guan's
+    research helped to prevent the outbreak of?
+  type: multi
+  relevant_sources:
+  - Yi_Guan_1fd55a.md
+  - Timeline_of_the_SARS_outbreak_57656c.md
+  answer_keywords:
+  - severe
+  - acute
+  - respiratory
+  - syndrome
+  reference_answer: severe acute respiratory syndrome
+- question: Which Kentucky Writers Hall of Fame author has had works published by
+    Dim Gray Bar Press?
+  type: multi
+  relevant_sources:
+  - Dim_Gray_Bar_Press_809c57.md
+  - Wendell_Berry_4313ab.md
+  answer_keywords:
+  - Wendell
+  - Berry
+  reference_answer: Wendell Berry
+- question: What director worked with Vikram Bhatt on a film starring actors Rajneesh
+    Duggal and Adah Sharma?
+  type: multi
+  relevant_sources:
+  - 1920_film_series_78d752.md
+  - 1920_film_db5e98.md
+  answer_keywords:
+  - Tinu
+  - Suresh
+  - Desai
+  reference_answer: Tinu Suresh Desai
+- question: ' Robert Smith founded the multinational company headquartered in what
+    city?'
+  type: multi
+  relevant_sources:
+  - Robert_Smith_Illinois_politician_865c2b.md
+  - General_Mills_011f74.md
+  answer_keywords:
+  - Golden
+  - Valley
+  - Minnesota
+  reference_answer: Golden Valley, Minnesota,
+- question: What amount was the settlement that the character from the Son of al Quada
+    got in 2017?
+  type: multi
+  relevant_sources:
+  - Son_of_al_Qaeda_015df9.md
+  - Omar_Khadr_92c9dd.md
+  answer_keywords:
+  - '10'
+  - '5'
+  - million
+  reference_answer: $10.5 million
+- question: Considered the strongest recorded tropical cyclone, which cyclone had
+    a film made about it in 2007?
+  type: multi
+  relevant_sources:
+  - Kathantara_27af02.md
+  - 1999_Odisha_cyclone_9f509e.md
+  answer_keywords:
+  - '1999'
+  - Odisha
+  - cyclone
+  reference_answer: 1999 Odisha cyclone
+- question: The 2000 British film Snatch was later adapted into a television series
+    for what streaming service?
+  type: multi
+  relevant_sources:
+  - Snatch_TV_series_0447c5.md
+  - Snatch_film_b83776.md
+  answer_keywords:
+  - Crackle
+  reference_answer: Crackle
+- question: Chris Williams last played for which football club from the National League
+    North?
+  type: multi
+  relevant_sources:
+  - Chris_Williams_English_footballer_4c64d6.md
+  - Salford_City_F_C_0b6a1a.md
+  answer_keywords:
+  - Salford
+  - City
+  - Football
+  - Club
+  reference_answer: Salford City Football Club
+- question: Who designed the hotel that held the IFBB professional bodybuilding competition
+    in September 1991?
+  type: multi
+  relevant_sources:
+  - 1991_Mr_Olympia_bb4432.md
+  - Walt_Disney_World_Dolphin_41494e.md
+  answer_keywords:
+  - architect
+  - Michael
+  - Graves
+  reference_answer: architect Michael Graves
+- question: At the 71st Golden Globe Awards for television in 2013, what achievement
+    did Breaking Bad, police sitcom Brooklyn Nine-Nine and American Hustle attain?
+  type: multi
+  relevant_sources:
+  - 71st_Golden_Globe_Awards_8dbed6.md
+  - Brooklyn_Nine_Nine_eec7c9.md
+  answer_keywords:
+  - multiple
+  - awards
+  reference_answer: multiple awards
+- question: Which actor does American Beauty and American Beauty have in common?
+  type: multi
+  relevant_sources:
+  - American_Beauty_soundtrack_1b32f2.md
+  - American_Beauty_1999_film_ec6498.md
+  answer_keywords:
+  - Kevin
+  - Spacey
+  reference_answer: Kevin Spacey
+- question: 'Onika Tanya Maraj is a judge on a television show hosted by whom? '
+  type: multi
+  relevant_sources:
+  - American_Idol_season_12_9c1d46.md
+  - Nicki_Minaj_206852.md
+  answer_keywords:
+  - Ryan
+  - Seacrest
+  reference_answer: Ryan Seacrest
+- question: Are Hot Rod and The Memory of Our People both magazines?
+  type: multi
+  relevant_sources:
+  - Hot_Rod_magazine_80c147.md
+  - The_Memory_of_Our_People_6f267d.md
+  answer_keywords:
+  - 'yes'
+  reference_answer: 'yes'
+- question: Who was Chamberlain and Colonel of the military staff of The Merrie Monarch?
+  type: multi
+  relevant_sources:
+  - Charles_Hastings_Judd_409cf1.md
+  - Kal_kaua_055843.md
+  answer_keywords:
+  - Colonel
+  - Charles
+  - Hastings
+  - Judd
+  reference_answer: Colonel Charles Hastings Judd
+- question: Who has written more than 300 papers, Semyon Aranovich Gershgorin or Pavel
+    Alexandrov?
+  type: multi
+  relevant_sources:
+  - Semyon_Aranovich_Gershgorin_36e989.md
+  - Pavel_Alexandrov_a4f8e6.md
+  answer_keywords:
+  - Pavel
+  - Sergeyevich
+  - Alexandrov
+  reference_answer: Pavel Sergeyevich Alexandrov
+- question: Which post DC Extended Universe actress will also play a role in what
+    is intended to be the fifth installment of the DC Extended Universe?
+  type: multi
+  relevant_sources:
+  - Justice_League_film_2fb654.md
+  - Gal_Gadot_593d0f.md
+  answer_keywords:
+  - Gal
+  - Gadot
+  reference_answer: Gal Gadot
+- question: Who was the captain of the only battleship to provide gunfire support
+    during the Vietnam War?
+  type: multi
+  relevant_sources:
+  - J_Edward_Snyder_6c15cb.md
+  - USS_New_Jersey_BB_62_191143.md
+  answer_keywords:
+  - Rear
+  - Adm
+  - J
+  - Edward
+  - Snyder
+  reference_answer: Rear Adm. J. Edward Snyder
+- question: The Polar Bears featuring the voice of Armie Hammer, is also the same
+    voice actor for which character in Cars 3?
+  type: multi
+  relevant_sources:
+  - The_Polar_Bears_b06086.md
+  - Armie_Hammer_7c1778.md
+  answer_keywords:
+  - Jackson
+  - Storm
+  reference_answer: Jackson Storm
+- question: Which tower is taller, 712 Fifth Avenue or Manhattan Life Insurance Building?
+  type: multi
+  relevant_sources:
+  - 712_Fifth_Avenue_4807f9.md
+  - Manhattan_Life_Insurance_Building_fb6468.md
+  answer_keywords:
+  - '712'
+  - 5th
+  - Avenue
+  reference_answer: 712 5th Avenue
+- question: Is the Pakistan fast bowler who joined the Kent County Cricket Club in
+    June, 2011 a left-hand or right-hand batsmans?
+  type: multi
+  relevant_sources:
+  - Kent_County_Cricket_Club_in_2011_f5f89f.md
+  - Wahab_Riaz_123828.md
+  answer_keywords:
+  - right
+  - hand
+  reference_answer: right-hand
+- question: Who was born first, Arthur Conan Doyle or Penelope Lively?
+  type: multi
+  relevant_sources:
+  - Arthur_Conan_Doyle_d7ed32.md
+  - Penelope_Lively_f2dd67.md
+  answer_keywords:
+  - Arthur
+  - Ignatius
+  - Conan
+  - Doyle
+  reference_answer: Arthur Ignatius Conan Doyle
+- question: The Tennessee Volunteers football team plays as a member for a conference
+    in what city?
+  type: multi
+  relevant_sources:
+  - 1984_Tennessee_Volunteers_football_team_2ba4c2.md
+  - Southeastern_Conference_3f32fe.md
+  answer_keywords:
+  - Birmingham
+  - Alabama
+  reference_answer: Birmingham, Alabama
+- question: Ernest Foot was the best friend of the fighter pilot who had how many
+    victories?
+  type: multi
+  relevant_sources:
+  - Ernest_Foot_014335.md
+  - Albert_Ball_d16b2e.md
+  answer_keywords:
+  - '44'
+  reference_answer: '44'
+- question: From March 631 to April 631, Farrukhzad Khosrau V was the king of an empire
+    that succeeded which empire?
+  type: multi
+  relevant_sources:
+  - Farrukhzad_Khosrow_V_915f36.md
+  - Sasanian_Empire_e49dd6.md
+  answer_keywords:
+  - Parthian
+  - Empire
+  reference_answer: the Parthian Empire
+- question: Which suburb is a soap opera featuring a character named Beverly Marshall
+    set in?
+  type: multi
+  relevant_sources:
+  - Beverly_Marshall_579d76.md
+  - Ramsay_Street_cc7bce.md
+  answer_keywords:
+  - Erinsborough
+  reference_answer: Erinsborough
+- question: Which country did the Falkland Islands beat in the 2010 Commonwealth games
+    that has eleven administrative divisions?
+  type: multi
+  relevant_sources:
+  - Gerald_Reive_c5cd23.md
+  - Samoa_086113.md
+  answer_keywords:
+  - Samoa
+  reference_answer: Samoa
+- question: Which Netflix series "Unbreakable" character is Elizabeth Claire Kemper
+    known for playing?
+  type: multi
+  relevant_sources:
+  - Ellie_Kemper_01e39c.md
+  - Kimmy_Schmidt_21f50a.md
+  answer_keywords:
+  - Kimberly
+  - Couger
+  - Kimmy
+  - Schmidt
+  reference_answer: Kimberly Couger "Kimmy" Schmidt
+- question: Which television series featured an actor who also performed in "The Young
+    Ones"?
+  type: multi
+  relevant_sources:
+  - Bad_News_band_378875.md
+  - Ade_Edmondson_a1c7cd.md
+  answer_keywords:
+  - Comic
+  - Strip
+  - Presents
+  reference_answer: '"The Comic Strip Presents..."'
+- question: Are both Dafeng District and Dazhou located in the same province?
+  type: multi
+  relevant_sources:
+  - Dafeng_District_51a329.md
+  - Dazhou_d87030.md
+  answer_keywords:
+  - 'no'
+  reference_answer: 'no'
+- question: In what century did this Native warrior and chief, whose brother Tenskwatawa
+    led the Tippecanoe order of battle, become the primary leader of a large, multi
+    tribal confederacy?
+  type: multi
+  relevant_sources:
+  - Tippecanoe_order_of_battle_d27975.md
+  - Tecumseh_bcf68b.md
+  answer_keywords:
+  - nineteenth
+  reference_answer: nineteenth
+- question: What film was written and directed by Joby Harold with music written by
+    Samuel Sim?
+  type: multi
+  relevant_sources:
+  - Samuel_Sim_07d71f.md
+  - Awake_film_360ee6.md
+  answer_keywords:
+  - Awake
+  reference_answer: Awake
+- question: What is the name of the ethnic group who settled in Canada in the 17th
+    century that participated in a conflict with Irish Catholic immigrants in the
+    Shiners' War?
+  type: multi
+  relevant_sources:
+  - Shiners_War_4e069e.md
+  - French_Canadians_6cf5b4.md
+  answer_keywords:
+  - French
+  - Canadians
+  reference_answer: French Canadians
+- question: The author of The Thing of It Is... is what Nationality?
+  type: multi
+  relevant_sources:
+  - The_Thing_of_It_Is_1e56e8.md
+  - William_Goldman_9b7a75.md
+  answer_keywords:
+  - American
+  reference_answer: American
+- question: How long is the bridge in the Öresund Region that connect Copenhagen,
+    Denmark and Malmo, Sweden?
+  type: multi
+  relevant_sources:
+  - resund_Region_549ba5.md
+  - resund_Bridge_738526.md
+  answer_keywords:
+  - '8'
+  - km
+  reference_answer: 8 km
+- question: 'Martin Patterson "Pat" Hingle was a close friend of an actor who achieved
+    success in what Western TV series? '
+  type: multi
+  relevant_sources:
+  - Pat_Hingle_5a5cf2.md
+  - Clint_Eastwood_b84954.md
+  answer_keywords:
+  - Rawhide
+  reference_answer: Rawhide
+- question: Is the Marsilea or the Brabejum the genus of more individual species of
+    plants?
+  type: multi
+  relevant_sources:
+  - Marsilea_9312fe.md
+  - Brabejum_dfc7c0.md
+  answer_keywords:
+  - Marsilea
+  reference_answer: Marsilea
+- question: What building is opposite the ceremonial meeting place of the Accession
+    Council in the United Kingdom?
+  type: multi
+  relevant_sources:
+  - Mark_Masons_Hall_London_bdb6e8.md
+  - St_James_s_Palace_d826d9.md
+  answer_keywords:
+  - Mark
+  - Masons
+  - Hall
+  reference_answer: Mark Masons' Hall
+- question: What material did a hairdresser from Yorkshire, England invent that was
+    named by his granddaughter?
+  type: multi
+  relevant_sources:
+  - Maurice_Ward_158a0a.md
+  - Starlite_2c1671.md
+  answer_keywords:
+  - Starlite
+  reference_answer: Starlite
+- question: One Raffles Place is one of the tallest skyscrapers in the city of Singapore
+    and tallest in the wolrd outside North America until it was succeeded by a Building
+    in city?
+  type: multi
+  relevant_sources:
+  - One_Raffles_Place_372458.md
+  - Bank_of_China_Tower_Hong_Kong_eaec83.md
+  answer_keywords:
+  - Hong
+  - Kong
+  reference_answer: Hong Kong
+- question: Which case came first, Craig v. Boren or United States v. Paramount Pictures,
+    Inc.?
+  type: multi
+  relevant_sources:
+  - Craig_v_Boren_910f00.md
+  - United_States_v_Paramount_Pictures_Inc_4aa665.md
+  answer_keywords:
+  - Craig
+  - v
+  - Boren
+  reference_answer: Craig v. Boren
+- question: What is the nickname of the city where Darling's Waterfront Pavilion is
+    located?
+  type: multi
+  relevant_sources:
+  - Darling_s_Waterfront_Pavilion_69e5b4.md
+  - Bangor_Maine_ff5683.md
+  answer_keywords:
+  - Queen
+  - City
+  reference_answer: '"Queen City"'
+- question: The Kansas City Wizards have had three home venues in Kansas City in their
+    time.  Which was their first?
+  type: multi
+  relevant_sources:
+  - Children_s_Mercy_Park_c9283f.md
+  - CommunityAmerica_Ballpark_1e3f7d.md
+  answer_keywords:
+  - Arrowhead
+  - Stadium
+  reference_answer: Arrowhead Stadium
+- question: Henry Hall is known for fighting in the Revolutionary War, and for being
+    the first to successfully cultivate this food found in what type of bogs?
+  type: multi
+  relevant_sources:
+  - Henry_Hall_American_revolution_8f3329.md
+  - Cranberry_9830f3.md
+  answer_keywords:
+  - acidic
+  reference_answer: acidic
+- question: A scam involving a male calling small town fast-food restaurants and pretending
+    to be a police officer to have them strip search employees was turned into a movie
+    of what name?
+  type: multi
+  relevant_sources:
+  - Compliance_film_3647bc.md
+  - Strip_search_phone_call_scam_9b1a1b.md
+  answer_keywords:
+  - Compliance
+  reference_answer: Compliance
+- question: What airport serviced by American Airlines Shuttle, is also the largest
+    airport in the New England region and 17th busiest in the U.S?
+  type: multi
+  relevant_sources:
+  - American_Airlines_Shuttle_119c4a.md
+  - Logan_International_Airport_d86097.md
+  answer_keywords:
+  - Logan
+  - International
+  - Airport
+  reference_answer: Logan International Airport
+- question: Which genus has more species, Xanthoceras or Ehretia?
+  type: multi
+  relevant_sources:
+  - Xanthoceras_306d61.md
+  - Ehretia_39d6d4.md
+  answer_keywords:
+  - Ehretia
+  reference_answer: Ehretia
+- question: What arcade game is named after the only player in major league history
+    to have a 0.300 batting average for 7 consecutive seasons?
+  type: multi
+  relevant_sources:
+  - Frank_Thomas_Big_Hurt_f9ec32.md
+  - Frank_Thomas_designated_hitter_3ae59d.md
+  answer_keywords:
+  - pinball
+  - machine
+  reference_answer: a pinball machine
+- question: What american actress/singer born in 1956 recorded the song Something
+    there for beauty and the beast?
+  type: multi
+  relevant_sources:
+  - Something_There_380707.md
+  - Paige_O_Hara_4492a0.md
+  answer_keywords:
+  - Donna
+  - Paige
+  - Helmintoller
+  reference_answer: Donna Paige Helmintoller
+- question: 'Which professional baseball player and National 1993 Baseball Hall of
+    Fame inductee is featured in the Greatest Sports Legends anthology? '
+  type: multi
+  relevant_sources:
+  - Greatest_Sports_Legends_26088b.md
+  - Reggie_Jackson_9932b3.md
+  answer_keywords:
+  - Reginald
+  - Martinez
+  - Reggie
+  - Jackson
+  reference_answer: Reginald Martinez "Reggie" Jackson
+- question: Salisbury Woodland Gardens links a zoo with a park designed and built
+    under the watchful eye of who?
+  type: multi
+  relevant_sources:
+  - Salisbury_Woodland_Gardens_Blackpool_429c6c.md
+  - Stanley_Park_Blackpool_965354.md
+  answer_keywords:
+  - Thomas
+  - Mawson
+  reference_answer: Thomas Mawson
+- question: What class of instrument does Apatim Majumdar play?
+  type: multi
+  relevant_sources:
+  - Apratim_Majumdar_037c32.md
+  - Sarod_c6c707.md
+  answer_keywords:
+  - strings
+  reference_answer: strings
+- question: Jamie Harris is best known for his role as The Hook-Handed Man in a movie
+    directed by who ?
+  type: multi
+  relevant_sources:
+  - Jamie_Harris_actor_8be421.md
+  - Lemony_Snicket_s_A_Series_of_Unfortunate_Events_b03343.md
+  answer_keywords:
+  - Brad
+  - Silberling
+  reference_answer: Brad Silberling
+- question: How many laps did Harry Prowell run during the 10,000 metres race at the
+    1967 Pan American Games?
+  type: multi
+  relevant_sources:
+  - Harry_Prowell_091e77.md
+  - 10_000_metres_762faa.md
+  answer_keywords:
+  - '25'
+  - laps
+  reference_answer: 25 laps
+- question: Are  Chrysalis and Look both women's magazines?
+  type: multi
+  relevant_sources:
+  - Chrysalis_magazine_9f97e8.md
+  - Look_UK_magazine_3a0c07.md
+  answer_keywords:
+  - 'yes'
+  reference_answer: 'yes'
+- question: Which author has won more Pulitzer Prizes, Thomas Friedman or Henri Bergson?
+  type: multi
+  relevant_sources:
+  - Thomas_Friedman_64713c.md
+  - Henri_Bergson_271acb.md
+  answer_keywords:
+  - Thomas
+  - Loren
+  - Friedman
+  reference_answer: Thomas Loren Friedman
+- question: Yoann Lemoine, a French video director, has created music videos for Lana
+    Del Rey, Katy Perry, and an orchestral country pop ballad by which top pop artist?
+  type: multi
+  relevant_sources:
+  - Yoann_Lemoine_88a6da.md
+  - Back_to_December_514336.md
+  answer_keywords:
+  - Taylor
+  - Swift
+  reference_answer: Taylor Swift
+- question: In what city can a person find both the Nusretiye Clock Tower and the
+    Eski Imaret Mosque be found?
+  type: multi
+  relevant_sources:
+  - Nusretiye_Clock_Tower_9bcc17.md
+  - Eski_Imaret_Mosque_b4d62c.md
+  answer_keywords:
+  - Istanbul
+  - Turkey
+  reference_answer: Istanbul, Turkey
+- question: What is Opry Mills in Nashville, Tennessee?
+  type: multi
+  relevant_sources:
+  - Music_City_Queen_82e4a1.md
+  - Opry_Mills_53c375.md
+  answer_keywords:
+  - super
+  - regional
+  - shopping
+  - mall
+  reference_answer: super-regional shopping mall
+- question: Spaceware Sky Division II is manufactured by this subsidiary, which is
+    one of twelve subdivisions of Inner Mongolia, China?
+  type: multi
+  relevant_sources:
+  - Spaceware_Sky_Vision_II_63bd3f.md
+  - Ordos_City_e429e9.md
+  answer_keywords:
+  - Ordos
+  - City
+  reference_answer: Ordos City
+- question: Which director had the longest career, Alain Resnais or Scott Sidney?
+  type: multi
+  relevant_sources:
+  - Alain_Resnais_47ec9e.md
+  - Scott_Sidney_5ce003.md
+  answer_keywords:
+  - Scott
+  - Sidney
+  reference_answer: Scott Sidney
+- question: in 1999, Spirit Halloween LLC was purchased by a mall retailer that has
+    how many stores in the United States and Canada ?
+  type: multi
+  relevant_sources:
+  - Spirit_Halloween_6adf3e.md
+  - Spencer_Gifts_c0e0e3.md
+  answer_keywords:
+  - over
+  - '600'
+  - stores
+  reference_answer: over 600 stores
+- question: James Fieser received his B.A. from what liberal arts work college that
+    was founded in 1855?
+  type: multi
+  relevant_sources:
+  - James_Fieser_e21429.md
+  - Berea_College_88c6f9.md
+  answer_keywords:
+  - Berea
+  - College
+  reference_answer: Berea College
+- question: What year did Roy Rogers and his third wife star in a film directed by
+    Frank McDonald?
+  type: multi
+  relevant_sources:
+  - Along_the_Navajo_Trail_film_646e73.md
+  - Dale_Evans_0679a0.md
+  answer_keywords:
+  - '1945'
+  reference_answer: '1945'
+- question: ' The name "Mountbatten-Windsor" applies to male-line descendants of the
+    Queen without royal styles and titles which is a Eurpean dynasty resulting in
+    what family?'
+  type: multi
+  relevant_sources:
+  - Mountbatten_Windsor_14ee69.md
+  - Mountbatten_family_2f3191.md
+  answer_keywords:
+  - Mountbatten
+  - family
+  reference_answer: Mountbatten family
+- question: Who is known for producing the documentary television series based on
+    the book by science historian James Burke?
+  type: multi
+  relevant_sources:
+  - James_Burke_science_historian_6fe4bf.md
+  - Connections_TV_series_deb419.md
+  answer_keywords:
+  - James
+  - Burke
+  reference_answer: James Burke
+- question: which is larger Asante Traditional Buildings or Gulangyu?
+  type: multi
+  relevant_sources:
+  - Gulangyu_710c67.md
+  - Asante_Traditional_Buildings_273857.md
+  answer_keywords:
+  - Gulangyu
+  reference_answer: Gulangyu
+- question: Armageddon in Retrospect was written by the author who was best known
+    for what 1969 satire novel?
+  type: multi
+  relevant_sources:
+  - Armageddon_in_Retrospect_84dfe1.md
+  - Kurt_Vonnegut_642cae.md
+  answer_keywords:
+  - Slaughterhouse
+  - Five
+  reference_answer: Slaughterhouse-Five
+- question: Patrick Kennedy is known for his collections of Irish  folktales from
+    a province situated in which part of Ireland ?
+  type: multi
+  relevant_sources:
+  - Patrick_Kennedy_folklorist_1e1d34.md
+  - Leinster_d4e5b6.md
+  answer_keywords:
+  - east
+  - Ireland
+  reference_answer: the east of Ireland
+- question: What NIFL Premier Intermediate League team did Sean Connor play for?
+  type: multi
+  relevant_sources:
+  - Sean_Connor_d7e3bf.md
+  - Lisburn_Distillery_F_C_e0524d.md
+  answer_keywords:
+  - Distillery
+  reference_answer: Distillery
+- question: Which character does this protagonist, who secretly loves and marries
+    a member of the rival house, of William Shakespeare's tragedy that has a fictional
+    character Benvolio slay?
+  type: multi
+  relevant_sources:
+  - Benvolio_848ddf.md
+  - Romeo_87e7c1.md
+  answer_keywords:
+  - Tybalt
+  reference_answer: Tybalt
+- question: What was the name of the fanzine that interviewed the Sex Pistols bassist
+    when he was in the band "The Flowers of Romance?"
+  type: multi
+  relevant_sources:
+  - The_Flowers_of_Romance_band_99921b.md
+  - Sid_Vicious_3e1184.md
+  answer_keywords:
+  - SKUM
+  reference_answer: SKUM
+- question: What, known as AAS, is commonly used in bodybuilding?
+  type: multi
+  relevant_sources:
+  - Steroid_use_in_Australia_dfca20.md
+  - Anabolic_steroid_0fb269.md
+  answer_keywords:
+  - Anabolic
+  - steroids
+  reference_answer: Anabolic steroids
+- question: Which American character actor who starred on the television series "Stargate
+    SG-1" (1997–2007) and appeared in "Episode 8" of "Twin Peaks" as a guest star?
+  type: multi
+  relevant_sources:
+  - Episode_8_Twin_Peaks_b77be3.md
+  - Don_S_Davis_d33dcd.md
+  answer_keywords:
+  - Don
+  - S
+  - Davis
+  reference_answer: Don S. Davis
+- question: Candy Coburn has shared the stage with an American country music group
+    with who playing guitar?
+  type: multi
+  relevant_sources:
+  - Candy_Coburn_0e7ff3.md
+  - Lady_Antebellum_c21580.md
+  answer_keywords:
+  - Charles
+  - Kelley
+  reference_answer: Charles Kelley
+- question: What is the population according to the 2007 population census of the
+    city in which the National Archives and Library of Ethiopia is located?
+  type: multi
+  relevant_sources:
+  - National_Archives_and_Library_of_Ethiopia_6068a1.md
+  - Addis_Ababa_6c835e.md
+  answer_keywords:
+  - '3'
+  - '384'
+  - '569'
+  reference_answer: 3,384,569
+- question: Which composer created Night Ferry first performed in 2012 at Symphony
+    Center in Chicago?
+  type: multi
+  relevant_sources:
+  - Night_Ferry_composition_9f4c6a.md
+  - Symphony_Center_f29c57.md
+  answer_keywords:
+  - Anna
+  - Clyne
+  reference_answer: Anna Clyne
+- question: To which aircraft carrier was the VMF-213 Marine Fighting Squadron assigned
+    to durning World War II?
+  type: multi
+  relevant_sources:
+  - VMF_213_2b4a56.md
+  - USS_Essex_CV_9_9c73ce.md
+  answer_keywords:
+  - USS
+  - Essex
+  reference_answer: USS Essex
+- question: Can Stenocereus and Pachypodium both include tree like plants?
+  type: multi
+  relevant_sources:
+  - Stenocereus_df3b39.md
+  - Pachypodium_9ddc3e.md
+  answer_keywords:
+  - 'yes'
+  reference_answer: 'yes'
+- question: What movie did Pitof direct which had an action-adventure tie-in video
+    game based off of it in 2004?
+  type: multi
+  relevant_sources:
+  - Catwoman_video_game_223672.md
+  - Catwoman_film_4861a6.md
+  answer_keywords:
+  - Catwoman
+  reference_answer: Catwoman
+- question: on 16 January 1995 "First Knight" was being filmed at a studio located
+    how far from Windsor ?
+  type: multi
+  relevant_sources:
+  - Filming_of_James_Bond_in_the_1990s_7f307e.md
+  - Pinewood_Studios_37560f.md
+  answer_keywords:
+  - '7'
+  - miles
+  reference_answer: 7 miles
+- question: What is the name of the actress who has received a Drama Desk award and
+    was part of the cast album for the 2007 Broadway production of the hit musical,
+    "Grease"?
+  type: multi
+  relevant_sources:
+  - Grease_The_New_Broadway_Cast_Recording_f7ac05.md
+  - Laura_Osnes_4365e8.md
+  answer_keywords:
+  - Laura
+  - Ann
+  - Osnes
+  reference_answer: Laura Ann Osnes
+- question: Marion Greene was a health policy analyst for St. Judt Medical company,
+    which had how many principal operations worldwide?
+  type: multi
+  relevant_sources:
+  - Marion_Greene_672f65.md
+  - St_Jude_Medical_057b76.md
+  answer_keywords:
+  - '20'
+  reference_answer: '20'
+- question: Which Genus has more species Eucryphia or Lepidozamia ?
+  type: multi
+  relevant_sources:
+  - Eucryphia_3801b3.md
+  - Lepidozamia_4d1d3c.md
+  answer_keywords:
+  - Eucryphia
+  reference_answer: Eucryphia
+- question: In what city was the Italian Baroque composer who composed a set of sonatas,
+    titled Op. 5, born?
+  type: multi
+  relevant_sources:
+  - Six_Violin_Sonatas_Op_5_Vivaldi_6d604d.md
+  - Antonio_Vivaldi_2d7984.md
+  answer_keywords:
+  - Venice
+  reference_answer: Venice
+- question: Meaning "reddish water" in Hawaiian, which location was Butch Van Artsdalen
+    known for surfing 25-foot waves at?
+  type: multi
+  relevant_sources:
+  - Butch_Van_Artsdalen_be35e1.md
+  - Waimea_Bay_Hawaii_995124.md
+  answer_keywords:
+  - Waimea
+  - Bay
+  reference_answer: Waimea Bay
+- question: What type of magazine is Eugene Habecker the chairman of?
+  type: multi
+  relevant_sources:
+  - Eugene_Habecker_cdba38.md
+  - Christianity_Today_13cae1.md
+  answer_keywords:
+  - evangelical
+  - Christian
+  - periodical
+  reference_answer: evangelical Christian periodical
+- question: Flyboys stars which actor who was nominated for an Academy Award for "127
+    Hours"?
+  type: multi
+  relevant_sources:
+  - Flyboys_film_6b9885.md
+  - James_Franco_9e14e1.md
+  answer_keywords:
+  - James
+  - Franco
+  reference_answer: James Franco
+- question: The English actor Kris Marshall played which character in the highly rated
+    comedy-drama television series "Death in Paradise"?
+  type: multi
+  relevant_sources:
+  - Kris_Marshall_97e2d7.md
+  - Death_in_Paradise_TV_series_8a650d.md
+  answer_keywords:
+  - DI
+  - Humphrey
+  - Goodman
+  reference_answer: DI Humphrey Goodman
+- question: In what month was the relief first officer of the flight that crashed
+    on its way to Cairo with a stop in New York Born?
+  type: multi
+  relevant_sources:
+  - Gameel_Al_Batouti_e3ff1b.md
+  - EgyptAir_Flight_990_dfd74a.md
+  answer_keywords:
+  - February
+  reference_answer: February
+- question: 'Which film was released first: Sacred Planet or Oz the Great and Powerful?'
+  type: multi
+  relevant_sources:
+  - Sacred_Planet_26fd7b.md
+  - Oz_the_Great_and_Powerful_510b50.md
+  answer_keywords:
+  - Sacred
+  - Planet
+  reference_answer: Sacred Planet
+- question: I'd Come for You is a single by the band formed in what Alberta city?
+  type: multi
+  relevant_sources:
+  - I_d_Come_for_You_578566.md
+  - Nickelback_6f9412.md
+  answer_keywords:
+  - Hanna
+  reference_answer: Hanna
+- question: Who is older, Ferdi Taygan or Mahesh Bhupathi?
+  type: multi
+  relevant_sources:
+  - Ferdi_Taygan_3b4041.md
+  - Mahesh_Bhupathi_3a9fd2.md
+  answer_keywords:
+  - Ferdi
+  - Taygan
+  reference_answer: Ferdi Taygan
+- question: Other than racing, what sport does the 1998 champion of the Toyota GRand
+    Prix practice?
+  type: multi
+  relevant_sources:
+  - 1998_Toyota_Grand_Prix_of_Long_Beach_9454fd.md
+  - Alex_Zanardi_6c35d7.md
+  answer_keywords:
+  - paracyclist
+  reference_answer: paracyclist
+- question: Where did Ian Harland study prior to studying at the oldest college at
+    the University of Cambridge?
+  type: multi
+  relevant_sources:
+  - Ian_Harland_36e836.md
+  - Peterhouse_Cambridge_0d5430.md
+  answer_keywords:
+  - Dragon
+  - School
+  - Oxford
+  reference_answer: The Dragon School in Oxford
+- question: In what 1997 American mystery crime film did Johnny Galecki start in?
+  type: multi
+  relevant_sources:
+  - Suicide_Kings_16f126.md
+  - Johnny_Galecki_5afa30.md
+  answer_keywords:
+  - Suicide
+  - Kings
+  reference_answer: Suicide Kings
+- question: Which came to market first, "Hey Pa! There's a Goat on the Roof" or "Poleconomy"
+  type: multi
+  relevant_sources:
+  - Hey_Pa_There_s_a_Goat_on_the_Roof_0c48a7.md
+  - Poleconomy_71629b.md
+  answer_keywords:
+  - Hey
+  - Pa
+  - There
+  - s
+  - Goat
+  - Roof
+  reference_answer: Hey Pa! There's a Goat on the Roof
+- question: What record did the Super Bowl XXXIV champions finish the regular-season
+    with in 1999?
+  type: multi
+  relevant_sources:
+  - 2000_Tennessee_Titans_season_e76917.md
+  - 1999_St_Louis_Rams_season_525baa.md
+  answer_keywords:
+  - record
+  - '13'
+  - '3'
+  reference_answer: a record of 13–3
+- question: What is the population of the town at the intersection of Interstate Highways
+    77 and  the longest Interstate highway within the borders of Virginia?
+  type: multi
+  relevant_sources:
+  - Wytheville_Virginia_d496c8.md
+  - Interstate_81_in_Virginia_b7118a.md
+  answer_keywords:
+  - '8'
+  - '211'
+  - '2010'
+  - census
+  reference_answer: 8,211 at the 2010 census
+- question: What was the nickname of the hitman hired by an Italian American Criminal
+    Organization?
+  type: multi
+  relevant_sources:
+  - Salvatore_Testa_81c4d5.md
+  - Philadelphia_crime_family_ac7efc.md
+  answer_keywords:
+  - Crowned
+  - Prince
+  - Philadelphia
+  - Mob
+  reference_answer: The Crowned Prince of the Philadelphia Mob
+- question: What was the position of Jean Baptiste Androuet du Cerceau under the man
+    who was King of the Polish-Lithuanian Commonwealth from 1573 to 1575?
+  type: multi
+  relevant_sources:
+  - Jean_Baptiste_Androuet_du_Cerceau_735d16.md
+  - Henry_III_of_France_2b1ba3.md
+  answer_keywords:
+  - supervisor
+  - royal
+  - works
+  reference_answer: supervisor of the royal works
+- question: Which American music star appeared as a guest in a Will & Grace episode
+    called "Back Up, Dancer"?
+  type: multi
+  relevant_sources:
+  - Back_Up_Dancer_df39ba.md
+  - Janet_Jackson_9e245b.md
+  answer_keywords:
+  - Janet
+  - Damita
+  - Jo
+  - Jackson
+  reference_answer: Janet Damita Jo Jackson
+- question: What army did the namesake of the ship launched as the München in 1930
+    fight in during the American Revolutionary War?
+  type: multi
+  relevant_sources:
+  - SS_General_von_Steuben_65b2aa.md
+  - Friedrich_Wilhelm_von_Steuben_b4e95a.md
+  answer_keywords:
+  - Continental
+  - Army
+  reference_answer: Continental Army
+- question: The Church of the Guanche People was founded in the city that is on the
+    most populated island of what larger area?
+  type: multi
+  relevant_sources:
+  - Church_of_the_Guanche_People_345bf1.md
+  - Tenerife_c81266.md
+  answer_keywords:
+  - Macaronesia
+  reference_answer: Macaronesia
+- question: What officially ended the first phase of the military conflict between
+    the British Raj and the Emirate of Afghanistan from 1878 to 1880?
+  type: multi
+  relevant_sources:
+  - Second_Anglo_Afghan_War_adb0b2.md
+  - Treaty_of_Gandamak_9d4d6d.md
+  answer_keywords:
+  - Treaty
+  - Gandamak
+  reference_answer: Treaty of Gandamak
+- question: The mass killing that took place at Oakland, California on April 2, 2012
+    was less deadly than the one that took place on October 1, 2015 in which state?
+  type: multi
+  relevant_sources:
+  - Oikos_University_shooting_11f108.md
+  - Umpqua_Community_College_shooting_e28f1f.md
+  answer_keywords:
+  - Oregon
+  reference_answer: Oregon
+- question: 'When did the rock band that sang "All Join Hands" rise to prominence? '
+  type: multi
+  relevant_sources:
+  - All_Join_Hands_e9261f.md
+  - Slade_837df1.md
+  answer_keywords:
+  - early
+  - 1970s
+  reference_answer: early 1970s
+- question: Where is the company that owns thanKing Horse pub restaurant chain based
+    ?
+  type: multi
+  relevant_sources:
+  - Hungry_Horse_c5f4e9.md
+  - Greene_King_a2012f.md
+  answer_keywords:
+  - Bury
+  - St
+  - Edmunds
+  reference_answer: Bury St Edmunds,
+- question: What is the uppermost age range for the sort of fiction written by Alexander
+    Gordon Smith?
+  type: multi
+  relevant_sources:
+  - Alexander_Gordon_Smith_f11d85.md
+  - Young_adult_fiction_1cf19f.md
+  answer_keywords:
+  - early
+  - 20s
+  reference_answer: early 20s
+- question: What is the birthday of the actress who was the Duchess in "The Revengers
+    Tragedy"?
+  type: multi
+  relevant_sources:
+  - Revengers_Tragedy_be6518.md
+  - Diana_Quick_8d842d.md
+  answer_keywords:
+  - '23'
+  - November
+  - '1946'
+  reference_answer: 23 November 1946
+- question: Which film starring Patrick Tatten is based on a book written by Steve
+    Lopez?
+  type: multi
+  relevant_sources:
+  - Patrick_Tatten_d1f09d.md
+  - The_Soloist_ff0893.md
+  answer_keywords:
+  - Soloist
+  reference_answer: The Soloist
+- question: Are Skeptical Inquirer and The Progressive Populist both tabloid-style
+    magazines?
+  type: multi
+  relevant_sources:
+  - Skeptical_Inquirer_ddc1f5.md
+  - The_Progressive_Populist_7c1a63.md
+  answer_keywords:
+  - 'no'
+  reference_answer: 'no'
+- question: The 1984 film "Marlene" is a documentary about an actress born in what
+    year?
+  type: multi
+  relevant_sources:
+  - Marlene_1984_film_0dd960.md
+  - Marlene_Dietrich_eb0bc6.md
+  answer_keywords:
+  - '1901'
+  reference_answer: '1901'
+- question: Which former mill town is near Rivington Hall Barn?
+  type: multi
+  relevant_sources:
+  - Rivington_Hall_Barn_ad6e1c.md
+  - Bolton_6ce6c9.md
+  answer_keywords:
+  - Bolton
+  reference_answer: Bolton
+- question: What prolific English engineer, who died on 15 December 1857, contributed
+    to the advent of the hot air engine by way of their open cycle devices?
+  type: multi
+  relevant_sources:
+  - Hot_air_engine_2ed8e1.md
+  - George_Cayley_2c8397.md
+  answer_keywords:
+  - George
+  - Cayley
+  reference_answer: George Cayley
+- question: Which dog is considered a giant dog breed, the  Leonberger or the Basset
+    Hound?
+  type: multi
+  relevant_sources:
+  - Leonberger_d19b69.md
+  - Basset_Hound_ca5229.md
+  answer_keywords:
+  - Leonberger
+  - giant
+  - dog
+  - breed
+  reference_answer: The Leonberger is a giant dog breed.
+- question: Are Staten Island Catapult and This Is Elvis both documentaries?
+  type: multi
+  relevant_sources:
+  - Staten_Island_Catapult_b5dab2.md
+  - This_Is_Elvis_5680b8.md
+  answer_keywords:
+  - 'yes'
+  reference_answer: 'yes'
+- question: What is the year of the event that occured first, Making Today a Perfect
+    Day was produced, or Frozen was produced?
+  type: multi
+  relevant_sources:
+  - Making_Today_a_Perfect_Day_325714.md
+  - Frozen_Fever_bdfa6c.md
+  answer_keywords:
+  - '2013'
+  reference_answer: '2013'
+- question: Which magazine is published more often, Shonen Jump or Rolling Stone?
+  type: multi
+  relevant_sources:
+  - Shonen_Jump_magazine_c6c12c.md
+  - Rolling_Stone_d01752.md
+  answer_keywords:
+  - Rolling
+  - Stone
+  reference_answer: Rolling Stone
+- question: Where is the Cocoa Krispies and former Superman sponsor located?
+  type: multi
+  relevant_sources:
+  - Adventures_of_Superman_TV_series_584d73.md
+  - Kellogg_s_ca2962.md
+  answer_keywords:
+  - Battle
+  - Creek
+  - Michigan
+  reference_answer: Battle Creek, Michigan
+- question: Who was born first Am Rong or Ava DuVernay ?
+  type: multi
+  relevant_sources:
+  - Am_Rong_6b4698.md
+  - Ava_DuVernay_0b5f01.md
+  answer_keywords:
+  - Am
+  - Rong
+  reference_answer: Am Rong
+- question: How many days did it take the Best New Artist of 2009 to sell 2 million
+    copies of an album in the UK and break a twenty year old record?
+  type: multi
+  relevant_sources:
+  - Robson_amp_Jerome_album_8b59be.md
+  - Adele_a5c59c.md
+  answer_keywords:
+  - '29'
+  reference_answer: '29'
+- question: '"Ew!" is a song by a television host born where?'
+  type: multi
+  relevant_sources:
+  - Ew_e1feb4.md
+  - Jimmy_Fallon_fd7e09.md
+  answer_keywords:
+  - Bay
+  - Ridge
+  - Brooklyn
+  reference_answer: Bay Ridge, Brooklyn
+- question: The northern English anglian Kingdom in the Humber estuary spoke what
+    dialect of english?
+  type: multi
+  relevant_sources:
+  - Northumbrian_dialect_7334ca.md
+  - Kingdom_of_Northumbria_4036b8.md
+  answer_keywords:
+  - Northumbrian
+  reference_answer: Northumbrian
+- question: What Kentucky county has a population of 60,316 and features the Lake
+    Louisvilla neighborhood?
+  type: multi
+  relevant_sources:
+  - Lake_Louisvilla_Louisville_799a9a.md
+  - Oldham_County_Kentucky_34ed53.md
+  answer_keywords:
+  - Oldham
+  - County
+  reference_answer: Oldham County
+- question: Are both Duke Energy and Affiliated Managers Group based in Massachusetts?
+  type: multi
+  relevant_sources:
+  - Duke_Energy_e5896e.md
+  - Affiliated_Managers_Group_d1aeb2.md
+  answer_keywords:
+  - 'no'
+  reference_answer: 'no'
+- question: Two positions were filled in The Voice of Ireland b which British-Irish
+    girl group based in London, England?
+  type: multi
+  relevant_sources:
+  - The_Voice_of_Ireland_series_4_30dc26.md
+  - The_Saturdays_f252bf.md
+  answer_keywords:
+  - Saturdays
+  reference_answer: The Saturdays
+- question: Who was also an actor, Serri or John Fogerty?
+  type: multi
+  relevant_sources:
+  - Serri_singer_21ab4f.md
+  - John_Fogerty_33a22e.md
+  answer_keywords:
+  - Serri
+  reference_answer: Serri
+- question: What is the international football competition for women that Liu Ailing
+    played in the 1991,1995, 1999 editions?
+  type: multi
+  relevant_sources:
+  - Liu_Ailing_cfd610.md
+  - FIFA_Women_s_World_Cup_48fba6.md
+  answer_keywords:
+  - international
+  - football
+  - competition
+  reference_answer: international football competition
+- question: Rock Springs is a collection of short stories by an author born in what
+    year?
+  type: multi
+  relevant_sources:
+  - Rock_Springs_short_story_collection_59545d.md
+  - Richard_Ford_db80e7.md
+  answer_keywords:
+  - '1944'
+  reference_answer: '1944'
+- question: Folie à Deux is a studio album by the American rock band formed in which
+    city?
+  type: multi
+  relevant_sources:
+  - Folie_Deux_album_a3d083.md
+  - Fall_Out_Boy_ba7790.md
+  answer_keywords:
+  - Wilmette
+  reference_answer: Wilmette
+- question: 'This work of literature _______ , known by its Greek title Oedipus Tyrannus
+    was argued by Sigmund Freud to be one of the greatest works of world literature
+    in his 1928 article. '
+  type: multi
+  relevant_sources:
+  - Dostoevsky_and_Parricide_f04c2c.md
+  - Oedipus_Rex_d47dfb.md
+  answer_keywords:
+  - Oedipus
+  - Rex
+  reference_answer: Oedipus Rex
+- question: Katherine Waterston and Chrisann Brennan has what in common?
+  type: multi
+  relevant_sources:
+  - Katherine_Waterston_adb28e.md
+  - Chrisann_Brennan_25ed97.md
+  answer_keywords:
+  - Steve
+  - Jobs
+  reference_answer: Steve Jobs
+- question: The voice of Homer Simpson also voices what alien character in the television
+    series "The Simpsons"?
+  type: multi
+  relevant_sources:
+  - Kang_and_Kodos_53bfec.md
+  - Dan_Castellaneta_8e2cb9.md
+  answer_keywords:
+  - Kodos
+  reference_answer: Kodos
+- question: What studio album did Kanye West record with Roc-A-Fella Records and soul
+    singer Dwele?
+  type: multi
+  relevant_sources:
+  - Power_Kanye_West_song_11eb85.md
+  - My_Beautiful_Dark_Twisted_Fantasy_29d96e.md
+  answer_keywords:
+  - My
+  - Beautiful
+  - Dark
+  - Twisted
+  - Fantasy
+  reference_answer: My Beautiful Dark Twisted Fantasy
+- question: 'Were Enrique Carreras and Lionel Ngakane both filmakers during the 20th
+    century? '
+  type: multi
+  relevant_sources:
+  - Enrique_Carreras_fdfaad.md
+  - Lionel_Ngakane_8a375d.md
+  answer_keywords:
+  - 'yes'
+  reference_answer: 'yes'
+- question: The city that contains the Yunnan Provincial Museum is also known by what
+    nickname?
+  type: multi
+  relevant_sources:
+  - Yunnan_Provincial_Museum_c8f9fc.md
+  - Kunming_08b9a1.md
+  answer_keywords:
+  - Spring
+  - city
+  reference_answer: Spring city
+- question: Where is the singer of "B Boy" raised?
+  type: multi
+  relevant_sources:
+  - B_Boy_song_578ec6.md
+  - Meek_Mill_1f844b.md
+  answer_keywords:
+  - Philadelphia
+  reference_answer: Philadelphia
+- question: The Column of Saint Zanobi  is a monumental marble column located just
+    north of religious building with the status of what?
+  type: multi
+  relevant_sources:
+  - Colonna_di_San_Zanobi_Florence_fd1468.md
+  - Florence_Baptistery_e6f49a.md
+  answer_keywords:
+  - minor
+  - basilica
+  reference_answer: a minor basilica
+- question: The Ingerophrynus gollum is named after a character in a book that sold
+    how many copies?
+  type: multi
+  relevant_sources:
+  - Ingerophrynus_gollum_d66449.md
+  - The_Lord_of_the_Rings_cbb53f.md
+  answer_keywords:
+  - '150'
+  - million
+  - copies
+  reference_answer: 150 million copies
+- question: What Danish eurodance group had a single called "Barbie Girl" which resulted
+    in a lawsuit in 2002?
+  type: multi
+  relevant_sources:
+  - Mattel_Inc_v_MCA_Records_Inc_f54a87.md
+  - Aqua_band_fd9a63.md
+  answer_keywords:
+  - Aqua
+  reference_answer: Aqua
+- question: Which case was decided first, Selle v. Gibb or Reynolds v. Sims?
+  type: multi
+  relevant_sources:
+  - Selle_v_Gibb_676b22.md
+  - Reynolds_v_Sims_31c83e.md
+  answer_keywords:
+  - '1964'
+  reference_answer: '1964'
+- question: Mamie Gummer played the role of Nancy Crozier on the TV series airing
+    on what network?
+  type: multi
+  relevant_sources:
+  - Mamie_Gummer_4067c0.md
+  - The_Good_Wife_0a789c.md
+  answer_keywords:
+  - CBS
+  reference_answer: CBS
+- question: What country do both Adnan Akmal and Kamran Akmal represent in cricket?
+  type: multi
+  relevant_sources:
+  - Adnan_Akmal_e863b9.md
+  - Kamran_Akmal_9f2a8d.md
+  answer_keywords:
+  - Pakistani
+  reference_answer: Pakistani
+- question: Did Franki Valli sing with Hellogoodbye or The Four Seasons?
+  type: multi
+  relevant_sources:
+  - Hellogoodbye_74d3b0.md
+  - The_Four_Seasons_band_1874d3.md
+  answer_keywords:
+  - Four
+  - Seasons
+  reference_answer: The Four Seasons
+- question: Both Sorbaria and Goldenrod are a genus of more than 50 flowering plants?
+  type: multi
+  relevant_sources:
+  - Sorbaria_8cba6f.md
+  - Goldenrod_cf193e.md
+  answer_keywords:
+  - 'no'
+  reference_answer: 'no'
+- question: 'What is the capacity of the Stadium, other than Kauffman Stadium, designed
+    by Charles Deaton ? '
+  type: multi
+  relevant_sources:
+  - Charles_Deaton_e4fe98.md
+  - Arrowhead_Stadium_eae21e.md
+  answer_keywords:
+  - '76'
+  - '416'
+  reference_answer: 76,416
+- question: Who is the current drummer of the band who did the song "What Lovers Do"?
+  type: multi
+  relevant_sources:
+  - What_Lovers_Do_bb1039.md
+  - Maroon_5_0462eb.md
+  answer_keywords:
+  - Matt
+  - Flynn
+  reference_answer: Matt Flynn
+- question: What 2017 Christopher B. Landon directed American slasher film is Jessica
+    Rothe starring in?
+  type: multi
+  relevant_sources:
+  - Jessica_Rothe_59deb4.md
+  - Happy_Death_Day_793b37.md
+  answer_keywords:
+  - Happy
+  - Death
+  - Day
+  reference_answer: Happy Death Day
+- question: Who was the president of the Sinn Fein political party during the Hume-Adams
+    Dialogue?
+  type: multi
+  relevant_sources:
+  - Hume_Adams_dialogue_c9e758.md
+  - Gerry_Adams_2307b2.md
+  answer_keywords:
+  - Gerard
+  - Gerry
+  - Adams
+  reference_answer: Gerard "Gerry" Adams
+- question: Which of these battles occurred earlier--the Battle of Peleliu or the
+    Battle of Belleau Wood?
+  type: multi
+  relevant_sources:
+  - Battle_of_Belleau_Wood_043dd7.md
+  - Battle_of_Peleliu_99bf9c.md
+  answer_keywords:
+  - Battle
+  - Belleau
+  - Wood
+  reference_answer: The Battle of Belleau Wood
+- question: Garden Island Naval Chapel is the oldest Chistian chapel of a naval branch
+    of what defence force?
+  type: multi
+  relevant_sources:
+  - Garden_Island_Naval_Chapel_6a3c4e.md
+  - Royal_Australian_Navy_5e1d16.md
+  answer_keywords:
+  - Australian
+  - Defence
+  - Force
+  reference_answer: Australian Defence Force
+- question: Július Satinský was born in a city that has a current population of what?
+  type: multi
+  relevant_sources:
+  - J_lius_Satinsk_5044aa.md
+  - Bratislava_c114af.md
+  answer_keywords:
+  - about
+  - '450'
+  - '000'
+  reference_answer: about 450,000
+- question: What was the name of the 19th century foundry which was located in a village
+    directly across the Hudson River from Westpoint in Putnam County, New York?
+  type: multi
+  relevant_sources:
+  - Robert_Parker_Parrott_068701.md
+  - Cold_Spring_New_York_16f828.md
+  answer_keywords:
+  - West
+  - Point
+  - Iron
+  - Cannon
+  - Foundry
+  reference_answer: West Point Iron and Cannon Foundry
+- question: What fictional character created by Tom Clancy was turned into a film
+    in 2002?
+  type: multi
+  relevant_sources:
+  - The_Sum_of_All_Fears_dc7ae8.md
+  - Jack_Ryan_character_d8deeb.md
+  answer_keywords:
+  - Jack
+  - Ryan
+  reference_answer: Jack Ryan
+- question: Wheat salad is composed typically of what red fruit?
+  type: multi
+  relevant_sources:
+  - Wheat_salad_e0a900.md
+  - Tomato_77bd79.md
+  answer_keywords:
+  - tomato
+  reference_answer: tomato
+- question: What year did the biographical-comedy-crime film directed by Steven Soderbergh
+    about the highest-level corporate executive whistleblower come out?
+  type: multi
+  relevant_sources:
+  - The_Informant_376ad6.md
+  - Mark_Whitacre_ccc607.md
+  answer_keywords:
+  - '2009'
+  reference_answer: '2009'
+- question: when was the album that includes the song by Dustin Lynch released to
+    country radio on February 17, 2017?
+  type: multi
+  relevant_sources:
+  - Current_Mood_0317b8.md
+  - Small_Town_Boy_song_d2fddb.md
+  answer_keywords:
+  - September
+  - '8'
+  - '2017'
+  reference_answer: September 8, 2017
+- question: Which playwright lived a longer life, Edward Albee or J. M. Barrie?
+  type: multi
+  relevant_sources:
+  - Edward_Albee_1757e2.md
+  - J_M_Barrie_b8a16e.md
+  answer_keywords:
+  - Edward
+  - Franklin
+  - Albee
+  - III
+  reference_answer: Edward Franklin Albee III
+- question: Are both Rutgers University and Carnegie Mellon University located in
+    America?
+  type: multi
+  relevant_sources:
+  - Rutgers_University_268565.md
+  - Carnegie_Mellon_University_374282.md
+  answer_keywords:
+  - 'yes'
+  reference_answer: 'yes'
+- question: Vanessa Bley is what person who organizes and often finances concerts,
+    plays, or operas, performing a role?
+  type: multi
+  relevant_sources:
+  - Vanessa_Bley_785093.md
+  - Impresario_5cc7af.md
+  answer_keywords:
+  - impresario
+  reference_answer: impresario
+- question: Were Thomas H. Ince and Joseph McGrath of the same nationality?
+  type: multi
+  relevant_sources:
+  - Thomas_H_Ince_6c6951.md
+  - Joseph_McGrath_film_director_009fc3.md
+  answer_keywords:
+  - 'no'
+  reference_answer: 'no'
+- question: Are Phlebodium and Pieris both species of ferns?
+  type: multi
+  relevant_sources:
+  - Phlebodium_8bf33d.md
+  - Pieris_plant_9661d2.md
+  answer_keywords:
+  - 'no'
+  reference_answer: 'no'
+- question: Bartlett's Bridge was built by the engineer who worked for the county
+    seat of which Massachusetts county?
+  type: multi
+  relevant_sources:
+  - Bartlett_s_Bridge_b18985.md
+  - Worcester_Massachusetts_24ec68.md
+  answer_keywords:
+  - Worcester
+  - County
+  reference_answer: Worcester County
+- question: Which novelist, J. G. Farrell or Louis Aragon, wrote of the political
+    and human consequences of his country's colonial rule?
+  type: multi
+  relevant_sources:
+  - J_G_Farrell_a41810.md
+  - Louis_Aragon_0efbad.md
+  answer_keywords:
+  - Farrell
+  reference_answer: Farrell
+- question: 'What city did the characters from Gargoyles the Movie: The Heroes Awaken
+    wake up in after being in an enchantedly petrified state for a thousand years?'
+  type: multi
+  relevant_sources:
+  - Gargoyles_the_Movie_The_Heroes_Awaken_5c24d6.md
+  - Gargoyles_TV_series_acb424.md
+  answer_keywords:
+  - modern
+  - day
+  - New
+  - York
+  - City
+  reference_answer: modern-day New York City
+- question: Who were the producers of the show for which Chris McKay made his feature
+    film directorial debut?
+  type: multi
+  relevant_sources:
+  - Chris_McKay_59bf65.md
+  - The_Lego_Batman_Movie_c163fe.md
+  answer_keywords:
+  - Dan
+  - Lin
+  - Roy
+  - Lee
+  - Phil
+  - Lord
+  - Christopher
+  - Miller
+  reference_answer: Dan Lin, Roy Lee, Phil Lord and Christopher Miller
+- question: The Waterloo Vase has been used as a garden ornament at whose residence
+    and administrative headquarters?
+  type: multi
+  relevant_sources:
+  - Waterloo_Vase_4a9d93.md
+  - Buckingham_Palace_f6af44.md
+  answer_keywords:
+  - reigning
+  - monarch
+  - United
+  - Kingdom
+  reference_answer: reigning monarch of the United Kingdom
+- question: Scott Sandelin grew up in a town in what Minnesota county?
+  type: multi
+  relevant_sources:
+  - Scott_Sandelin_385998.md
+  - Hibbing_Minnesota_8a029b.md
+  answer_keywords:
+  - Saint
+  - Louis
+  - County
+  reference_answer: Saint Louis County
+- question: The 37th Disney animated feature film Tarzan features You'll be in my
+    heart by which artist?
+  type: multi
+  relevant_sources:
+  - You_ll_Be_in_My_Heart_1a72e2.md
+  - Tarzan_1999_film_c56381.md
+  answer_keywords:
+  - Phil
+  - Collins
+  reference_answer: Phil Collins
+- question: What type of media does J. T. Petty and Outlast have in common?
+  type: multi
+  relevant_sources:
+  - J_T_Petty_e5ea9c.md
+  - Outlast_e469ba.md
+  answer_keywords:
+  - video
+  - game
+  reference_answer: video game
+- question: Where did the architect of the Governor's House, located in Knutsford,
+    graduate from college?
+  type: multi
+  relevant_sources:
+  - Governor_s_House_Knutsford_4f75b9.md
+  - Edmund_Sharpe_07dbf7.md
+  answer_keywords:
+  - Cambridge
+  - University
+  reference_answer: Cambridge University
+- question: ' What is the latest album of Tim Hecker, the Canadian electronic music
+    maker?'
+  type: multi
+  relevant_sources:
+  - Ravedeath_1972_08847b.md
+  - Tim_Hecker_80429a.md
+  answer_keywords:
+  - Love
+  - Streams
+  reference_answer: Love Streams
+- question: What is the name of this Fortune 500 American company that operates a
+    chain of retail home improvement stores that sponsored House Rules?
+  type: multi
+  relevant_sources:
+  - House_Rules_2003_TV_series_722f88.md
+  - Lowe_s_ffd775.md
+  answer_keywords:
+  - Lowe
+  - s
+  reference_answer: Lowe's
+- question: For what "first" was Ivory Lee Brown's nephew credited for in Heisman
+    Trophy balloting?
+  type: multi
+  relevant_sources:
+  - Ivory_Lee_Brown_4d1964.md
+  - Adrian_Peterson_1ca55b.md
+  answer_keywords:
+  - first
+  - freshman
+  - finish
+  - as
+  - runner
+  - up
+  reference_answer: first freshman to finish as the runner-up
+- question: Haruki Murakami said that writing "Dance Dance Dance" had been a healing
+    act after his unexpected fame following the publication of a novel published in
+    which year ?
+  type: multi
+  relevant_sources:
+  - Dance_Dance_Dance_novel_c5371b.md
+  - Norwegian_Wood_novel_366169.md
+  answer_keywords:
+  - '1987'
+  reference_answer: '1987'
+- question: Erica Packer was the second wife of what Australian businessman?
+  type: multi
+  relevant_sources:
+  - Erica_Packer_6b4c34.md
+  - James_Packer_eae46c.md
+  answer_keywords:
+  - James
+  - Packer
+  reference_answer: James Packer
+- question: What type of media does Bitter Jester and Sicko have in common?
+  type: multi
+  relevant_sources:
+  - Bitter_Jester_f61a2e.md
+  - Sicko_07f8c4.md
+  answer_keywords:
+  - documentary
+  reference_answer: documentary
+- question: What country does Eric A. Sykes and Eccles, Greater Manchester have ion
+    common?
+  type: multi
+  relevant_sources:
+  - Eric_A_Sykes_c052f8.md
+  - Eccles_Greater_Manchester_40177d.md
+  answer_keywords:
+  - England
+  reference_answer: England
+- question: What South Korean actor was a member of the pop duo TVXQ and stared in
+    Heading to the Ground, a 2009 MBC television series?
+  type: multi
+  relevant_sources:
+  - Heading_to_the_Ground_c0d478.md
+  - Yunho_0dd429.md
+  answer_keywords:
+  - Jung
+  - Yun
+  - ho
+  reference_answer: Jung Yun-ho
+- question: which is traditionally drunk before retiring to bed, Hot toddy or Kir?
+  type: multi
+  relevant_sources:
+  - Hot_toddy_30e3b0.md
+  - Kir_cocktail_31c859.md
+  answer_keywords:
+  - Hot
+  - toddy
+  reference_answer: Hot toddy
+- question: What year was the film "Mom" released, starring the voice of Shashaa Tirupati?
+  type: multi
+  relevant_sources:
+  - Shashaa_Tirupati_ff2c7c.md
+  - Mom_film_398f32.md
+  answer_keywords:
+  - '2017'
+  reference_answer: '2017'
+- question: For One Night Only was hosted by the man most well-known for hosting what
+    show from 1962 until 1999?
+  type: multi
+  relevant_sources:
+  - For_One_Night_Only_Irish_TV_series_ed466c.md
+  - Gay_Byrne_4247e7.md
+  answer_keywords:
+  - Late
+  - Late
+  - Show
+  reference_answer: The Late Late Show
+- question: What company did Roscoe Channing form with the owner of a leading stable
+    of thoroughbred racehorses?
+  type: multi
+  relevant_sources:
+  - Roscoe_Channing_8e099f.md
+  - Cornelius_Vanderbilt_Whitney_7d76fc.md
+  answer_keywords:
+  - Hudson
+  - Bay
+  - Mining
+  - Smelting
+  - Company
+  reference_answer: Hudson Bay Mining and Smelting Company
+- question: Jens Risom introduced what type of design, characterized by minimalism
+    and functionality?
+  type: multi
+  relevant_sources:
+  - Jens_Risom_59bab6.md
+  - Scandinavian_design_4ad552.md
+  answer_keywords:
+  - Scandinavian
+  - design
+  reference_answer: Scandinavian design
+- question: Which of the movie which has Rich Lee 3-D previsualizations was directed
+    by Francis Lawrence?
+  type: multi
+  relevant_sources:
+  - Rich_Lee_9bc366.md
+  - Constantine_film_771f1f.md
+  answer_keywords:
+  - Constantine
+  reference_answer: Constantine
+- question: What criteria subjectively qualifies the Houston Astrodome to be called
+    the Eighth Wonder of the World?
+  type: multi
+  relevant_sources:
+  - Astrodome_f88adf.md
+  - Eighth_Wonder_of_the_World_556f6f.md
+  answer_keywords:
+  - comparable
+  - seven
+  - Wonders
+  - World
+  reference_answer: comparable to the seven Wonders of the World
+- question: Who was born first, José Echegaray y Eizaguirre or P. J. O'Rourke?
+  type: multi
+  relevant_sources:
+  - Jos_Echegaray_18e717.md
+  - P_J_O_Rourke_bc4fe4.md
+  answer_keywords:
+  - Jos
+  - Echegaray
+  - y
+  - Eizaguirre
+  reference_answer: José Echegaray y Eizaguirre
+- question: 'Who did the Doncaster Belles play in the 1994 FA Women''s Cup Final held
+    at Glanford Park? '
+  type: multi
+  relevant_sources:
+  - 1994_FA_Women_s_Cup_Final_cf2150.md
+  - Glanford_Park_b70c3b.md
+  answer_keywords:
+  - Knowsley
+  - United
+  - Women
+  reference_answer: Knowsley United Women
+- question: What act for Innocent Records achieved Platinum sales and shares its name
+    with a primary color in the RGB color model?
+  type: multi
+  relevant_sources:
+  - Innocent_Records_1582f5.md
+  - Blue_9594ee.md
+  answer_keywords:
+  - Blue
+  reference_answer: Blue
+- question: What national historic district is located near a village in the town
+    of Philipstown, New York?
+  type: multi
+  relevant_sources:
+  - Valhalla_Highlands_Historic_District_3758b0.md
+  - Cold_Spring_New_York_16f828.md
+  answer_keywords:
+  - Valhalla
+  - Highlands
+  - Historic
+  - District
+  reference_answer: Valhalla Highlands Historic District
+- question: Which American writer wrote both The Ganymede Takeover (1967) and The
+    Man in the High Castle (1962)?
+  type: multi
+  relevant_sources:
+  - The_Ganymede_Takeover_5feff5.md
+  - The_Man_in_the_High_Castle_1c064a.md
+  answer_keywords:
+  - Philip
+  - K
+  - Dick
+  reference_answer: Philip K. Dick
+- question: Curt Menefee is the host of the Fox network's NFL show with co-host Michael
+    Anthony Strahan who spent his entire 15-year career with what team?
+  type: multi
+  relevant_sources:
+  - Curt_Menefee_0ab3d9.md
+  - Michael_Strahan_1fa88f.md
+  answer_keywords:
+  - New
+  - York
+  - Giants
+  reference_answer: New York Giants
+- question: Francisco Jose Hernandez was a participant in an invasion that took place
+    in what year?
+  type: multi
+  relevant_sources:
+  - Francisco_Jose_Hernandez_2be157.md
+  - Bay_of_Pigs_Invasion_cb36cf.md
+  answer_keywords:
+  - '1961'
+  reference_answer: '1961'
+- question: Dead but Rising was a song by the Danish band fomed in what city in 2001?
+  type: multi
+  relevant_sources:
+  - Dead_but_Rising_ba0a31.md
+  - Volbeat_9d57eb.md
+  answer_keywords:
+  - Copenhagen
+  reference_answer: Copenhagen
+- question: The man, who the award in which "Summer of the Monkeys" won, was a spokesman
+    for white sector of America?
+  type: multi
+  relevant_sources:
+  - Summer_of_the_Monkeys_0b84ea.md
+  - William_Allen_White_d1418b.md
+  answer_keywords:
+  - middle
+  - America
+  reference_answer: middle America
+- question: Which lead actor/actress in War Chhod Na Yaar has also acted in Bengali
+    and English-language films?
+  type: multi
+  relevant_sources:
+  - War_Chhod_Na_Yaar_98ceca.md
+  - Soha_Ali_Khan_b0280e.md
+  answer_keywords:
+  - Soha
+  - Ali
+  - Khan
+  reference_answer: Soha Ali Khan
+- question: What type of movie are Wishing Stairs and Voice?
+  type: multi
+  relevant_sources:
+  - Wishing_Stairs_8c3b13.md
+  - Voice_film_5546f0.md
+  answer_keywords:
+  - South
+  - Korean
+  - horror
+  - film
+  reference_answer: South Korean horror film
+- question: Which cast member of Alice Upside Down also stars in the ABC Family/Freeform
+    drama "Switched at Birth?"
+  type: multi
+  relevant_sources:
+  - Alice_Upside_Down_2fe728.md
+  - Lucas_Grabeel_c00cb8.md
+  answer_keywords:
+  - Lucas
+  - Stephen
+  - Grabeel
+  reference_answer: Lucas Stephen Grabeel
+- question: What kind of movie directed by F. Javier gutierrez did an Italian model
+    and actress star in?
+  type: multi
+  relevant_sources:
+  - Matilda_Lutz_48d612.md
+  - Rings_2017_film_beea89.md
+  answer_keywords:
+  - American
+  - supernatural
+  - psychological
+  - horror
+  - film
+  reference_answer: American supernatural psychological horror film
+- question: In which county is the English king Harold Godwinson buried?
+  type: multi
+  relevant_sources:
+  - Edith_Walks_fa3315.md
+  - Waltham_Abbey_Church_f5164e.md
+  answer_keywords:
+  - Essex
+  reference_answer: Essex
+- question: Who wrote The Devils, and was an eninent English theater, opera and film
+    director?
+  type: multi
+  relevant_sources:
+  - The_Devils_play_32a003.md
+  - Peter_Hall_director_bd2edf.md
+  answer_keywords:
+  - Peter
+  - Hall
+  reference_answer: Peter Hall
+- question: Which Grand Slam singles tournament have Francesca Schiavone and Olga
+    Morozova both been finalists in?
+  type: multi
+  relevant_sources:
+  - Francesca_Schiavone_8706b5.md
+  - Olga_Morozova_77a2a8.md
+  answer_keywords:
+  - French
+  - Open
+  reference_answer: French Open
+- question: '"Kapitän zur See" Ernst Lindemann was the commander of which one of two
+    battleships built for Nazi Germany''s "Kriegsmarine"?'
+  type: multi
+  relevant_sources:
+  - Ernst_Heinrich_Lindemann_a48ace.md
+  - German_battleship_Bismarck_adf326.md
+  answer_keywords:
+  - Bismarck
+  reference_answer: Bismarck
+- question: Which football team does Lewis Young's older brother, Ashley Young, play
+    for?
+  type: multi
+  relevant_sources:
+  - Lewis_Young_9447cd.md
+  - Ashley_Young_590bf7.md
+  answer_keywords:
+  - Premier
+  - League
+  - club
+  - Manchester
+  - United
+  - England
+  - national
+  - team
+  reference_answer: Premier League club Manchester United and the England national
+    team
+- question: Snowdrop is a proprietary game engine first revealed with an online-only
+    action role-playing video game developed by who?
+  type: multi
+  relevant_sources:
+  - Snowdrop_game_engine_750d41.md
+  - Tom_Clancy_s_The_Division_3e09f9.md
+  answer_keywords:
+  - Massive
+  - Entertainment
+  reference_answer: Massive Entertainment
+- question: Wendy Ayche was featured in 2016 in an annual production created by Youtube
+    and what other organization?
+  type: multi
+  relevant_sources:
+  - Wengie_c38b7b.md
+  - YouTube_Rewind_162d6e.md
+  answer_keywords:
+  - Portal
+  - Interactive
+  reference_answer: Portal A Interactive

@@ -32,7 +32,8 @@ class EmbedConfig:
 class Config:
     """실험 전체 설정 — LLM·임베딩 + 청킹(chunk_size/overlap)·검색(top_k)·경로(data_dir/storage_dir).
 
-    extract_lang 은 그래프 추출 프롬프트 언어, hipporag_* 는 HippoRAG 어댑터 전용 override.
+    extract_lang 은 그래프 추출 프롬프트 언어, answer_style 은 답변 형식(공개벤치=short),
+    hipporag_* 는 HippoRAG 어댑터 전용 override.
     """
     llm: LLMConfig = field(default_factory=LLMConfig)
     embed: EmbedConfig = field(default_factory=EmbedConfig)
@@ -42,6 +43,7 @@ class Config:
     data_dir: str = "data"
     storage_dir: str = "storage"
     extract_lang: str = "ko"  # 그래프 추출 프롬프트 언어("ko" 사내도메인 / "en" 범용). 외부벤치용.
+    answer_style: str = "default"  # 생성 답변 형식. "short"=공개벤치용 짧은답(EM/F1 비교 가능)
     hipporag_embedding: str | None = None  # HippoRAG 임베딩(기본 facebook/contriever). e5는 OpenAI호환 서버.
     hipporag_embedding_base_url: str | None = None  # e5 OpenAI호환 서버 URL(공정비교). 이름에 "text-embedding" 필요.
     hipporag_llm_base_url: str | None = None  # HippoRAG 내부 LLM(OpenIE+트리플필터) 엔드포인트. 기본 Gemini. NIM 등 override.

@@ -13,6 +13,42 @@ from ..core.interface import QueryResult, RagBackend, RetrievedContext
 
 _TOKEN = re.compile(r"[A-Za-z0-9가-힣]+")
 
+# 공개벤치(HotpotQA 등)용 짧은답 템플릿 — 정답이 2~3단어 span 이라 문장형 답변은
+# EM/token-F1 이 구조적으로 깎인다(논문 수치와 비교 불가). answer_style="short" 로 전환.
+#
+# 근거 원칙: 추정 금지, 검색된 컨텍스트로 뒷받침되는 내용만 답한다(RAG 의 groundedness
+# 관례 — 근거 없는 생성은 환각이므로 점수를 얻더라도 무효). 근거가 없으면 추측 대신
+# 고정 토큰 NO_ANSWER 로 기권시켜, 오답과 기권을 분리 집계할 수 있게 한다.
+_SHORT_QA_TMPL = (
+    "Context information is below.\n"
+    "---------------------\n"
+    "{context_str}\n"
+    "---------------------\n"
+    "Answer the question using ONLY the context above. Do not use prior knowledge and "
+    "do not speculate — every part of the answer must be supported by the context.\n"
+    "Give the SHORTEST possible answer span (a name, entity, number, date, or yes/no). "
+    "Output only the answer itself — no sentence, no explanation, no punctuation at the end.\n"
+    "If the context does not support an answer, output exactly: NO_ANSWER\n"
+    "Question: {query_str}\n"
+    "Answer: "
+)
+
+
+def apply_answer_style(engine: Any, cfg: Config) -> Any:
+    """cfg.answer_style 에 따라 질의 엔진의 답변 생성 템플릿을 교체한다.
+
+    입력: engine — LlamaIndex 질의 엔진 / cfg — 설정(answer_style)
+    출력: 같은 engine 객체("short" 면 text_qa_template 이 짧은답 템플릿으로 교체됨)
+    """
+    if getattr(cfg, "answer_style", "default") != "short":
+        return engine
+    from llama_index.core import PromptTemplate
+
+    engine.update_prompts(
+        {"response_synthesizer:text_qa_template": PromptTemplate(_SHORT_QA_TMPL)}
+    )
+    return engine
+
 
 def ko_tokenize(text: str) -> list[str]:
     """한국어/영문/숫자 토큰화(어절·연속문자 단위). 형태소 분석 없이 BM25용 1차 토크나이저.
@@ -99,7 +135,7 @@ class LlamaIndexBackend(RagBackend):
             로 변환: 본문·file_name 출처·score·메타), metadata(method·top_k)
         """
         self._ensure_loaded()
-        resp = self._make_engine().query(question)
+        resp = apply_answer_style(self._make_engine(), self.cfg).query(question)
         contexts = [
             RetrievedContext(
                 text=node.node.get_content(),

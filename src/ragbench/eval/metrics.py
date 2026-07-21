@@ -1,6 +1,12 @@
-"""검색/답변 지표. 기법 무관 — QueryResult 의 contexts(출처)와 answer 만 사용한다."""
+"""검색/답변 지표. 기법 무관 — QueryResult 의 contexts(출처)와 answer 만 사용한다.
+
+지표 두 갈래: ① 자체 채점(hit·recall@k·precision·MRR·keyword_recall)
+② 공개벤치 표준(EM·token F1) — 논문 수치와 직접 비교하기 위해 SQuAD 관례를 따른다.
+"""
 from __future__ import annotations
 
+import re
+from collections import Counter
 from typing import Sequence
 
 
@@ -71,3 +77,53 @@ def keyword_recall(answer: str, keywords: Sequence[str]) -> float | None:
     low = answer.lower()
     present = sum(1 for kw in keywords if kw.lower() in low)
     return present / len(keywords)
+
+
+# --- 공개벤치 표준 지표(EM/F1) — 논문 수치와 같은 자로 비교하기 위함 -------------
+# SQuAD/HotpotQA 관례: 소문자화 + 관사 제거 + 구두점 제거 + 공백 정규화 후 비교.
+_ARTICLES = re.compile(r"\b(a|an|the)\b", re.UNICODE)
+_PUNCT = re.compile(r"[^\w\s]", re.UNICODE)
+
+
+def normalize_answer(text: str) -> str:
+    """정답 비교용 정규화(SQuAD 표준) — 소문자·관사 제거·구두점 제거·공백 정리.
+
+    입력: text — 원본 답변 문자열
+    출력: 정규화된 문자열(비교·토큰화의 기준)
+    """
+    s = (text or "").lower()
+    s = _PUNCT.sub(" ", s)
+    s = _ARTICLES.sub(" ", s)
+    return " ".join(s.split())
+
+
+def exact_match(prediction: str, gold: str | None) -> float | None:
+    """정규화 후 완전 일치면 1.0, 아니면 0.0 (공개벤치 EM).
+
+    입력: prediction — 모델 답변 / gold — 참조 정답(없으면 채점 생략)
+    출력: 1.0 / 0.0, gold 가 없으면 None
+    """
+    if not gold:
+        return None
+    return 1.0 if normalize_answer(prediction) == normalize_answer(gold) else 0.0
+
+
+def token_f1(prediction: str, gold: str | None) -> float | None:
+    """정규화 토큰 기준 F1 (공개벤치 표준). 부분 정답을 부분 점수로 인정한다.
+
+    입력: prediction — 모델 답변 / gold — 참조 정답(없으면 채점 생략)
+    출력: 0.0~1.0 F1, gold 가 없으면 None. 양쪽 다 빈 토큰이면 완전일치로 1.0
+    """
+    if not gold:
+        return None
+    p_tok = normalize_answer(prediction).split()
+    g_tok = normalize_answer(gold).split()
+    if not p_tok or not g_tok:
+        return 1.0 if p_tok == g_tok else 0.0
+    common = Counter(p_tok) & Counter(g_tok)
+    n_same = sum(common.values())
+    if n_same == 0:
+        return 0.0
+    precision = n_same / len(p_tok)
+    recall = n_same / len(g_tok)
+    return 2 * precision * recall / (precision + recall)

@@ -40,7 +40,7 @@
 3. **"하이브리드 > 단일검색"은 도메인 특이적** — 공개벤치(HotpotQA n=100)에선 세 검색이 **통계적 동률**(McNemar 무유의차). 자체 코퍼스(한국어 사내문서)의 우위가 일반법칙은 아님을 **외부검증으로 확인**.
 4. **벤치마크 함정 — 결론을 스스로 반증하라** — 약judge·단일검색·미세버그가 결론을 왜곡한다. "그래프=구조적 한계", "HippoRAG=버그로 저하" 두 결론을 **실측으로 뒤집었다**(강judge 교차검증·공개벤치·레버 애블레이션).
 
-> 결론 한 장: [`docs/RESULT_SUMMARY.md`](docs/RESULT_SUMMARY.md) · 용도별 선택: [`docs/RESULT_PROFILES.md`](docs/RESULT_PROFILES.md) · 전체 여정: [`CLAUDE.md`](CLAUDE.md) §10.5~10.11.
+> 결론·용도별 선택: [`docs/RESULT.md`](docs/RESULT.md) · 전체 여정: [`CLAUDE.md`](CLAUDE.md) §10.5~10.11.
 
 ---
 
@@ -157,7 +157,7 @@ docs/           # 설계·논문정리·작업 타임라인
 
 ## 💡 배운 점 · 한계
 
-- **단일 승자는 없다 — 용도별 2 프로필**: 범용은 `hybrid`(벡터+키워드), 조직 특화·연결성·전역 질의는 `graphrag_e2b_hybrid`/HippoRAG2. → [`docs/RESULT_PROFILES.md`](docs/RESULT_PROFILES.md).
+- **단일 승자는 없다 — 용도별 2 프로필**: 범용은 `hybrid`(벡터+키워드), 조직 특화·연결성·전역 질의는 `graphrag_e2b_hybrid`/HippoRAG2. → [`docs/RESULT.md`](docs/RESULT.md).
 - **그래프 저성능 = 방법론이 아니라 구현 성숙도** — 자체 그래프(0.33)와 공식 HippoRAG2 PPR(0.806)의 격차가 증명. 성숙한 OpenIE+PPR+passage노드면 평면과 동률.
 - **연결성 ↑ ≠ 성능 ↑ (반직관)** — 과연결 그래프가 핀포인트엔 오히려 노이즈. 그래프의 값어치는 연결성의 양이 아니라 **질문이 실제로 연결을 요구하는지**에 달렸다.
 - **코퍼스 품질 실측** — 자체 코퍼스 88%가 자동생성 near-duplicate(TTR 0.156)였음 → 수치에 아티팩트 혼입. 실무 신뢰는 **외부(HotpotQA)·손작성** 위주.
@@ -167,15 +167,14 @@ docs/           # 설계·논문정리·작업 타임라인
 
 ## 📄 더 보기
 
-> **문서 명명 규칙** — 문서를 새로 늘리지 않는다. 유사 문서는 **`그룹_주제.md`** 로 접두어를 공유하고 접미사만 다르게 한다.
-> `RESULT_*`(결론) · `VALIDATION_*`(검증) · `GUIDE_*`(사용법) · `DESIGN_*`(설계) · `LOG_*`(기록).
-> 새 내용은 **기존 문서에 절(節)로 추가**하고, 정말 새 축일 때만 같은 그룹의 새 접미사를 만든다.
+> **문서 규칙 — 파일을 늘리지 않는다.** 주제별 **5개 문서**로 고정하고, 새 내용은 **해당 문서에 절(節)로 추가**한다(날짜 또는 주제로 구분). 정말 새 축일 때만 문서를 만든다.
 
-- [`docs/RESULT_SUMMARY.md`](docs/RESULT_SUMMARY.md) — **RAG 핵심 압축**(한 장 결론) ← 여기부터
-- [`docs/RESULT_PROFILES.md`](docs/RESULT_PROFILES.md) — **용도별 2 프로필**(범용 vs 커뮤니티)
-- [`docs/DESIGN_MES_WMS.md`](docs/DESIGN_MES_WMS.md) — **MES·WMS 도메인 확장**(개념 + ragbench 검증 확장 기술경로)
-- [`docs/VALIDATION_EXTERNAL.md`](docs/VALIDATION_EXTERNAL.md) — **외부 검증 재설계**(공개벤치 중심 작업 목록·통계 설계)
-- [`docs/GUIDE_ARCHITECTURE.md`](docs/GUIDE_ARCHITECTURE.md) — **코드 지도**(무슨 코드가 어디, X 고치려면 어디)
-- [`docs/GUIDE_RUN.md`](docs/GUIDE_RUN.md) · [`docs/GUIDE_TECH.md`](docs/GUIDE_TECH.md) — 실행 가이드 · 기술 레퍼런스
-- [`CLAUDE.md`](CLAUDE.md) — 설계·규칙·전체 결과(§10.5~10.11) · [`docs/LOG_WORK.md`](docs/LOG_WORK.md) — 타임라인
-- [`docs/DESIGN_GRAPH.md`](docs/DESIGN_GRAPH.md) — 그래프 품질 개선 설계(L1~L5)
+| 문서 | 담는 것 |
+| --- | --- |
+| [`docs/RESULT.md`](docs/RESULT.md) ← **여기부터** | 핵심 압축(한 장 결론) · 용도별 2 프로필 |
+| [`docs/VALIDATION.md`](docs/VALIDATION.md) | 외부 검증(공개벤치) 설계·실측·문제 진단 |
+| [`docs/GUIDE.md`](docs/GUIDE.md) | 실행 가이드 · 코드 지도 · 기술 레퍼런스 · 논문 정리 |
+| [`docs/DESIGN.md`](docs/DESIGN.md) | 그래프 품질 개선(L1~L5) · MES·WMS 도메인 확장 |
+| [`docs/LOG.md`](docs/LOG.md) | 날짜별 작업 타임라인 · TODO |
+
+- [`CLAUDE.md`](CLAUDE.md) — 설계 방향·규칙·전체 결과(§10.5~10.11)

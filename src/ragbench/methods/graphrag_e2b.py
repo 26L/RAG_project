@@ -18,11 +18,117 @@ description 채움률·타입 정확도가 오른다(추출 LLM은 config로 교
 from __future__ import annotations
 
 import asyncio
+import hashlib
+import json
 import os
 import re
+import sys
+import threading
+import time
 from typing import Any, Sequence
 
 from .graphrag import GraphRAG
+
+# 장기 인덱싱 견고화 (2026-07-22 행(hang) 사고 대응)
+# 공급자(Gemini)가 502/503 을 뱉으면 재시도 중 연결이 물려 **타임아웃 없이 무한 대기**했고,
+# 체크포인트가 없어 2h42m 작업의 중간 결과가 0이었다. 아래 셋으로 같은 손실을 막는다.
+_EXTRACT_TIMEOUT_S = 120.0   # 청크당 LLM 호출 상한. 넘으면 그 청크만 포기하고 진행.
+_EXTRACT_RETRIES = 3         # 타임아웃·일시장애(502/503) 재시도 횟수
+_PROGRESS_EVERY = 50         # 진행 로그 간격(청크). stderr 로 즉시 flush.
+
+
+def _log(msg: str) -> None:
+    """진행/경고를 stderr 로 **즉시 flush** 해서 출력한다.
+
+    tqdm 진행바는 버퍼에 갇혀 파이프 뒤에서 안 보인다 — 행(hang) 감지가 늦어진
+    직접 원인이었다. 이 로그는 라인 단위로 바로 나간다.
+
+    입력: msg — 출력할 한 줄
+    출력: 없음(stderr 출력)
+    """
+    # 앞의 \n: tqdm 진행바가 \r 로 같은 줄을 물고 있어, 붙이면 로그가 섞여 안 보인다.
+    print(f"\n[extract] {msg}", file=sys.stderr, flush=True)
+
+
+def _cache_key(text: str) -> str:
+    """청크 본문으로 체크포인트 키를 만든다(본문이 같으면 추출 결과도 같다).
+
+    입력: text — 추출에 넣는 청크 본문
+    출력: sha1 16자리 키
+    """
+    return hashlib.sha1(text.encode("utf-8")).hexdigest()[:16]
+
+
+class _ExtractCache:
+    """추출 체크포인트 — 청크별 결과를 JSONL 로 append 해 중단 시 재개를 가능하게 한다.
+
+    왜: 2026-07-22 인덱싱이 2h42m 만에 행(hang)했는데 중간 결과가 **0** 이었다.
+    LLM 호출 1건이 끝날 때마다 즉시 디스크에 붙이므로, 언제 죽어도 그때까지가 남는다.
+    스레드/코루틴이 섞이므로 파일 쓰기는 락으로 직렬화한다.
+    """
+
+    def __init__(self) -> None:
+        """빈 캐시 상태로 초기화한다(open 전까지 아무 것도 하지 않음)."""
+        self._data: dict[str, tuple[list, list]] = {}
+        self._fh = None
+        self._lock = threading.Lock()
+        self._done = 0
+        self._total = 0
+        self._t0 = 0.0
+
+    def open(self, path: str | None, total: int) -> None:
+        """기존 체크포인트를 읽어들이고 append 핸들을 연다.
+
+        입력: path — JSONL 경로(None 이면 캐시 비활성) / total — 전체 청크 수
+        출력: 없음(재개 가능 건수를 로그로 알림)
+        """
+        self._data, self._done, self._total, self._t0 = {}, 0, total, time.time()
+        if not path:
+            return
+        os.makedirs(os.path.dirname(path) or ".", exist_ok=True)
+        if os.path.exists(path):
+            with open(path, encoding="utf-8") as f:
+                for line in f:
+                    try:
+                        rec = json.loads(line)
+                    except json.JSONDecodeError:
+                        continue  # 죽는 순간 잘린 마지막 줄은 버린다
+                    self._data[rec["k"]] = (rec["e"], rec["r"])
+        self._fh = open(path, "a", encoding="utf-8")
+        if self._data:
+            _log(f"체크포인트 {len(self._data)}건 재사용 → 남은 {max(total - len(self._data), 0)}건만 호출")
+
+    def get(self, key: str) -> tuple[list, list] | None:
+        """캐시된 추출 결과를 돌려준다(없으면 None)."""
+        return self._data.get(key)
+
+    def put(self, key: str, ents: list, rels: list) -> None:
+        """추출 결과를 메모리와 디스크(JSONL)에 즉시 기록한다."""
+        self._data[key] = (ents, rels)
+        if self._fh is None:
+            return
+        with self._lock:
+            self._fh.write(json.dumps({"k": key, "e": ents, "r": rels}, ensure_ascii=False) + "\n")
+            self._fh.flush()
+
+    def tick(self) -> None:
+        """청크 1건 완료를 세고, _PROGRESS_EVERY 마다 진행률·ETA 를 찍는다."""
+        with self._lock:
+            self._done += 1
+            done, total = self._done, self._total
+        if done % _PROGRESS_EVERY == 0 and total:
+            elapsed = time.time() - self._t0
+            eta = elapsed / done * (total - done) if done else 0
+            _log(f"{done}/{total} ({done / total:.0%}) · 경과 {elapsed / 60:.0f}분 · 남은 ~{eta / 60:.0f}분")
+
+    def close(self) -> None:
+        """append 핸들을 닫는다(다음 open 까지 캐시는 메모리에만 남음)."""
+        if self._fh is not None:
+            self._fh.close()
+            self._fh = None
+
+
+_CACHE = _ExtractCache()
 
 _TYPES = "직원/부서/프로젝트/규정/양식/장비/회의/법령/직급/개념"
 
@@ -181,9 +287,15 @@ class GraphRAGE2B(GraphRAG):
         """산문 추출기를 만든다. cfg.extract_lang 으로 한국어/영어 프롬프트를 고른다.
 
         출력: _E2BExtractor (추출 LLM은 self.llm — 그래프 품질은 이 모델에 좌우)
+          cache_path 는 persist_dir 옆에 두어, 중단 후 재실행 시 남은 청크만 호출한다.
         """
         prompt = PROMPT_EN if getattr(self.cfg, "extract_lang", "ko") == "en" else PROMPT
-        return _E2BExtractor(llm=self.llm, num_workers=1, prompt=prompt)
+        return _E2BExtractor(
+            llm=self.llm,
+            num_workers=1,
+            prompt=prompt,
+            cache_path=f"{self.persist_dir}_extract.jsonl",
+        )
 
     def _make_engine(self) -> Any:
         """그래프 검색 + E5 재순위 질의 엔진을 만든다.
@@ -551,6 +663,7 @@ def _build_extractor_cls():
         llm: LLM
         num_workers: int = 1
         prompt: str = PROMPT
+        cache_path: str | None = None  # 체크포인트 JSONL. 죽어도 여기서 재개한다.
 
         @classmethod
         def class_name(cls) -> str:
@@ -578,11 +691,14 @@ def _build_extractor_cls():
             """
             # 청크(≤1024토큰) 전체를 추출에 넣도록 여유 있게(이전 2000자 절단이 긴 청크 손실).
             text = node.get_content(metadata_mode=MetadataMode.LLM)[:4000]
-            try:
-                resp = await self.llm.acomplete(self.prompt.format(text=text))
-                ents, rels = parse_extraction(str(resp))
-            except Exception:
-                ents, rels = [], []
+            key = _cache_key(text)
+            hit = _CACHE.get(key)
+            if hit is not None:  # 체크포인트 재사용 — LLM 호출 없이 즉시 복원
+                ents, rels = hit
+            else:
+                ents, rels = await self._extract_with_retry(text)
+                _CACHE.put(key, ents, rels)
+            _CACHE.tick()
 
             kg_nodes = node.metadata.pop(KG_NODES_KEY, [])
             kg_rels = node.metadata.pop(KG_RELATIONS_KEY, [])
@@ -622,14 +738,47 @@ def _build_extractor_cls():
             node.metadata[KG_RELATIONS_KEY] = kg_rels
             return node
 
+        async def _extract_with_retry(self, text: str) -> tuple[list, list]:
+            """LLM 추출을 타임아웃·재시도로 감싼다 — 한 청크가 전체를 멈추지 못하게.
+
+            공급자 일시장애(502/503)나 응답 없는 연결에 걸리면 _EXTRACT_TIMEOUT_S 에서
+            끊고 지수 백오프로 다시 시도한다. 끝내 실패하면 그 청크만 빈 결과로 넘긴다.
+
+            입력: text — 청크 본문
+            출력: (엔티티 목록, 관계 목록). 전부 실패 시 ([], [])
+            """
+            for attempt in range(_EXTRACT_RETRIES):
+                try:
+                    resp = await asyncio.wait_for(
+                        self.llm.acomplete(self.prompt.format(text=text)),
+                        timeout=_EXTRACT_TIMEOUT_S,
+                    )
+                    return parse_extraction(str(resp))
+                except asyncio.TimeoutError:
+                    _log(f"타임아웃({_EXTRACT_TIMEOUT_S:.0f}s) 재시도 {attempt + 1}/{_EXTRACT_RETRIES}")
+                except Exception as exc:  # 502/503 등 공급자 일시장애
+                    _log(f"추출 실패({type(exc).__name__}) 재시도 {attempt + 1}/{_EXTRACT_RETRIES}")
+                if attempt < _EXTRACT_RETRIES - 1:
+                    await asyncio.sleep(2 ** attempt)
+            return [], []
+
         async def acall(self, nodes, show_progress: bool = False, **kwargs):
             """모든 청크의 추출을 num_workers 만큼 동시에 실행한다.
+
+            시작 시 체크포인트를 열어 이미 끝낸 청크를 건너뛴다 → 중단 후 재실행하면
+            남은 청크만 LLM 을 호출한다(행(hang)·크래시 복구).
 
             입력: nodes — 청크 노드 목록 / show_progress — 진행바 표시 여부
             출력: 추출 결과가 채워진 노드 목록
             """
-            jobs = [self._aextract(n) for n in nodes]
-            return await run_jobs(jobs, workers=self.num_workers, show_progress=show_progress, desc="E2B 추출")
+            _CACHE.open(self.cache_path, total=len(nodes))
+            try:
+                jobs = [self._aextract(n) for n in nodes]
+                return await run_jobs(
+                    jobs, workers=self.num_workers, show_progress=show_progress, desc="E2B 추출"
+                )
+            finally:
+                _CACHE.close()
 
     return E2BExtractor
 

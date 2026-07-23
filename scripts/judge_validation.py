@@ -42,7 +42,10 @@ def cmd_sample(args: argparse.Namespace) -> None:
         "seed": args.seed,
         "instruction": (
             "각 항목의 human 을 1(모델 답변이 참조 정답과 핵심 사실이 일치) 또는 0 으로 채운다. "
-            "판단이 불가능하면 null 로 두면 집계에서 제외된다."
+            "판단이 불가능하면 null 로 두면 집계에서 제외된다. "
+            "★ 기권(NO_ANSWER)은 0 으로 채운다 — 검색이 근거를 못 찾은 것이므로 "
+            "검색 성능 평가에서는 실패가 맞다. "
+            "★ judge 판정은 일부러 넣지 않았다(보고 채점하면 앵커링으로 일치도가 부풀려진다)."
         ),
         "items": [
             {
